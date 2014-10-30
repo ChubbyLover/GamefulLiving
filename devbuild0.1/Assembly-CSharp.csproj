@@ -46,26 +46,20 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\Audio\AudioControl.cs" />
-     <Compile Include="Assets\Scripts\BloodCellSpawner.cs" />
-     <Compile Include="Assets\Scripts\Cell_GetInfected.cs" />
-     <Compile Include="Assets\Scripts\FluidStream.cs" />
-     <Compile Include="Assets\Scripts\FollowObject.cs" />
-     <Compile Include="Assets\Scripts\Helper\CallHelper.cs" />
-     <Compile Include="Assets\Scripts\Helper\CallSyringe.cs" />
-     <Compile Include="Assets\Scripts\Helper\Helper_AI.cs" />
-     <Compile Include="Assets\Scripts\Helper\Syringe.cs" />
-     <Compile Include="Assets\Scripts\Helper\Syringe_Medicine.cs" />
-     <Compile Include="Assets\Scripts\Pathogen\pathogen.cs" />
-     <Compile Include="Assets\Scripts\Player\antibodyCannon.cs" />
-     <Compile Include="Assets\Scripts\Player\antibodyMarker.cs" />
-     <Compile Include="Assets\Scripts\Player\boneMarrow.cs" />
-     <Compile Include="Assets\Scripts\Player\cell.cs" />
-     <Compile Include="Assets\Scripts\Player\control.cs" />
-     <Compile Include="Assets\Scripts\Reset.cs" />
-     <Compile Include="Assets\Scripts\Test.cs" />
-     <Compile Include="Assets\Scripts\camera\cameraScript.cs" />
-     <Compile Include="Assets\Scripts\controlOut.cs" />
+     <Compile Include="Assets\Scripts\Objects\Camera\Camera_Control.cs" />
+     <Compile Include="Assets\Scripts\Objects\Camera\Camera_Follow.cs" />
+     <Compile Include="Assets\Scripts\Objects\Enemy\Pathogen\Patho_Behaviour.cs" />
+     <Compile Include="Assets\Scripts\Objects\Level_Prototype\Props\Props_BoneMarrow.cs" />
+     <Compile Include="Assets\Scripts\Objects\Level_Prototype\Props\Props_RedCellSpawner.cs" />
+     <Compile Include="Assets\Scripts\Objects\Level_Prototype\Walls\Walls_FluidStream.cs" />
+     <Compile Include="Assets\Scripts\Objects\Player\Play_Antibody.cs" />
+     <Compile Include="Assets\Scripts\Objects\Player\Play_AntibodyCannon.cs" />
+     <Compile Include="Assets\Scripts\Objects\Player\Play_Behaviour.cs" />
+     <Compile Include="Assets\Scripts\Objects\Player\Powers\Powers_CallHelper.cs" />
+     <Compile Include="Assets\Scripts\Objects\Player\Powers\Powers_CallSyringe.cs" />
+     <Compile Include="Assets\Scripts\Objects\Player\Powers\Powers_HelperAI.cs" />
+     <Compile Include="Assets\Scripts\Objects\Player\Powers\Powers_Medicine.cs" />
+     <Compile Include="Assets\Scripts\Objects\Player\Powers\Powers_Syringe.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.0/UnityEngine.UI.dll</HintPath>
  </Reference>
