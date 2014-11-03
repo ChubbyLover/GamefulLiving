@@ -10,7 +10,7 @@ public class Play_Behaviour: MonoBehaviour {
 	public float fCompensator=100;
 	public GameObject antibodySprite;
 	void Start () {
-		selected = false;
+		// selected = false;
 		if(antibodyType == 16) antibodyType = Random.Range(0,15);
 		Sprite[] test = Resources.LoadAll <Sprite> ("Sprites/Objects/Player/Play_Antigens");
 		antibodySprite.GetComponent<SpriteRenderer>().sprite = test[antibodyType];
@@ -56,7 +56,7 @@ public class Play_Behaviour: MonoBehaviour {
 		
 		if(collision.gameObject.tag == "pathogen"+(antibodyType.ToString())) 
 		{	
-			if((collision.gameObject.name == "Patho_GenericPathogen" || collision.gameObject.name == "Patho_GenericPathogen(Clone)") && (gameObject.name != "Play_AntibodyCannon(Clone)")) 
+			if((collision.gameObject.name == "Patho_GenericPathogen" || collision.gameObject.name == "Patho_GenericPathogen(Clone)") && (gameObject.name != "Play_AntibodyCannon(Clone)") && (gameObject.name != "Play_AntibodyCannon")) 
 			{
 				if(collision.gameObject.transform.parent == null) collision.gameObject.transform.parent = gameObject.transform;
 				Destroy(collision.gameObject.GetComponent<Rigidbody2D>());
