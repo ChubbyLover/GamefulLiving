@@ -51,9 +51,14 @@ public class Play_Behaviour: MonoBehaviour {
 	}
 	
 	void OnCollisionEnter2D(Collision2D collision){
+		
 		if(collision.gameObject.tag == "pathogen"+(antibodyType.ToString())) 
 		{	
-			if((collision.gameObject.name == "pathogen" || collision.gameObject.name == "pathogen(Clone)") && (gameObject.name != "antibodyCannon(Clone)")) Destroy (collision.gameObject);
+			if((collision.gameObject.name == "Patho_GenericPathogen" || collision.gameObject.name == "Patho_GenericPathogen(Clone)") && (gameObject.name != "Play_AntibodyCannon(Clone)")) 
+			{
+				print("destroying");
+				Destroy (collision.gameObject);
+			}
 			
 			// ACTIVATE
 			if(!activated) 
