@@ -6,7 +6,7 @@ public class Camera_SetStart : MonoBehaviour {
 	// Use this for initialization
 	void Start () 
 	{
-		GetComponent<Camera_Switcher>().EnableCamera("1.0");
+		GetComponent<Camera_Switcher>().EnableCamera("10");
 	}
 	
 	// Update is called once per frame
