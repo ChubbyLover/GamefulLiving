@@ -46,6 +46,9 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Camera_AnyButtonContinue.cs" />
+     <Compile Include="Assets\Camera_ChangetoScreen.cs" />
+     <Compile Include="Assets\Camera_Switcher.cs" />
      <Compile Include="Assets\Scripts\Objects\Camera\Camera_Control.cs" />
      <Compile Include="Assets\Scripts\Objects\Camera\Camera_Follow.cs" />
      <Compile Include="Assets\Scripts\Objects\Enemy\Pathogen\Patho_Behaviour.cs" />
@@ -60,6 +63,7 @@
      <Compile Include="Assets\Scripts\Objects\Player\Powers\Powers_HelperAI.cs" />
      <Compile Include="Assets\Scripts\Objects\Player\Powers\Powers_Medicine.cs" />
      <Compile Include="Assets\Scripts\Objects\Player\Powers\Powers_Syringe.cs" />
+     <Compile Include="Assets\Switchtofullscreen.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.0/UnityEngine.UI.dll</HintPath>
  </Reference>
