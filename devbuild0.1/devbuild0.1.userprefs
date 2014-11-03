@@ -1,20 +1,12 @@
 ﻿<Properties>
-<<<<<<< HEAD
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Objects\Player\Play_Behaviour.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Objects\Camera\Camera_AnyButtonContinue.cs">
     <Files>
-      <File FileName="Assets\Scripts\Objects\Player\Play_Behaviour.cs" Line="71" Column="12" />
-=======
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Objects\Camera\Camera_Follow.cs">
-    <Files>
-      <File FileName="Assets\Scripts\Objects\Player\Play_Behaviour.cs" Line="80" Column="1" />
-      <File FileName="Assets\Scripts\Objects\Player\Play_Antibody.cs" Line="22" Column="4" />
-      <File FileName="Assets\Scripts\Objects\Level_Prototype\Walls\Walls_FluidStream.cs" Line="25" Column="1" />
-      <File FileName="Assets\Scripts\Objects\Enemy\Pathogen\Prototype_Patho_Behaviour.cs" Line="45" Column="1" />
-      <File FileName="Assets\Scripts\Objects\Enemy\Pathogen\Patho_Behaviour.cs" Line="33" Column="4" />
-      <File FileName="Assets\Scripts\Objects\Camera\Camera_Follow.cs" Line="16" Column="79" />
->>>>>>> 2ddcd1f1336b566fe351f13c7123927dff50d11e
+      <File FileName="Assets\Scripts\Objects\Player\Play_AntibodyCannon.cs" Line="24" Column="23" />
+      <File FileName="Assets\Scripts\Objects\Player\Play_Behaviour.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Objects\Camera\Camera_AnyButtonContinue.cs" Line="27" Column="22" />
+      <File FileName="Assets\Camera_Transition_Scene.cs" Line="18" Column="16" />
+      <File FileName="Assets\Scripts\Objects\Enemy\Pathogen\Prototype_Patho_Behaviour.cs" Line="8" Column="20" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

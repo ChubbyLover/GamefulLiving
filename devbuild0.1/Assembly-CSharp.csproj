@@ -52,6 +52,7 @@
      <Compile Include="Assets\Scripts\Objects\Camera\Camera_Follow.cs" />
      <Compile Include="Assets\Scripts\Objects\Camera\Camera_SetStart.cs" />
      <Compile Include="Assets\Scripts\Objects\Camera\Camera_Switcher.cs" />
+     <Compile Include="Assets\Scripts\Objects\Camera\Camera_Transition_Scene.cs" />
      <Compile Include="Assets\Scripts\Objects\Camera\Switchtofullscreen.cs" />
      <Compile Include="Assets\Scripts\Objects\Enemy\Pathogen\Patho_Behaviour.cs" />
      <Compile Include="Assets\Scripts\Objects\Enemy\Pathogen\Prototype_Patho_Behaviour.cs" />

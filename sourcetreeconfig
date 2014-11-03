@@ -8,6 +8,9 @@
     <string>Zweige</string>
     <string>Remotes</string>
     <string>Datei Status</string>
+    <string>Zweige</string>
+    <string>Remotes</string>
+    <string>Datei Status</string>
     <string>Datei Status/Arbeitskopie</string>
     <string>Zweige</string>
     <string>Markierungen</string>
@@ -15,7 +18,7 @@
   </SidebarExpandedItems>
   <SidebarWidth>140</SidebarWidth>
   <AutoRefreshRemotes>true</AutoRefreshRemotes>
-  <LastCheckedRemotes>2014-11-03T15:34:11.404927+01:00</LastCheckedRemotes>
+  <LastCheckedRemotes>2014-11-03T18:04:31.8036741+01:00</LastCheckedRemotes>
   <RemoteProjectLinks />
   <CommitTextLinks />
   <SubtreeLinks />

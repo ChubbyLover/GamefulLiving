@@ -4,9 +4,11 @@ using System.Collections;
 public class Play_AntibodyCannon : MonoBehaviour {
 
 	public GameObject antibodySprite;
+	private Animator anim;
 	// Use this for initialization
-	void Start () {
-	
+	void Start () 
+	{
+		anim = GetComponent<Animator>();
 	}
 	
 	// Update is called once per frame
@@ -19,6 +21,7 @@ public class Play_AntibodyCannon : MonoBehaviour {
 			
 			if (Input.GetMouseButtonDown(0))
 			{
+				anim.SetTrigger("Shoot");
 				GameObject clone = (GameObject) Instantiate(Resources.Load("Prefabs/Objects/Player/PLay_Antibody"), transform.position+transform.right, transform.rotation);
 				clone.rigidbody2D.velocity = transform.right*20.0f;
 				clone.GetComponent<Play_Antibody>().antibodyType = gameObject.GetComponent<Play_Behaviour>().antibodyType;

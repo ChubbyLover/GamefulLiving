@@ -9,17 +9,13 @@ public class Play_Behaviour: MonoBehaviour {
 	public int antibodyType;
 	public float fCompensator=100;
 	public GameObject antibodySprite;
-<<<<<<< HEAD
 
 	private Animator[] anims;
 
+
 	void Start () 
 	{
-		selected = false;
-=======
-	void Start () {
 		// selected = false;
->>>>>>> 2ddcd1f1336b566fe351f13c7123927dff50d11e
 		if(antibodyType == 16) antibodyType = Random.Range(0,15);
 		Sprite[] test = Resources.LoadAll <Sprite> ("Sprites/Objects/Player/Play_Antigens");
 		antibodySprite.GetComponent<SpriteRenderer>().sprite = test[antibodyType];
