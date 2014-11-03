@@ -9,11 +9,16 @@ public class Play_Behaviour: MonoBehaviour {
 	public int antibodyType;
 	public float fCompensator=100;
 	public GameObject antibodySprite;
-	void Start () {
+
+	private Animator[] anims;
+
+	void Start () 
+	{
 		selected = false;
 		if(antibodyType == 16) antibodyType = Random.Range(0,15);
 		Sprite[] test = Resources.LoadAll <Sprite> ("Sprites/Objects/Player/Play_Antigens");
 		antibodySprite.GetComponent<SpriteRenderer>().sprite = test[antibodyType];
+		anims=gameObject.GetComponentsInChildren<Animator>();
 	}
 	
 	// Update is called once per frame
@@ -63,6 +68,8 @@ public class Play_Behaviour: MonoBehaviour {
 				// Destroy(collision.gameObject.GetComponent<CircleCollider2D>());
 				collision.gameObject.GetComponent<Prototype_Patho_Behaviour>().Phagozytiert(gameObject.transform);
 				transform.localScale+=new Vector3(0.02f,0.02f,0.02f);
+				anims[0].SetTrigger("HitEnemy");
+				anims[1].SetTrigger("HitEnemy");
 				// Destroy (collision.gameObject);
 			}			
 			// ACTIVATE
