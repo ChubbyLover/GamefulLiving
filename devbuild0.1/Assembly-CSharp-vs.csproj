@@ -52,6 +52,7 @@
      <Compile Include="Assets\Scripts\Objects\Camera\Camera_Control.cs" />
      <Compile Include="Assets\Scripts\Objects\Camera\Camera_Follow.cs" />
      <Compile Include="Assets\Scripts\Objects\Enemy\Pathogen\Patho_Behaviour.cs" />
+     <Compile Include="Assets\Scripts\Objects\Enemy\Pathogen\Prototype_Patho_Behaviour.cs" />
      <Compile Include="Assets\Scripts\Objects\Level_Prototype\Props\Props_BoneMarrow.cs" />
      <Compile Include="Assets\Scripts\Objects\Level_Prototype\Props\Props_RedCellSpawner.cs" />
      <Compile Include="Assets\Scripts\Objects\Level_Prototype\Walls\Walls_FluidStream.cs" />

@@ -14,8 +14,8 @@ public class Walls_FluidStream : MonoBehaviour
 	{
 		if(Time.time>=fTimelastPulse+fPulseInterval)
 		{
-			float fAccelleration = Random.Range(19.0f,31f);
-			if (col.gameObject.tag!="Helper"&&/*col.attachedRigidbody&&col.gameObject.tag=="Stream_Influence"||col.gameObject.tag=="Pathogen"&&*/col.attachedRigidbody.velocity.magnitude<40)
+			float fAccelleration = Random.Range(1f,3f);
+			if (col.gameObject.tag!="Helper"&&/*col.attachedRigidbody&&col.gameObject.tag=="Stream_Influence"||col.gameObject.tag=="Pathogen"&&*/col.attachedRigidbody.velocity.magnitude<3)
 			{
 				col.attachedRigidbody.AddForce(this.collider2D.transform.right * fAccelleration);
 			}

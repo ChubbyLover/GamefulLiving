@@ -18,8 +18,10 @@ public class Play_Behaviour: MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		
 		if(!selected && !activated) 
 		{	
+			
 			lifeSpan--; 
 			if(lifeSpan < 0) Destroy(gameObject);
 		}
@@ -56,10 +58,13 @@ public class Play_Behaviour: MonoBehaviour {
 		{	
 			if((collision.gameObject.name == "Patho_GenericPathogen" || collision.gameObject.name == "Patho_GenericPathogen(Clone)") && (gameObject.name != "Play_AntibodyCannon(Clone)")) 
 			{
-				print("destroying");
-				Destroy (collision.gameObject);
-			}
-			
+				if(collision.gameObject.transform.parent == null) collision.gameObject.transform.parent = gameObject.transform;
+				Destroy(collision.gameObject.GetComponent<Rigidbody2D>());
+				// Destroy(collision.gameObject.GetComponent<CircleCollider2D>());
+				collision.gameObject.GetComponent<Prototype_Patho_Behaviour>().Phagozytiert(gameObject.transform);
+				transform.localScale+=new Vector3(0.02f,0.02f,0.02f);
+				// Destroy (collision.gameObject);
+			}			
 			// ACTIVATE
 			if(!activated) 
 			{	
