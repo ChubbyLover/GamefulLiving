@@ -2,8 +2,7 @@
 using System.Collections;
 
 public class Camera_Switcher : MonoBehaviour {
-
-	public string sCamera;
+	
 	GameObject[] Cameras;
 
 	// Use this for initialization
@@ -19,11 +18,12 @@ public class Camera_Switcher : MonoBehaviour {
 	}
 	private void DisableAllCameras()
 	{
-		Cameras = Cameras = GameObject.FindGameObjectsWithTag("Camera");
+		Cameras = GameObject.FindGameObjectsWithTag("Camera");
 
 		foreach (GameObject camera in Cameras)
 		{
 			camera.GetComponent<Camera>().enabled=false;
+			camera.GetComponent<AudioListener>().enabled=false;
 		}
 	}
 	public void EnableCamera(string sAdd)
@@ -33,7 +33,9 @@ public class Camera_Switcher : MonoBehaviour {
 		string sCamera = "Camera"+sAdd;
 		if(GameObject.Find(sCamera)!=null)
 		{
+			Debug.Log(sCamera);
 			GameObject.Find(sCamera).GetComponent<Camera>().enabled = true;
+			GameObject.Find(sCamera).GetComponent<AudioListener>().enabled = true;
 		}
 	}
 }
