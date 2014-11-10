@@ -17,7 +17,7 @@ public class Camera_Transition_Scene : MonoBehaviour {
 		iNumber=GameObject.FindGameObjectsWithTag("pathogen11").Length;
 		if(iNumber==0)
 		{
-			Application.LoadLevel(2);
+			Application.LoadLevel(1);
 		}
 	}
 }

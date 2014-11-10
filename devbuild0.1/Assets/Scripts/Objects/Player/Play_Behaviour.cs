@@ -11,7 +11,7 @@ public class Play_Behaviour: MonoBehaviour {
 	public GameObject antibodySprite;
 
 	private Animator[] anims;
-
+	private Transform target;
 
 	void Start () 
 	{
@@ -25,6 +25,8 @@ public class Play_Behaviour: MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		
+		
+		
 		if(!selected && !activated) 
 		{	
 			
@@ -32,24 +34,32 @@ public class Play_Behaviour: MonoBehaviour {
 			if(lifeSpan < 0) Destroy(gameObject);
 		}
 		else{
-			if (Input.GetKey(KeyCode.W))
+			if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
 			{
 				rigidbody2D.AddForce(Vector2.up*fCompensator);	
 			}
-			if (Input.GetKey(KeyCode.S))
+			if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow))
 			{
 				rigidbody2D.AddForce(Vector2.up*fCompensator*-1.0f);
 			}
-			if (Input.GetKey(KeyCode.A))
+			if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
 			{
 				rigidbody2D.AddForce(Vector2.right*fCompensator*-1.0f);	
 			}
-			if (Input.GetKey(KeyCode.D))
+			if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
 			{
 				rigidbody2D.AddForce(Vector2.right*fCompensator);	
 			}
 		}
 		
+		if(target != null)
+		{
+			Vector2 dir = target.position - transform.position;
+			float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+			Quaternion desiredRotation = Quaternion.AngleAxis(angle, Vector3.forward);
+			transform.rotation = Quaternion.Slerp(transform.rotation, desiredRotation, Time.time*0.01f);
+			// print(transform.rotation);
+		}
 	}
 	
 	void OnMouseDown()
@@ -71,6 +81,7 @@ public class Play_Behaviour: MonoBehaviour {
 				transform.localScale+=new Vector3(0.02f,0.02f,0.02f);
 				anims[0].SetTrigger("HitEnemy");
 				anims[1].SetTrigger("HitEnemy");
+				target = null;
 				// Destroy (collision.gameObject);
 			}			
 			// ACTIVATE
@@ -83,5 +94,21 @@ public class Play_Behaviour: MonoBehaviour {
 			}
 		}
 		
+	}
+	
+	void OnTriggerEnter2D(Collider2D collision)
+	{
+		
+		if(collision.tag == "pathogen11" && target==null){
+			 target = collision.transform;
+		} 
+	}
+	
+	void OnTriggerLeave2D(Collider2D collision)
+	{
+		
+		if(collision.tag == "pathogen11" && target!=null){
+			target = null;
+		} 
 	}
 }

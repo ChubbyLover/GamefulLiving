@@ -4,6 +4,7 @@ using System.Collections;
 public class guiProceed : MonoBehaviour {
 	
 	public GameObject Player;
+	public Camera miniMap;
 	
 	// Use this for initialization
 	void Start () {
@@ -18,6 +19,10 @@ public class guiProceed : MonoBehaviour {
 	void OnMouseDown()
 	{
 		Camera.main.GetComponent<Camera_Follow>().Follow(Player);
-		if(Player.name == "Play_AntibodyCannon" || Player.name == "Play_Fress") Time.timeScale = 1;
+		if(Player.name == "Play_AntibodyCannon" || Player.name == "Play_Fress") {
+			
+			Time.timeScale = 1;
+			miniMap.enabled = true;
+		}
 	}
 }
