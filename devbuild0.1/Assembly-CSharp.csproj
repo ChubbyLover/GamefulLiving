@@ -46,14 +46,17 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\Objects\Camera\Camera_AnyButtonContinue.cs" />
-     <Compile Include="Assets\Scripts\Objects\Camera\Camera_ChangetoScreen.cs" />
+     <Compile Include="Assets\Scripts\Classes\Converter_SVG.cs" />
+     <Compile Include="Assets\Scripts\Classes\Polygon.cs" />
      <Compile Include="Assets\Scripts\Objects\Camera\Camera_Control.cs" />
      <Compile Include="Assets\Scripts\Objects\Camera\Camera_Follow.cs" />
-     <Compile Include="Assets\Scripts\Objects\Camera\Camera_SetStart.cs" />
-     <Compile Include="Assets\Scripts\Objects\Camera\Camera_Switcher.cs" />
-     <Compile Include="Assets\Scripts\Objects\Camera\Camera_Transition_Scene.cs" />
-     <Compile Include="Assets\Scripts\Objects\Camera\Switchtofullscreen.cs" />
+     <Compile Include="Assets\Scripts\Objects\Camera\Camera_GUI.cs" />
+     <Compile Include="Assets\Scripts\Objects\Camera\Prototyp\Camera_AnyButtonContinue.cs" />
+     <Compile Include="Assets\Scripts\Objects\Camera\Prototyp\Camera_ChangetoScreen.cs" />
+     <Compile Include="Assets\Scripts\Objects\Camera\Prototyp\Camera_SetStart.cs" />
+     <Compile Include="Assets\Scripts\Objects\Camera\Prototyp\Camera_Switcher.cs" />
+     <Compile Include="Assets\Scripts\Objects\Camera\Prototyp\Camera_Transition_Scene.cs" />
+     <Compile Include="Assets\Scripts\Objects\Camera\Prototyp\Switchtofullscreen.cs" />
      <Compile Include="Assets\Scripts\Objects\Enemy\Pathogen\Patho_Behaviour.cs" />
      <Compile Include="Assets\Scripts\Objects\Enemy\Pathogen\Prototype_Patho_Behaviour.cs" />
      <Compile Include="Assets\Scripts\Objects\Level_Prototype\Props\Props_BoneMarrow.cs" />
