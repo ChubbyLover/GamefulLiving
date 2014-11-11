@@ -2,18 +2,20 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Classes\Converter_SVG.cs">
     <Files>
-      <File FileName="Assets\Scripts\Classes\Converter_SVG.cs" Line="31" Column="61" />
+      <File FileName="Assets\Scripts\Classes\Converter_SVG.cs" Line="97" Column="3" />
       <File FileName="Assets\Scripts\Objects\Camera\Camera_GUI.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Objects\Player\Play_Behaviour.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Objects\Player\Play_AntibodyCannon.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Objects\Camera\Camera_Follow.cs" Line="1" Column="1" />
       <File FileName="Assets\guiProceed.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Classes\Converter_SVG.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Classes\Polygon.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Classes\Polygon.cs" Line="5" Column="2" />
+      <File FileName="Assets\Scripts\GUI\Buttons\Button_Origin.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches>
+    <Watch file="Assets\Scripts\Classes\Converter_SVG.cs" line="8" offsetX="366" offsetY="112" expression="Polygons" liveUpdate="False" />
+  </MonoDevelop.Ide.DebuggingService.PinnedWatches>
 </Properties>

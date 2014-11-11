@@ -48,6 +48,8 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\Classes\Converter_SVG.cs" />
      <Compile Include="Assets\Scripts\Classes\Polygon.cs" />
+     <Compile Include="Assets\Scripts\GUI\Buttons\Button_Origin.cs" />
+     <Compile Include="Assets\Scripts\GUI\Images\Icon_DisplayLock.cs" />
      <Compile Include="Assets\Scripts\Objects\Camera\Camera_Control.cs" />
      <Compile Include="Assets\Scripts\Objects\Camera\Camera_Follow.cs" />
      <Compile Include="Assets\Scripts\Objects\Camera\Camera_GUI.cs" />
