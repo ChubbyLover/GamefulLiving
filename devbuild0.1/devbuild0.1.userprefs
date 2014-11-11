@@ -2,14 +2,15 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Classes\Converter_SVG.cs">
     <Files>
-      <File FileName="Assets\Scripts\Classes\Converter_SVG.cs" Line="97" Column="3" />
+      <File FileName="Assets\Scripts\Classes\Converter_SVG.cs" Line="69" Column="59" />
       <File FileName="Assets\Scripts\Objects\Camera\Camera_GUI.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Objects\Player\Play_Behaviour.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Objects\Player\Play_AntibodyCannon.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Objects\Camera\Camera_Follow.cs" Line="1" Column="1" />
       <File FileName="Assets\guiProceed.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Classes\Polygon.cs" Line="5" Column="2" />
+      <File FileName="Assets\Scripts\Classes\Polygon.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\GUI\Buttons\Button_Origin.cs" Line="1" Column="1" />
+      <File FileName="Assets\Resources\Sprites\Objects\Level_Prototype\SVG\SVG_Test.txt" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
