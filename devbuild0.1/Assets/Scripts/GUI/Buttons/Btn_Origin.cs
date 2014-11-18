@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Button_Origin : MonoBehaviour 
+public class Btn_Origin : MonoBehaviour 
 {
 
 	string Origin;

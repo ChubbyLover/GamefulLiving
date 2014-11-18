@@ -48,11 +48,14 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\Classes\Converter_SVG.cs" />
      <Compile Include="Assets\Scripts\Classes\Polygon.cs" />
-     <Compile Include="Assets\Scripts\GUI\Buttons\Button_Origin.cs" />
+     <Compile Include="Assets\Scripts\GUI\Buttons\Btn_Origin.cs" />
+     <Compile Include="Assets\Scripts\GUI\Buttons\Btn_Pressed.cs" />
+     <Compile Include="Assets\Scripts\GUI\Camera\Camera_GUI.cs" />
+     <Compile Include="Assets\Scripts\GUI\Camera\Camera_Proceed.cs" />
      <Compile Include="Assets\Scripts\GUI\Images\Icon_DisplayLock.cs" />
+     <Compile Include="Assets\Scripts\Objects\Audio\Audio_Levelmanager.cs" />
      <Compile Include="Assets\Scripts\Objects\Camera\Camera_Control.cs" />
      <Compile Include="Assets\Scripts\Objects\Camera\Camera_Follow.cs" />
-     <Compile Include="Assets\Scripts\Objects\Camera\Camera_GUI.cs" />
      <Compile Include="Assets\Scripts\Objects\Camera\Prototyp\Camera_AnyButtonContinue.cs" />
      <Compile Include="Assets\Scripts\Objects\Camera\Prototyp\Camera_ChangetoScreen.cs" />
      <Compile Include="Assets\Scripts\Objects\Camera\Prototyp\Camera_SetStart.cs" />
@@ -72,7 +75,7 @@
      <Compile Include="Assets\Scripts\Objects\Player\Powers\Powers_HelperAI.cs" />
      <Compile Include="Assets\Scripts\Objects\Player\Powers\Powers_Medicine.cs" />
      <Compile Include="Assets\Scripts\Objects\Player\Powers\Powers_Syringe.cs" />
-     <Compile Include="Assets\guiProceed.cs" />
+     <None Include="Assets\Resources\Sprites\Objects\Level_Prototype\SVG\SVG_Test.txt" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.0/UnityEngine.UI.dll</HintPath>
  </Reference>

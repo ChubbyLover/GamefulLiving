@@ -24,4 +24,8 @@ public class Camera_GUI : MonoBehaviour {
 	{
 		Application.LoadLevel(1);
 	}
+	public void EndGame()
+	{
+		Application.Quit();
+	}
 }

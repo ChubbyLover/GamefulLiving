@@ -7,6 +7,8 @@ public class Converter_SVG : MonoBehaviour
 {
 	protected List<Polygon> Polygons;
 	protected List<Vector2> XYcoordinates;
+
+	public TextAsset SVG;
 	// Directory of the File to read
 	string sPath=@"";
 	// Filename
@@ -38,7 +40,8 @@ public class Converter_SVG : MonoBehaviour
 	}
 	void readFile()
 	{
-	 sFileText = System.IO.File.ReadAllText(Application.dataPath + "/Resources/Sprites/Objects/Level_Prototype/SVG/SVG_Test.svg");
+	 //sFileText = System.IO.File.ReadAllText(Application.dataPath + "/Resources/Sprites/Objects/Level_Prototype/SVG/SVG_Test.svg");
+		sFileText = SVG.text;
 	}
 	void parseText()
 	{
@@ -63,7 +66,7 @@ public class Converter_SVG : MonoBehaviour
 		{
 			for(int i=iIndex+sSubstring.Length; i<sFileText.Length; i++)
 			{
-				if(sFileText[i]!=','&&sFileText[i]!=' ')
+				if(sFileText[i]!=','&&sFileText[i]!=' '&&sFileText[i]!='"')
 				{
 					sNumber+=sFileText[i];
 					Debug.Log("Number:"+sFileText[i]);
@@ -84,6 +87,7 @@ public class Converter_SVG : MonoBehaviour
 				if(sFileText[i]=='"')
 				{
 					Polygons.Add(new Polygon(XYcoordinates.ToArray()));
+					sNumber="";
 					Debug.Log("End Of Polygon:"+sFileText[i]);
 					break;
 				}
