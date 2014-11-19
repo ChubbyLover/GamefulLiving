@@ -70,6 +70,7 @@
      <Compile Include="Assets\Scripts\Objects\Player\Play_Antibody.cs" />
      <Compile Include="Assets\Scripts\Objects\Player\Play_AntibodyCannon.cs" />
      <Compile Include="Assets\Scripts\Objects\Player\Play_Behaviour.cs" />
+     <Compile Include="Assets\Scripts\Objects\Player\Play_SpawningWBC.cs" />
      <Compile Include="Assets\Scripts\Objects\Player\Powers\Powers_CallHelper.cs" />
      <Compile Include="Assets\Scripts\Objects\Player\Powers\Powers_CallSyringe.cs" />
      <Compile Include="Assets\Scripts\Objects\Player\Powers\Powers_HelperAI.cs" />

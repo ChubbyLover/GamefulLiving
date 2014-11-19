@@ -10,12 +10,8 @@ public class Converter_SVG : MonoBehaviour
 
 	public TextAsset SVG;
 	// Directory of the File to read
-	string sPath=@"";
-	// Filename
-	string sFilename="";
 	// Contents of the File
 	string sFileText;
-	string sPointString="";
 	string sSubstring="points=";
 
 	List<int> iIndexlist;
@@ -59,7 +55,6 @@ public class Converter_SVG : MonoBehaviour
 	void Convert()
 	{
 		Vector2 XY = new Vector2();
-		int iSort=0;
 		string sNumber="";
 
 		foreach (int iIndex in iIndexlist)

@@ -23,12 +23,6 @@ public class Powers_Medicine : MonoBehaviour {
 	{
 		if (coll.gameObject.tag == "pathogen"+iAntibodytype.ToString())
 		{
-			GameObject[] Helpers =  GameObject.FindGameObjectsWithTag("Helper");
-			foreach(GameObject Helper in Helpers)
-			{
-				Powers_HelperAI AI = Helper.GetComponent<Powers_HelperAI>();
-				AI.Pathogens.Clear();
-			}
 			GameObject.Destroy(coll.gameObject);
 			GameObject.Destroy(gameObject);
 		}

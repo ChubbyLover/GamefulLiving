@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class guiProceed : MonoBehaviour {
+public class Camera_Proceed : MonoBehaviour {
 	
 	public GameObject Player;
 	public Camera miniMap;
