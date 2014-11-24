@@ -1,87 +1,154 @@
 ﻿using UnityEngine;
 using System.Collections;
-using System.Collections.Generic;
 
 public class Powers_HelperAI : MonoBehaviour 
 {
 
-	public List<GameObject> Pathogens = new List<GameObject>();
-    GameObject Closest;
-    float fDistance = 200;
-	public int iMode=0;
-    public float fSpeed;
-	public float angle; 
+	GameObject Target;
+	GameObject WBC;
+	public string sState;
+
+	public float fSpeed;
+	public float fSpeedRotation;
+	public float fSpeedMaximum;
+
+	float fLastTimeDirectionChanged;
+	public int iTimeDirectionChange;
+	public float fTimeToDeath;
+	public bool bConsumedPathogen = false;
+
 	// Use this for initialization
 	void Start ()
 	{
-	
+		fLastTimeDirectionChanged = Time.time;
+		WBC=GameObject.FindGameObjectWithTag("wbc");
+
 	}
 	
 	// Update is called once per frame
 	void Update ()
 	{
+		Statemachine();
+	}
 
-         if (Pathogens.Count != 0)
-        {
-			gameObject.tag="Helper";
-            GetClosestPathogen();
+	void OnBecameInvisible() 
+	{
+		if(WBC!=null)
+		{
+			Play_SpawningWBC script = GameObject.FindGameObjectWithTag("wbc").GetComponent<Play_SpawningWBC>();
+			script.iCurrentCountWBC--;
+			Destroy(gameObject);
+		}
+	}
+	void Idle()
+	{
+		if(Target == null&&Time.time > fLastTimeDirectionChanged+iTimeDirectionChange&&rigidbody2D.velocity.magnitude < fSpeedMaximum&&!bConsumedPathogen)
+		{
+			Vector2 Direction = new Vector2(Random.Range(-fSpeed,fSpeed),Random.Range(-fSpeed,fSpeed));
+			rigidbody2D.AddForce(Direction,ForceMode2D.Impulse);
+			fLastTimeDirectionChanged = Time.time;
+			sState = "Search";
+		}
+		if(bConsumedPathogen)
+		{
+			transform.localScale*=0.98f;
+			Destroy(gameObject,fTimeToDeath);
+		}
+	}
+	public void Search()
+	{
+		GameObject[] PathogensUnmarked;
+		GameObject[] PathogensMarked;
+		float fDistance = 50000;
 
-			Quaternion rotation = Quaternion.LookRotation
-				(Closest.transform.position - transform.position, transform.TransformDirection(Vector3.up));
-			transform.rotation = new Quaternion(0, 0, rotation.z, rotation.w);
+		PathogensUnmarked = GameObject.FindGameObjectsWithTag("Pathogen");
+		PathogensMarked = GameObject.FindGameObjectsWithTag("Marked");
+		if(PathogensMarked != null)
+		{
 
-            rigidbody2D.AddRelativeForce(Vector2.right*-fSpeed);
-        }
-		else
-		{
-			gameObject.tag="Stream_Influence";
-			Pathogens.Clear();
-		}
-	}
-	void OnTriggerEnter2D (Collider2D coll)
-	{
-		if(coll.gameObject.tag=="marked")
-		{
-			Pathogens.Add(coll.gameObject);
-		}
-	}
-	void OnTriggerExit2D (Collider2D coll)
-	{
-		if(coll.gameObject.tag=="marked")
-		{	
-			Pathogens.Clear();
-		}
-	}
-	void OnCollisionEnter2D(Collision2D coll) 
-	{
-		if (coll.gameObject.tag == "marked")
-		{
-			GameObject[] Helpers =  GameObject.FindGameObjectsWithTag("Helper");
-			foreach(GameObject Helper in Helpers)
+			foreach (GameObject Pathogen in PathogensMarked)
 			{
-				Powers_HelperAI AI = Helper.GetComponent<Powers_HelperAI>();
-				AI.Pathogens.Clear();
+				if(Vector3.Distance(transform.position,Pathogen.transform.position)<fDistance)
+				{
+					fDistance = Vector3.Distance(transform.position,Pathogen.transform.position);
+					Target = Pathogen;
+
+				}
 			}
-			GameObject.Destroy(coll.gameObject);
-			GameObject.Destroy(gameObject);
+		}
+		if(PathogensUnmarked != null&&Target == null)
+		{
+			foreach (GameObject Pathogen in PathogensUnmarked)
+			{
+				if(Vector3.Distance(transform.position,Pathogen.transform.position)<fDistance)
+				{
+					fDistance = Vector3.Distance(transform.position,Pathogen.transform.position);
+					Target = Pathogen;
+				}
+			}
+		}
+		if(Target == null) sState="Idle";
+		else sState="Swim";
+	}
+	void Swim()
+	{
+		if (Target!=null)
+		{
+			Vector3 vectorToTarget = Target.transform.position - transform.position;
+			float angle = Mathf.Atan2(vectorToTarget.y, vectorToTarget.x) * Mathf.Rad2Deg;
+			Quaternion q = Quaternion.AngleAxis(angle, Vector3.forward);
+			transform.rotation = Quaternion.Slerp(transform.rotation, q, Time.deltaTime * fSpeedRotation);
+
+			if(rigidbody2D.velocity.sqrMagnitude < fSpeedMaximum)
+			{
+				rigidbody2D.AddRelativeForce(Vector2.right*fSpeed,ForceMode2D.Impulse);
+			}
 		}
 	}
-    void GetClosestPathogen()
-    {
-        foreach (GameObject Pathogen in Pathogens)
-        {
-			if(Pathogen!=null)
-			{
-	            if (fDistance > Vector3.Distance(Pathogen.transform.position, gameObject.transform.position))
-	            {
-	                fDistance=Vector3.Distance(Pathogen.transform.position, gameObject.transform.position);
-	                Closest=Pathogen;
-	            }
-			}
-			else
-			{
-				Pathogens.Remove(Pathogen);
-			}
-        }
-    }
+	void Consume ()
+	{
+		//Animator anim = gameObject.GetComponent<Animator>();
+
+		//anim.SetTrigger("Consume");
+		GameObject[] WBC = GameObject.FindGameObjectsWithTag("Helper");
+		foreach (GameObject Helper in WBC)
+		{
+			Powers_HelperAI HelperAI = Helper.GetComponent<Powers_HelperAI>();
+			HelperAI.ForceState("Search");
+		}
+		sState="Idle";
+	}
+	void Statemachine ()
+	{
+		switch (sState)
+		{
+		case "Idle": 	Idle ();
+					 	break;
+		case "Search": 	Search ();
+						break;
+		case "Swim": 	Swim ();
+						break;
+		case "Consume": Consume ();
+						break;
+		default: 		Idle ();
+						break;
+		}
+	}
+	public void ForceState(string sState)
+	{
+		this.sState=sState;
+	}
+	void OnCollisionEnter2D(Collision2D col)
+	{
+		if(col.gameObject.tag=="Marked")
+		{
+			sState="Consume";
+			col.gameObject.GetComponent<Prototype_Patho_Behaviour>().Phagozytiert(gameObject.transform);
+			bConsumedPathogen=true;
+		}
+		if(col.gameObject.tag=="Wall")
+		{
+			sState="Idle";
+		}
+	}
 }

@@ -7,10 +7,11 @@ public class Prototype_Patho_Behaviour : MonoBehaviour {
 	public GameObject antibodySprite;
 	public int antibodyType;
 	public static int amountOfPathogens  = 1;
-	int dissolve;
+	int dissolve=1;
 	Transform Phagozytose;
 	// Use this for initialization
-	void Start () {
+	void Start () 
+	{
 		if(antibodyType == 16) 
 		{
 			antibodyType = Random.Range(0,15);
@@ -18,7 +19,9 @@ public class Prototype_Patho_Behaviour : MonoBehaviour {
 		Sprite[] test = Resources.LoadAll <Sprite> ("Sprites/Objects/Player/Play_Antigens");
 		antibodySprite.GetComponent<SpriteRenderer>().sprite = test[antibodyType];
 		gameObject.tag = "pathogen"+antibodyType.ToString();
-		
+
+		Camera.main.GetComponent<Camera_Transition_Scene>().iNumber++;
+
 		timeUntilMitosis = Random.Range(50,amountOfPathogens*100);
 		rigidbody2D.AddForce(new Vector2(Random.value*50-25,Random.value*50-25));
 	}
@@ -32,7 +35,11 @@ public class Prototype_Patho_Behaviour : MonoBehaviour {
 			Phagozytose.localScale-=new Vector3(0.0002f,0.0002f,0.0002f);
 			Vector3 goal = Phagozytose.position;
 			transform.position = transform.position + (goal - transform.position)*0.08f;
-			if(dissolve<0) Destroy (gameObject);
+			if(dissolve<0)
+			{
+				Camera.main.GetComponent<Camera_Transition_Scene>().iNumber--;
+				Destroy (gameObject);
+			}
 		}
 	}
 	
