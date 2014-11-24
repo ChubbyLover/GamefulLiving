@@ -24,5 +24,9 @@ public class Camera_Proceed : MonoBehaviour {
 			Time.timeScale = 1;
 			miniMap.enabled = true;
 		}
+		if(Player.name=="Screen2")
+		{
+			Application.LoadLevel(3);
+		}
 	}
 }
