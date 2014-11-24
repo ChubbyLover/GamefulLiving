@@ -1,6 +1,24 @@
 ﻿<Properties>
+<<<<<<< HEAD
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Objects\Level_Alpha\Level_Generation.cs">
+=======
+<<<<<<< HEAD
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\PathController.cs">
+    <Files>
+      <File FileName="Assets\Scripts\Objects\Player\Play_Behaviour.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Objects\Player\Play_AntibodyCannon.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Objects\Camera\Camera_Follow.cs" Line="1" Column="1" />
+      <File FileName="Assets\guiProceed.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Objects\Camera\Camera_Transition_Scene.cs" Line="1" Column="1" />
+      <File FileName="..\..\..\..\..\Projekte\legleg\Assets\cameraFollow.cs" Line="1" Column="1" />
+      <File FileName="Assets\PathController.cs" Line="45" Column="110" />
+      <File FileName="Assets\Triangulator.cs" Line="1" Column="1" />
+=======
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\GUI\Camera\Camera_Proceed.cs">
+>>>>>>> f23b931faed4eb9a29a32383b7d73c25c3de6ea8
     <Files>
       <File FileName="Assets\Scripts\Objects\Level_Alpha\Level_Generation.cs" Line="76" Column="1" />
       <File FileName="Assets\Scripts\GUI\Camera\Camera_Proceed.cs" Line="33" Column="1" />
@@ -11,6 +29,11 @@
       <File FileName="Assets\Scripts\Objects\Camera\Prototyp\Camera_Transition_Scene.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Objects\Enemy\Pathogen\Prototype_Patho_Behaviour.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Objects\Player\Play_Behaviour.cs" Line="1" Column="1" />
+<<<<<<< HEAD
+=======
+      <File FileName="Assets\Level_Generation.cs" Line="1" Column="1" />
+>>>>>>> origin/master
+>>>>>>> f23b931faed4eb9a29a32383b7d73c25c3de6ea8
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

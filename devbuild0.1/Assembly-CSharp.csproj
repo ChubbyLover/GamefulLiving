@@ -46,6 +46,11 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\PathController.cs" />
+     <Compile Include="Assets\Scripts\Objects\Camera\Camera_AnyButtonContinue.cs" />
+     <Compile Include="Assets\Scripts\Objects\Camera\Camera_ChangetoScreen.cs" />
+     <Compile Include="Assets\Level_Generation.cs" />
+     <Compile Include="Assets\Level_Tile.cs" />
      <Compile Include="Assets\Scripts\Classes\Converter_SVG.cs" />
      <Compile Include="Assets\Scripts\Classes\Polygon.cs" />
      <Compile Include="Assets\Scripts\GUI\Buttons\Btn_Origin.cs" />
@@ -78,6 +83,8 @@
      <Compile Include="Assets\Scripts\Objects\Player\Powers\Powers_HelperAI.cs" />
      <Compile Include="Assets\Scripts\Objects\Player\Powers\Powers_Medicine.cs" />
      <Compile Include="Assets\Scripts\Objects\Player\Powers\Powers_Syringe.cs" />
+     <Compile Include="Assets\Triangulator.cs" />
+     <Compile Include="Assets\guiProceed.cs" />
      <None Include="Assets\Resources\Sprites\Objects\Level_Prototype\SVG\SVG_Test.txt" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.0/UnityEngine.UI.dll</HintPath>
