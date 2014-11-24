@@ -1,12 +1,15 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Objects\Camera\Camera_Transition_Scene.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\PathController.cs">
     <Files>
-      <File FileName="Assets\Scripts\Objects\Player\Play_Behaviour.cs" Line="84" Column="19" />
-      <File FileName="Assets\Scripts\Objects\Player\Play_AntibodyCannon.cs" Line="23" Column="70" />
-      <File FileName="Assets\Scripts\Objects\Camera\Camera_Follow.cs" Line="16" Column="79" />
-      <File FileName="Assets\guiProceed.cs" Line="7" Column="24" />
-      <File FileName="Assets\Scripts\Objects\Camera\Camera_Transition_Scene.cs" Line="24" Column="1" />
+      <File FileName="Assets\Scripts\Objects\Player\Play_Behaviour.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Objects\Player\Play_AntibodyCannon.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Objects\Camera\Camera_Follow.cs" Line="1" Column="1" />
+      <File FileName="Assets\guiProceed.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Objects\Camera\Camera_Transition_Scene.cs" Line="1" Column="1" />
+      <File FileName="..\..\..\..\..\Projekte\legleg\Assets\cameraFollow.cs" Line="1" Column="1" />
+      <File FileName="Assets\PathController.cs" Line="45" Column="110" />
+      <File FileName="Assets\Triangulator.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
