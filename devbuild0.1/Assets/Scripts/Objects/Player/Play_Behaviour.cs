@@ -7,7 +7,8 @@ public class Play_Behaviour: MonoBehaviour {
 	public bool selected;
 	public bool activated;
 	public int antibodyType;
-	public float fCompensator=100;
+	public float fCompensator;
+	public float fMaxSpeed;
 	public GameObject antibodySprite;
 
 	private Animator[] anims;
@@ -34,19 +35,19 @@ public class Play_Behaviour: MonoBehaviour {
 			if(lifeSpan < 0) Destroy(gameObject);
 		}
 		else{
-			if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
+			if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow)&&rigidbody2D.velocity.magnitude<fMaxSpeed)
 			{
 				rigidbody2D.AddForce(Vector2.up*fCompensator);	
 			}
-			if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow))
+			if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow)&&rigidbody2D.velocity.magnitude<fMaxSpeed)
 			{
 				rigidbody2D.AddForce(Vector2.up*fCompensator*-1.0f);
 			}
-			if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
+			if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow)&&rigidbody2D.velocity.magnitude<fMaxSpeed)
 			{
 				rigidbody2D.AddForce(Vector2.right*fCompensator*-1.0f);	
 			}
-			if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
+			if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow)&&rigidbody2D.velocity.magnitude<fMaxSpeed)
 			{
 				rigidbody2D.AddForce(Vector2.right*fCompensator);	
 			}
