@@ -46,7 +46,6 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\PathController.cs" />
      <Compile Include="Assets\Scripts\Classes\Converter_SVG.cs" />
      <Compile Include="Assets\Scripts\Classes\Polygon.cs" />
      <Compile Include="Assets\Scripts\GUI\Buttons\Btn_Origin.cs" />
@@ -65,6 +64,9 @@
      <Compile Include="Assets\Scripts\Objects\Camera\Prototyp\Switchtofullscreen.cs" />
      <Compile Include="Assets\Scripts\Objects\Enemy\Pathogen\Patho_Behaviour.cs" />
      <Compile Include="Assets\Scripts\Objects\Enemy\Pathogen\Prototype_Patho_Behaviour.cs" />
+     <Compile Include="Assets\Scripts\Objects\Enemy\Pathogen_Behaviour.cs" />
+     <Compile Include="Assets\Scripts\Objects\Level_Alpha\Body_Functions.cs" />
+     <Compile Include="Assets\Scripts\Objects\Level_Alpha\Body_PathogenInfluence.cs" />
      <Compile Include="Assets\Scripts\Objects\Level_Alpha\Level_Generation.cs" />
      <Compile Include="Assets\Scripts\Objects\Level_Alpha\Level_Tile.cs" />
      <Compile Include="Assets\Scripts\Objects\Level_Prototype\Props\Props_BoneMarrow.cs" />
@@ -79,7 +81,6 @@
      <Compile Include="Assets\Scripts\Objects\Player\Powers\Powers_HelperAI.cs" />
      <Compile Include="Assets\Scripts\Objects\Player\Powers\Powers_Medicine.cs" />
      <Compile Include="Assets\Scripts\Objects\Player\Powers\Powers_Syringe.cs" />
-     <Compile Include="Assets\Triangulator.cs" />
      <None Include="Assets\Resources\Sprites\Objects\Level_Prototype\SVG\SVG_Test.txt" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.0/UnityEngine.UI.dll</HintPath>
