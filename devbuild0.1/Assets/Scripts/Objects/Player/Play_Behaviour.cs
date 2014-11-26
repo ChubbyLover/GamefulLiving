@@ -94,37 +94,27 @@ public class Play_Behaviour: MonoBehaviour {
 	
 	void OnCollisionEnter2D(Collision2D collision){
 		
-		if(collision.gameObject.tag == "pathogen"+(antibodyType.ToString())) 
-		{	
-			if((collision.gameObject.name == "Patho_GenericPathogen" || collision.gameObject.name == "Patho_GenericPathogen(Clone)") && (gameObject.name != "Play_AntibodyCannon(Clone)") && (gameObject.name != "Play_AntibodyCannon")) 
-			{
-				if(collision.gameObject.transform.parent == null) collision.gameObject.transform.parent = gameObject.transform;
-				Destroy(collision.gameObject.GetComponent<Rigidbody2D>());
-				// Destroy(collision.gameObject.GetComponent<CircleCollider2D>());
-				collision.gameObject.GetComponent<Prototype_Patho_Behaviour>().Phagozytiert(gameObject.transform);
-				transform.localScale+=new Vector3(0.02f,0.02f,0.02f);
-				anims[0].SetTrigger("HitEnemy");
-				anims[1].SetTrigger("HitEnemy");
-				target = null;
-				// Destroy (collision.gameObject);
-			}			
-		}
+		
 		
 	}
 	
 	void OnTriggerEnter2D(Collider2D collision)
 	{
-		
-		if(collision.tag == "pathogen11" && target==null){
-			 target = collision.transform;
-		} 
+		if(collision.gameObject.tag == "Pathogen" || collision.gameObject.tag == "Marked")
+		{	
+				if(collision.gameObject.transform.parent == null) collision.gameObject.transform.parent = gameObject.transform;
+				Destroy(collision.gameObject.GetComponent<Rigidbody2D>());
+				Destroy(collision.gameObject.GetComponent<CircleCollider2D>());
+				collision.gameObject.GetComponent<Pathogen_Behaviour>().Phagozytiert(gameObject.transform);
+				transform.localScale+=new Vector3(0.02f,0.02f,0.02f);
+				anims[0].SetTrigger("HitEnemy");
+				anims[1].SetTrigger("HitEnemy");
+		}
 	}
 	
 	void OnTriggerLeave2D(Collider2D collision)
 	{
 		
-		if(collision.tag == "pathogen11" && target!=null){
-			target = null;
-		} 
+		// CLOSE MOUTH
 	}
 }

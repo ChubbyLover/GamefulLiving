@@ -22,7 +22,6 @@ public class Powers_HelperAI : MonoBehaviour
 	{
 		fLastTimeDirectionChanged = Time.time;
 		WBC=GameObject.FindGameObjectWithTag("wbc");
-
 	}
 	
 	// Update is called once per frame
@@ -33,7 +32,7 @@ public class Powers_HelperAI : MonoBehaviour
 
 	void OnBecameInvisible() 
 	{
-		if(WBC!=null)
+		if(WBC!=null && sState != "Consume")
 		{
 			Play_SpawningWBC script = GameObject.FindGameObjectWithTag("wbc").GetComponent<Play_SpawningWBC>();
 			script.iCurrentCountWBC--;
@@ -57,11 +56,11 @@ public class Powers_HelperAI : MonoBehaviour
 	}
 	public void Search()
 	{
-		GameObject[] PathogensUnmarked;
+		// GameObject[] PathogensUnmarked;
 		GameObject[] PathogensMarked;
 		float fDistance = 50000;
 
-		PathogensUnmarked = GameObject.FindGameObjectsWithTag("Pathogen");
+		// PathogensUnmarked = GameObject.FindGameObjectsWithTag("Pathogen");
 		PathogensMarked = GameObject.FindGameObjectsWithTag("Marked");
 		if(PathogensMarked != null)
 		{
@@ -76,7 +75,7 @@ public class Powers_HelperAI : MonoBehaviour
 				}
 			}
 		}
-		if(PathogensUnmarked != null&&Target == null)
+		/*if(PathogensUnmarked != null&&Target == null)
 		{
 			foreach (GameObject Pathogen in PathogensUnmarked)
 			{
@@ -86,7 +85,7 @@ public class Powers_HelperAI : MonoBehaviour
 					Target = Pathogen;
 				}
 			}
-		}
+		}*/
 		if(Target == null) sState="Idle";
 		else sState="Swim";
 	}
@@ -143,7 +142,7 @@ public class Powers_HelperAI : MonoBehaviour
 		if(col.gameObject.tag=="Marked")
 		{
 			sState="Consume";
-			col.gameObject.GetComponent<Prototype_Patho_Behaviour>().Phagozytiert(gameObject.transform);
+			col.gameObject.GetComponent<Pathogen_Behaviour>().Phagozytiert(gameObject.transform);
 			bConsumedPathogen=true;
 		}
 		if(col.gameObject.tag=="Wall")

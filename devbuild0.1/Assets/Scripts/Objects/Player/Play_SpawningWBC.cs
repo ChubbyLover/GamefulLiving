@@ -31,7 +31,7 @@ public class Play_SpawningWBC : MonoBehaviour {
 			RaycastHit2D WallHit = Physics2D.Raycast(transform.position,VelVector2D,fMaxCastDistance,SpawningMask);
 			if(WallHit.collider!=null)
 			{
-				Debug.DrawLine (transform.position, WallHit.point, Color.cyan,5);
+				// Debug.DrawLine (transform.position, WallHit.point, Color.cyan,5);
 
 				GameObject clone = Instantiate(WBC,WallHit.point+WallHit.normal*0.1f,WBC.transform.rotation) as GameObject;
 				iCurrentCountWBC++;
@@ -39,7 +39,7 @@ public class Play_SpawningWBC : MonoBehaviour {
 			}
 			else
 			{
-				Debug.DrawLine (transform.position, WallHit.point, Color.cyan,5);
+				// Debug.DrawLine (transform.position, WallHit.point, Color.cyan,5);
 				GameObject clone = Instantiate(WBC,WallHit.point,transform.rotation) as GameObject;
 				iCurrentCountWBC++;
 				iLastSpawn=Time.time;
