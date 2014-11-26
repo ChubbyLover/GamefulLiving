@@ -81,9 +81,7 @@
      <Compile Include="Assets\Scripts\Objects\Player\Powers\Powers_HelperAI.cs" />
      <Compile Include="Assets\Scripts\Objects\Player\Powers\Powers_Medicine.cs" />
      <Compile Include="Assets\Scripts\Objects\Player\Powers\Powers_Syringe.cs" />
-     <Compile Include="Assets\Triangulator.cs" />
      <None Include="Assets\Resources\sprites\Objects\Level_Prototype\SVG\SVG_Test.txt" />
-     <None Include="Assets\Resources\Sprites\Objects\Level_Prototype\SVG\SVG_Test.txt" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.0/UnityEngine.UI.dll</HintPath>
  </Reference>

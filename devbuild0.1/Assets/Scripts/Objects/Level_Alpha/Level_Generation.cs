@@ -52,6 +52,7 @@ public class Level_Generation : MonoBehaviour {
 				TileClone.GetComponent<Level_Tile>().iX=j;
 				TileClone.GetComponent<Level_Tile>().iY=i;
 				TileClone.GetComponent<SpriteRenderer>().sprite = TilesSprites[(iVerticalTiles-1)-i,j]as Sprite;
+				TileClone.layer = LayerMask.NameToLayer("Map"); 
 			}
 		}
 		Time.timeScale=1;
