@@ -1,10 +1,11 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Objects\Camera\Camera_Follow.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Objects\Player\Play_Behaviour.cs">
     <Files>
-      <File FileName="Assets\Scripts\Objects\Level_Prototype\Walls\Walls_FluidStream.cs" Line="18" Column="50" />
-      <File FileName="Assets\Scripts\Objects\Player\Play_Behaviour.cs" Line="50" Column="105" />
-      <File FileName="Assets\Scripts\Objects\Camera\Camera_Follow.cs" Line="14" Column="12" />
+      <File FileName="Assets\Scripts\Objects\Player\Play_Behaviour.cs" Line="76" Column="32" />
+      <File FileName="Assets\Scripts\Objects\Level_Prototype\Walls\Walls_FluidStream.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Objects\Camera\Camera_Follow.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Objects\Player\Play_AntibodyCannon.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

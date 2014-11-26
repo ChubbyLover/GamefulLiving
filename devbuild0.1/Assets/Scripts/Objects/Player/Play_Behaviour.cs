@@ -10,13 +10,14 @@ public class Play_Behaviour: MonoBehaviour {
 	public float fCompensator;
 	public float fMaxSpeed;
 	public GameObject antibodySprite;
+	public Transform partner;
 
 	private Animator[] anims;
 	private Transform target;
 
 	void Start () 
 	{
-		// selected = false;
+		
 		if(antibodyType == 16) antibodyType = Random.Range(0,15);
 		Sprite[] test = Resources.LoadAll <Sprite> ("Sprites/Objects/Player/Play_Antigens");
 		antibodySprite.GetComponent<SpriteRenderer>().sprite = test[antibodyType];
@@ -25,16 +26,30 @@ public class Play_Behaviour: MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+	
 		
-		
-		
-		if(!selected && !activated) 
-		{	
-			
-			lifeSpan--; 
-			if(lifeSpan < 0) Destroy(gameObject);
+		//CHANGE ZYTHI SELECTION
+		if (Input.GetKeyDown(KeyCode.Q) || Input.GetKeyDown(KeyCode.E))
+		{
+			selected = !selected;
+			if(selected) 
+			{ 
+				transform.localScale = new Vector3(0.3f,0.3f,0.3f);
+				Camera.main.GetComponent<Camera_Follow>().Follow(gameObject);
+			} else {
+				transform.localScale = new Vector3(0.2f,0.2f,0.2f);
+				
+			}
 		}
-		else{
+		
+		if(selected)
+		{
+			// LOOKAT MOUSE
+			Vector2 dir = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
+			float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+			transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+			
+			// MOVEMENT
 			if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow)&&rigidbody2D.velocity.magnitude<fMaxSpeed)
 			{
 				rigidbody2D.AddForce(Vector2.up*fCompensator);	
@@ -51,23 +66,31 @@ public class Play_Behaviour: MonoBehaviour {
 			{
 				rigidbody2D.AddForce(Vector2.right*fCompensator);	
 			}
+			
+		}
+		else
+		{
+			// QUIETLY FOLLOW YOUR PARTNER
+			Vector2 dir = partner.position - transform.position;
+			if(dir.magnitude > 2)  {
+				rigidbody2D.velocity = dir*(float)(dir.magnitude-2.0f);
+			} else {
+				rigidbody2D.velocity = Vector2.zero; 
+			}
+			float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+			transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
 		}
 		
-		if(target != null)
+		/*if(target != null)
 		{
 			Vector2 dir = target.position - transform.position;
 			float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
 			Quaternion desiredRotation = Quaternion.AngleAxis(angle, Vector3.forward);
 			transform.rotation = Quaternion.Slerp(transform.rotation, desiredRotation, Time.time*0.01f);
 			// print(transform.rotation);
-		}
+		}*/
 	}
 	
-	void OnMouseDown()
-	{
-		Camera.main.GetComponent<Camera_Follow>().Follow(gameObject);
-		selected = true;
-	}
 	
 	void OnCollisionEnter2D(Collision2D collision){
 		
@@ -85,14 +108,6 @@ public class Play_Behaviour: MonoBehaviour {
 				target = null;
 				// Destroy (collision.gameObject);
 			}			
-			// ACTIVATE
-			if(!activated) 
-			{	
-				activated = true;
-				GameObject cannon = (GameObject) Instantiate(Resources.Load("Prefabs/Objects/Player/Play_AntibodyCannon"), transform.position, transform.rotation);
-				cannon.GetComponent<Play_Behaviour>().antibodyType = antibodyType;
-				cannon.GetComponent<Play_Behaviour>().activated = true;
-			}
 		}
 		
 	}

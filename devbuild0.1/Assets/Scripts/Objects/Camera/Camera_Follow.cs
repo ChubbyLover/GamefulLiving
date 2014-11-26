@@ -18,10 +18,7 @@ public class Camera_Follow : MonoBehaviour {
 	
 	public void Follow(GameObject targetToFollow)
 	{
-		try{
-			target.gameObject.GetComponent<Play_Behaviour>().selected = false;
-		} catch {}
-		freeMover.position = transform.position;
 		target = targetToFollow.transform;
+		print(targetToFollow);
 	}
 }
