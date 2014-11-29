@@ -106,9 +106,9 @@ public class Powers_HelperAI : MonoBehaviour
 	}
 	void Consume ()
 	{
-		//Animator anim = gameObject.GetComponent<Animator>();
+		Animator anim = gameObject.GetComponent<Animator>();
 
-		//anim.SetTrigger("Consume");
+		anim.SetTrigger("Consume");
 		GameObject[] WBC = GameObject.FindGameObjectsWithTag("Helper");
 		foreach (GameObject Helper in WBC)
 		{
