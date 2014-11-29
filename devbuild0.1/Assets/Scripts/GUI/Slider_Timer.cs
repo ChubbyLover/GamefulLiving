@@ -6,7 +6,7 @@ public class Slider_Timer : MonoBehaviour {
 
 	public Slider TargetSlider;
 	public Button TargetButton;
-
+	
 	bool StartTimer=false;
 	float fLastTime;
 	float fTimer=0.1f;
@@ -25,19 +25,24 @@ public class Slider_Timer : MonoBehaviour {
 			{
 				TargetSlider.value+=1;
 				fLastTime=Time.time;
+				Camera.main.GetComponent<Powers_Items>().Kill(50/TargetSlider.maxValue);
 			}
 			else
 			{
-				TargetButton.interactable=true;	
+				TargetButton.interactable=true;
+				StartTimer=false;
 			}
 		}
 	}
 	public void Starttimer(float fLength)
 	{
-		TargetSlider.value=0;
-		TargetSlider.maxValue=fLength;
-		StartTimer=true;
-		fLastTime=Time.time;
+		if(!StartTimer)
+		{
+			TargetSlider.value=0;
+			TargetSlider.maxValue=fLength;
+			StartTimer=true;
+			fLastTime=Time.time;
+		}
 	}
 
 }

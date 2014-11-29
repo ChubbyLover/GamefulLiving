@@ -53,6 +53,9 @@
      <Compile Include="Assets\Scripts\GUI\Camera\Camera_GUI.cs" />
      <Compile Include="Assets\Scripts\GUI\Camera\Camera_Proceed.cs" />
      <Compile Include="Assets\Scripts\GUI\Images\Icon_DisplayLock.cs" />
+     <Compile Include="Assets\Scripts\GUI\Slider_Coloradjustment.cs" />
+     <Compile Include="Assets\Scripts\GUI\Slider_Percent.cs" />
+     <Compile Include="Assets\Scripts\GUI\Slider_Timer.cs" />
      <Compile Include="Assets\Scripts\Objects\Audio\Audio_Levelmanager.cs" />
      <Compile Include="Assets\Scripts\Objects\Camera\Camera_Control.cs" />
      <Compile Include="Assets\Scripts\Objects\Camera\Camera_Follow.cs" />
@@ -80,11 +83,9 @@
      <Compile Include="Assets\Scripts\Objects\Player\Powers\Powers_CallHelper.cs" />
      <Compile Include="Assets\Scripts\Objects\Player\Powers\Powers_CallSyringe.cs" />
      <Compile Include="Assets\Scripts\Objects\Player\Powers\Powers_HelperAI.cs" />
+     <Compile Include="Assets\Scripts\Objects\Player\Powers\Powers_Items.cs" />
      <Compile Include="Assets\Scripts\Objects\Player\Powers\Powers_Medicine.cs" />
      <Compile Include="Assets\Scripts\Objects\Player\Powers\Powers_Syringe.cs" />
-     <Compile Include="Assets\Slider_Coloradjustment.cs" />
-     <Compile Include="Assets\Slider_Percent.cs" />
-     <Compile Include="Assets\Slider_Timer.cs" />
      <None Include="Assets\Resources\Sprites\Objects\Level_Prototype\SVG\SVG_Test.txt" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.0/UnityEngine.UI.dll</HintPath>
