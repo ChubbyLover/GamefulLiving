@@ -27,7 +27,6 @@ public class Pathogen_Behaviour : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{
-		
 		if(timeUntilMitosis<=0 && Phagozytose==null)
 		{
 			amountOfPathogens++;

@@ -4,7 +4,7 @@ using System.Collections;
 
 public class Body_Functions : MonoBehaviour 
 {
-	public int iRest=1;
+	public int iRest;
 	public float fHealthDarm=100;
 	public float fHealthHerz=100;
 	public float fHealthLunge=100;
@@ -33,9 +33,9 @@ public class Body_Functions : MonoBehaviour
 	{
 		if(Time.time > fLastTick+fTickSpeed)
 		{
-			if(fHealthDarm<100&&fHealthDarm<0)fHealthDarm+=iRest;
-			if(fHealthHerz<100&&fHealthHerz<0)fHealthHerz+=iRest;
-			if(fHealthLunge<100&&fHealthLunge<0)fHealthLunge+=iRest;
+			if(fHealthDarm<100&&fHealthDarm>0)fHealthDarm+=iRest;
+			if(fHealthHerz<100&&fHealthHerz>0)fHealthHerz+=iRest;
+			if(fHealthLunge<100&&fHealthLunge>0)fHealthLunge+=iRest;
 			fLastTick=Time.time;
 		}
 	}

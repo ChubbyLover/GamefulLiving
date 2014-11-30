@@ -6,6 +6,9 @@ public class Camera_Follow : MonoBehaviour {
 	// Use this for initialization
 	public Transform target;
 	public Transform freeMover;
+
+	bool bFrozen=false;
+
 	void Start () {
 		
 	}
@@ -20,5 +23,18 @@ public class Camera_Follow : MonoBehaviour {
 	{
 		target = targetToFollow.transform;
 		print(targetToFollow);
+	}
+	public void FreezeUnfreeze ()
+	{
+		if(bFrozen)
+		{
+			bFrozen=false;
+			Time.timeScale	=1;
+		}
+		else
+		{
+			bFrozen=true;
+			Time.timeScale	=0;
+		}
 	}
 }

@@ -25,7 +25,11 @@ public class Slider_Timer : MonoBehaviour {
 			{
 				TargetSlider.value+=1;
 				fLastTime=Time.time;
-				Camera.main.GetComponent<Powers_Items>().Kill(50/TargetSlider.maxValue);
+				if(gameObject.name=="Slider_Item1")	Camera.main.GetComponent<Powers_Items>().Kill(50/TargetSlider.maxValue);
+				if(gameObject.name=="Slider_Item2")	Camera.main.GetComponent<Powers_Items>().ReduceMitosis(50/TargetSlider.maxValue);
+				if(gameObject.name=="Slider_Item3")	Camera.main.GetComponent<Powers_Items>().EnhanceWhiteHepers(50/TargetSlider.maxValue);
+				if(gameObject.name=="Slider_Item4")	Camera.main.GetComponent<Powers_Items>().RestoreBodilyFunctions(50/TargetSlider.maxValue,"All");
+
 			}
 			else
 			{

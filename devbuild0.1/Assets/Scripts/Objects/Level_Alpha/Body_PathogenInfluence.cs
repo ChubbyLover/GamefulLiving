@@ -14,7 +14,7 @@ public class Body_PathogenInfluence : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{
-	
+		Body.iRest=1;
 	}
 	void OnTriggerStay2D(Collider2D col) 
 	{
