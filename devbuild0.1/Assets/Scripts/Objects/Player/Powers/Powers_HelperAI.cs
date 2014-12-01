@@ -51,7 +51,7 @@ public class Powers_HelperAI : MonoBehaviour
 		if(bConsumedPathogen)
 		{
 			transform.localScale*=0.98f;
-			Destroy(gameObject,fTimeToDeath);
+			// Destroy(gameObject,fTimeToDeath);
 		}
 	}
 	public void Search()

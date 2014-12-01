@@ -6,7 +6,7 @@ public class Pathogen_Behaviour : MonoBehaviour {
 	public int timeUntilMitosis;
 	public float fLastTime;
 	public static int amountOfPathogens  = 1;
-	
+	private bool eaten = false;
 	
 	int dissolve=1;
 	Transform Phagozytose;
@@ -27,13 +27,13 @@ public class Pathogen_Behaviour : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{
-		if(timeUntilMitosis<=0 && Phagozytose==null)
+		if(timeUntilMitosis<=0 && !eaten && tag=="Pathogen")
 		{
 			amountOfPathogens++;
 			GameObject clone = (GameObject) Instantiate(gameObject, transform.position, transform.rotation);
 			timeUntilMitosis = Random.Range(10,amountOfPathogens*100);
 		}
-		if(Phagozytose!=null)
+		if(eaten)
 		{
 			dissolve--;
 			transform.localScale*=0.98f;
@@ -52,6 +52,7 @@ public class Pathogen_Behaviour : MonoBehaviour {
 	
 	public void Phagozytiert (Transform Phagozyt)
 	{
+		eaten = true;
 		gameObject.tag = "Untagged"; 
 		dissolve = 100;
 		Phagozytose=Phagozyt;
