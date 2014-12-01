@@ -8,13 +8,19 @@ public class Camera_Follow : MonoBehaviour {
 	public Transform freeMover;
 
 	bool bFrozen=false;
+	bool bStart=true;
 
-	void Start () {
-		
+	void Start() 
+	{
 	}
 	
 	// Update is called once per frame
 	void FixedUpdate () {
+		if(bStart)
+		{
+			FreezeUnfreeze();
+			bStart=false;
+		}
 		Vector3 goal = new Vector3(target.position.x,target.position.y,-10f);
 		transform.position = transform.position + (goal - transform.position)*0.08f;
 	}

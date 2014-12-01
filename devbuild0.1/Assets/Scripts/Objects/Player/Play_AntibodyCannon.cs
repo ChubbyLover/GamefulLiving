@@ -25,6 +25,9 @@ public class Play_AntibodyCannon : MonoBehaviour {
 				clone.rigidbody2D.velocity = transform.right*20.0f;
 				clone.GetComponent<Play_Antibody>().antibodyType = gameObject.GetComponent<Play_Behaviour>().antibodyType;
 				clone.GetComponent<SpriteRenderer>().sprite = antibodySprite.GetComponent<SpriteRenderer>().sprite;
+				Animator anim = GetComponent<Animator>();
+
+				anim.SetTrigger("Pew");
 				// gameObject.tag = "pathogen"+gameObject.GetComponent<Play_Behaviour>().antibodyType.ToString();
 			}
 		}	
