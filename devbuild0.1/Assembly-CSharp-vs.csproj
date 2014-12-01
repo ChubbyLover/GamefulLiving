@@ -48,6 +48,7 @@
   <ItemGroup>
      <Compile Include="Assets\Level_Anitgene.cs" />
      <Compile Include="Assets\Level_AnitgeneSpawner.cs" />
+     <Compile Include="Assets\RBC_controller.cs" />
      <Compile Include="Assets\Scripts\Classes\Converter_SVG.cs" />
      <Compile Include="Assets\Scripts\Classes\Polygon.cs" />
      <Compile Include="Assets\Scripts\GUI\Buttons\Btn_Origin.cs" />
@@ -88,7 +89,7 @@
      <Compile Include="Assets\Scripts\Objects\Player\Powers\Powers_Items.cs" />
      <Compile Include="Assets\Scripts\Objects\Player\Powers\Powers_Medicine.cs" />
      <Compile Include="Assets\Scripts\Objects\Player\Powers\Powers_Syringe.cs" />
-     <None Include="Assets\Resources\Sprites\Objects\Level_Prototype\SVG\SVG_Test.txt" />
+     <None Include="Assets\Resources\sprites\Objects\Level_Prototype\SVG\SVG_Test.txt" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.0/UnityEngine.UI.dll</HintPath>
  </Reference>

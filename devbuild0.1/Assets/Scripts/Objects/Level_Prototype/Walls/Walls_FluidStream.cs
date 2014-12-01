@@ -15,7 +15,7 @@ public class Walls_FluidStream : MonoBehaviour
 		if(Time.time>=fTimelastPulse+fPulseInterval)
 		{
 			float fAccelleration = 5;
-			if (col.attachedRigidbody.velocity.magnitude<7)
+			if (col.attachedRigidbody.velocity.magnitude<7 && !col.isTrigger) // second argument von florentin hinzugefügt (ignore trigger das sonst fresszelle doppelt so schnell beschleunigt wird)
 			{
 				col.attachedRigidbody.AddForce(this.collider2D.transform.right * fAccelleration);
 			}
