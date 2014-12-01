@@ -1,14 +1,14 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Objects\Level_Alpha\Body_Functions.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Objects\Enemy\Pathogen_Behaviour.cs">
     <Files>
-      <File FileName="Assets\Scripts\Objects\Enemy\Pathogen_Behaviour.cs" Line="29" Column="3" />
-      <File FileName="Assets\Scripts\Objects\Enemy\Pathogen_Behaviour.cs" Line="29" Column="3" />
+      <File FileName="Assets\Scripts\Objects\Enemy\Pathogen_Behaviour.cs" Line="40" Column="4" />
       <File FileName="Assets\Scripts\Objects\Player\Powers\Powers_Items.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\GUI\Slider_Timer.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Objects\Camera\Camera_Follow.cs" Line="36" Column="17" />
-      <File FileName="Assets\Scripts\Objects\Level_Alpha\Body_Functions.cs" Line="38" Column="38" />
+      <File FileName="Assets\Scripts\Objects\Level_Alpha\Body_Functions.cs" Line="10" Column="32" />
       <File FileName="Assets\Scripts\Objects\Level_Alpha\Body_PathogenInfluence.cs" Line="17" Column="15" />
+      <File FileName="Assets\Scripts\Objects\Player\Powers\Powers_HelperAI.cs" Line="17" Column="27" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
