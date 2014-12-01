@@ -46,6 +46,8 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Level_Anitgene.cs" />
+     <Compile Include="Assets\Level_AnitgeneSpawner.cs" />
      <Compile Include="Assets\RBC_controller.cs" />
      <Compile Include="Assets\Scripts\Classes\Converter_SVG.cs" />
      <Compile Include="Assets\Scripts\Classes\Polygon.cs" />

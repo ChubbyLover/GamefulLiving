@@ -1,15 +1,17 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Objects\Camera\Camera_Follow.cs">
     <Files>
-      <File FileName="Assets\Scripts\Objects\Enemy\Pathogen_Behaviour.cs" Line="40" Column="4" />
+      <File FileName="Assets\Scripts\Objects\Camera\Camera_Follow.cs" Line="13" Column="48" />
+      <File FileName="Assets\Scripts\Objects\Camera\Camera_Follow.cs" Line="95" Column="1" />
+      <File FileName="Assets\Scripts\Objects\Enemy\Pathogen_Behaviour.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Objects\Player\Powers\Powers_Items.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\GUI\Slider_Timer.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Objects\Camera\Camera_Follow.cs" Line="54" Column="77" />
       <File FileName="Assets\Scripts\Objects\Level_Alpha\Body_Functions.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Objects\Level_Alpha\Body_PathogenInfluence.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Objects\Player\Powers\Powers_HelperAI.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Objects\Player\Play_AntibodyCannon.cs" Line="24" Column="161" />
+      <File FileName="Assets\Scripts\Objects\Player\Play_AntibodyCannon.cs" Line="1" Column="1" />
+      <File FileName="Assets\RBC_controller.cs" Line="26" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

@@ -10,7 +10,7 @@ public class Camera_Follow : MonoBehaviour {
 	bool bFrozen=false;
 
 	void Start () {
-		InvokeRepeating("BloodstreamIndicators", 0, 2);
+		InvokeRepeating("BloodstreamIndicators", 0, 1);
 		// Physics2D.DefaultRaycastLayers = 8;
 	}
 	
@@ -40,25 +40,54 @@ public class Camera_Follow : MonoBehaviour {
 		}
 	}
 	
+	public bool pointInBloodStream(Vector2 test)
+	{
+		bool stillToCheck = true;
+		bool inside = false;
+		Vector2 toTest = test;
+		while(stillToCheck)
+		{
+			toTest = Physics2D.Raycast(toTest, Vector2.zero-toTest, 1000, walls).point;
+			if(toTest == Vector2.zero) stillToCheck = false;
+			else {
+				inside = !inside;
+				toTest += (Vector2.zero-toTest).normalized/10;
+			}
+		}
+		return inside;
+		
+	}
+	
 	void BloodstreamIndicators()
 	{
 		Vector2 halfDiagonal = new Vector2(-camera.orthographicSize*8/4.5f, camera.orthographicSize);
 		Vector2 upperLeftCorner = (Vector2)transform.position - halfDiagonal;
 		Vector2 lowerRightCorner = (Vector2)transform.position + halfDiagonal;
-		print (transform.position);
+		
 		// spwan above camera
 		for(int i = 0; i<10; i++)
 		{
 			GameObject newRBC = (GameObject) Instantiate(Resources.Load("Prefabs/Objects/RBC/RBC"), new Vector3(upperLeftCorner.x+halfDiagonal.x/5*i,upperLeftCorner.y-1,0), transform.rotation);
-			if(Physics2D.RaycastAll(newRBC.transform.position, (target.position-newRBC.transform.position), (target.position-newRBC.transform.position).magnitude, walls).Length%2 == 1) Destroy(newRBC);
-			Debug.DrawLine(newRBC.transform.position, target.position, Color.red, 2);
+			if(!pointInBloodStream(newRBC.transform.position)) Destroy(newRBC);
+			
 		}
 		// spwan below camera
 		for(int i = 0; i<10; i++)
 		{
 			GameObject newRBC = (GameObject) Instantiate(Resources.Load("Prefabs/Objects/RBC/RBC"), new Vector3(lowerRightCorner.x-halfDiagonal.x/5*i,lowerRightCorner.y+1,0), transform.rotation);
-			if(Physics2D.RaycastAll(newRBC.transform.position, (target.position-newRBC.transform.position), (target.position-newRBC.transform.position).magnitude, walls).Length%2 == 1) Destroy(newRBC);
-			Debug.DrawLine(newRBC.transform.position, target.position, Color.red, 2);
+			if(!pointInBloodStream(newRBC.transform.position)) Destroy(newRBC);			
+		}
+		// spwan left camera
+		for(int i = 0; i<10; i++)
+		{
+			GameObject newRBC = (GameObject) Instantiate(Resources.Load("Prefabs/Objects/RBC/RBC"), new Vector3(upperLeftCorner.x+1,upperLeftCorner.y+halfDiagonal.y/5*i,0), transform.rotation);
+			if(!pointInBloodStream(newRBC.transform.position)) Destroy(newRBC);			
+		}
+		// spwan right camera
+		for(int i = 0; i<10; i++)
+		{
+			GameObject newRBC = (GameObject) Instantiate(Resources.Load("Prefabs/Objects/RBC/RBC"), new Vector3(lowerRightCorner.x-1,lowerRightCorner.y-halfDiagonal.y/5*i,0), transform.rotation);
+			if(!pointInBloodStream(newRBC.transform.position)) Destroy(newRBC);			
 		}
 		
 	}

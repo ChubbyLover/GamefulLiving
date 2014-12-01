@@ -15,7 +15,7 @@ public class RBC_controller : MonoBehaviour {
 	
 	void CheckDistance()
 	{
-		print(Vector2.Distance(transform.position, Camera.main.transform.position));
+		
 		if(Vector2.Distance(transform.position, Camera.main.transform.position)>10) 
 		{
 			Destroy(gameObject);

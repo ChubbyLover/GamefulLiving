@@ -46,7 +46,7 @@ public class Pathogen_Behaviour : MonoBehaviour {
 				Destroy (gameObject);
 			}
 		} else {
-			timeUntilMitosis--;
+			if(Time.timeScale == 1.0f) timeUntilMitosis--;
 		}
 	}
 	
