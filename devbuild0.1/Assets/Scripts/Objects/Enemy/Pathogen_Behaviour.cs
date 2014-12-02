@@ -22,7 +22,7 @@ public class Pathogen_Behaviour : MonoBehaviour {
 	void Start () 
 	{
 		
-		timeUntilMitosis = Random.Range(10,amountOfPathogens*100);
+		timeUntilMitosis = Random.Range(100,amountOfPathogens*200);
 		rigidbody2D.AddForce(new Vector2(Random.value*50-25,Random.value*50-25));
 		
 	}
@@ -35,7 +35,7 @@ public class Pathogen_Behaviour : MonoBehaviour {
 		{
 			amountOfPathogens++;
 			GameObject clone = (GameObject) Instantiate(gameObject, transform.position, transform.rotation);
-			timeUntilMitosis = Random.Range(10,amountOfPathogens*100);
+			timeUntilMitosis = Random.Range(100,amountOfPathogens*200);
 			
 		}
 		if(eaten)
@@ -44,7 +44,7 @@ public class Pathogen_Behaviour : MonoBehaviour {
 			transform.localScale*=0.98f;
 			if(Phagozytose!=null )
 			{
-				Phagozytose.localScale-=new Vector3(0.0002f,0.0002f,0.0002f);
+				// Phagozytose.localScale-=new Vector3(0.0002f,0.0002f,0.0002f);
 				Vector3 goal = Phagozytose.position;
 				transform.position = transform.position + (goal - transform.position)*0.1f;
 				if(dissolve<0)

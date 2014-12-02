@@ -19,13 +19,11 @@ public class Play_Antibody : MonoBehaviour {
 	void OnCollisionEnter2D(Collision2D collision){
 		if(collision.gameObject.tag == "Pathogen" || collision.gameObject.tag == "Marked") 
 		{
-			print (collision.gameObject.GetComponent<Pathogen_Behaviour>().pathoType);
-			print (antibodyType);
 			if(collision.gameObject.GetComponent<Pathogen_Behaviour>().pathoType == antibodyType)
 			{
 				gameObject.transform.parent = collision.gameObject.transform;
 				Destroy(gameObject.GetComponent<Rigidbody2D>());
-				Destroy(gameObject.GetComponent<CircleCollider2D>());
+				Destroy(gameObject.GetComponent<BoxCollider2D>());
 				collision.gameObject.tag="Marked";
 			}
 		}

@@ -114,7 +114,7 @@ public class Play_Behaviour: MonoBehaviour {
 				Destroy(collision.gameObject.GetComponent<Rigidbody2D>());
 				Destroy(collision.gameObject.GetComponent<CircleCollider2D>());
 				collision.gameObject.GetComponent<Pathogen_Behaviour>().Phagozytiert(gameObject.transform);
-				transform.localScale+=new Vector3(0.02f,0.02f,0.02f);
+				// transform.localScale+=new Vector3(0.02f,0.02f,0.02f);
 				anims[0].SetTrigger("HitEnemy");
 				anims[1].SetTrigger("HitEnemy");
 			}
