@@ -23,9 +23,20 @@ public class Camera_Follow : MonoBehaviour {
 			FreezeUnfreeze();
 			bStart=false;
 		}
-		Vector3 goal = new Vector3(target.position.x,target.position.y,-10f);
-		if(!freeLook) camera.orthographicSize = 5+(goal - transform.position).magnitude;
-		transform.position = transform.position + (goal - transform.position)*0.08f;
+		if(!freeLook)
+		{
+			Vector3 goal = new Vector3(target.position.x,target.position.y,-10f);
+		 	camera.orthographicSize = 5+(goal - transform.position).magnitude;
+			transform.position = transform.position + (goal - transform.position)*0.08f;
+		}
+	}
+	void Update(){
+		if(freeLook)
+		{
+			Vector3 goal = new Vector3(target.position.x,target.position.y,-10f);
+			camera.orthographicSize = 10;
+			transform.position = transform.position + (goal - transform.position)*0.08f;
+		}
 	}
 	
 	public void Follow(GameObject targetToFollow)
@@ -67,13 +78,18 @@ public class Camera_Follow : MonoBehaviour {
 	public void startFreeLook(Transform freeTarget)
 	{
 		freeLook = true;
+		Time.timeScale=0.1f;
 		storeTarget = target;
 		target=freeTarget;
 	}
 	public void endFreeLook()
 	{
-		freeLook = false;
-		target = storeTarget;
+		if(freeLook)
+		{
+			freeLook = false;
+			Time.timeScale=1;
+			target = storeTarget;
+		}
 	}
 	
 	void BloodstreamIndicators()
