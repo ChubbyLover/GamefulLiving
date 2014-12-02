@@ -2,18 +2,17 @@
 using System.Collections;
 
 public class Level_Anitgene : MonoBehaviour {
-
-	Sprite[] Antigene;
 	
 	public float TimeStamp;
 	public float Livetime; 
-	public int iAmmountOfAntigenes=6;
+	//public int iAmmountOfAntigenes=6;
+	public int antigeneType;
 	// Use this for initialization
 	void Start () 
 	{
-		Object[] AntigeneBuffer = Resources.LoadAll("Sprites/Objects/Player/Aura/Antigene");
-
-		Antigene = new Sprite[iAmmountOfAntigenes];
+		
+		
+		/*Antigene = new Sprite[iAmmountOfAntigenes];
 		int iUnevenNumbers =0;
 		for(int i = 0; i<iAmmountOfAntigenes;i++)
 		{
@@ -23,14 +22,14 @@ public class Level_Anitgene : MonoBehaviour {
 				Antigene[i-iUnevenNumbers]=AntigeneBuffer[i] as Sprite;
 			}
 		}
-		float TimeStamp= Time.time;
-		gameObject.GetComponent<SpriteRenderer>().sprite = Antigene[Random.Range(0,Antigene.Length)] as Sprite;
-
+		
+		antigeneType = Random.Range(0,Antigene.Length);
+		gameObject.GetComponent<SpriteRenderer>().sprite = Antigene[antigeneType] as Sprite;*/
 	}
 	
 	// Update is called once per frame
 	void Update () 
 	{
-		if(Time.time>TimeStamp+Livetime) Destroy(gameObject);
+		
 	}
 }

@@ -18,9 +18,9 @@ public class Play_Behaviour: MonoBehaviour {
 	void Start () 
 	{
 		
-		if(antibodyType == 16) antibodyType = Random.Range(0,15);
+		/*if(antibodyType == 16) antibodyType = Random.Range(0,15);
 		Sprite[] test = Resources.LoadAll <Sprite> ("Sprites/Objects/Player/Play_Antigens");
-		antibodySprite.GetComponent<SpriteRenderer>().sprite = test[antibodyType];
+		antibodySprite.GetComponent<SpriteRenderer>().sprite = test[antibodyType];*/
 		anims=gameObject.GetComponentsInChildren<Animator>();
 	}
 	
@@ -93,15 +93,21 @@ public class Play_Behaviour: MonoBehaviour {
 	
 	
 	void OnCollisionEnter2D(Collision2D collision){
-		
-		
-		
+		if(collision.gameObject.tag == "Antigene")
+		{
+			antibodyType = collision.gameObject.GetComponent<Level_Anitgene>().antigeneType;
+			antibodySprite.GetComponent<SpriteRenderer>().sprite = collision.gameObject.GetComponent<SpriteRenderer>().sprite;
+			partner.gameObject.GetComponent<Play_Behaviour>().antibodySprite.GetComponent<SpriteRenderer>().sprite = collision.gameObject.GetComponent<SpriteRenderer>().sprite;
+			Destroy (collision.gameObject);
+		}
 	}
 	
 	void OnTriggerEnter2D(Collider2D collision)
 	{
 		if(collision.gameObject.tag == "Pathogen" || collision.gameObject.tag == "Marked")
 		{	
+			if(collision.gameObject.GetComponent<Pathogen_Behaviour>().pathoType == antibodyType)
+			{
 				if(collision.gameObject.transform.parent == null) collision.gameObject.transform.parent = gameObject.transform;
 				Destroy(collision.gameObject.GetComponent<Rigidbody2D>());
 				Destroy(collision.gameObject.GetComponent<CircleCollider2D>());
@@ -109,6 +115,7 @@ public class Play_Behaviour: MonoBehaviour {
 				transform.localScale+=new Vector3(0.02f,0.02f,0.02f);
 				anims[0].SetTrigger("HitEnemy");
 				anims[1].SetTrigger("HitEnemy");
+			}
 		}
 	}
 	

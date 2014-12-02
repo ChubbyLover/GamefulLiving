@@ -4,6 +4,7 @@ using System.Collections;
 public class Pathogen_Behaviour : MonoBehaviour {
 	
 	public int timeUntilMitosis;
+	public int pathoType;
 	public float fLastTime;
 	public static int amountOfPathogens  = 1;
 	private bool eaten = false;
@@ -20,18 +21,22 @@ public class Pathogen_Behaviour : MonoBehaviour {
 	// Use this for initialization
 	void Start () 
 	{
+		
 		timeUntilMitosis = Random.Range(10,amountOfPathogens*100);
 		rigidbody2D.AddForce(new Vector2(Random.value*50-25,Random.value*50-25));
+		
 	}
 	
 	// Update is called once per frame
 	void Update () 
 	{
+		
 		if(timeUntilMitosis<=0 && !eaten && tag=="Pathogen")
 		{
 			amountOfPathogens++;
 			GameObject clone = (GameObject) Instantiate(gameObject, transform.position, transform.rotation);
 			timeUntilMitosis = Random.Range(10,amountOfPathogens*100);
+			
 		}
 		if(eaten)
 		{
@@ -46,8 +51,14 @@ public class Pathogen_Behaviour : MonoBehaviour {
 				Destroy (gameObject);
 			}
 		} else {
-			if(Time.timeScale == 1.0f) timeUntilMitosis--;
+			if(Time.timeScale == 1.0f) {
+				
+				
+				timeUntilMitosis--;
+				
+			}
 		}
+		
 	}
 	
 	public void Phagozytiert (Transform Phagozyt)
