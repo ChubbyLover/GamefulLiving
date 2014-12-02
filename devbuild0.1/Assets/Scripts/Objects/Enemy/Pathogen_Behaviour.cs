@@ -42,9 +42,12 @@ public class Pathogen_Behaviour : MonoBehaviour {
 		{
 			dissolve--;
 			transform.localScale*=0.98f;
-			Phagozytose.localScale-=new Vector3(0.0002f,0.0002f,0.0002f);
-			Vector3 goal = Phagozytose.position;
-			transform.position = transform.position + (goal - transform.position)*0.1f;
+			if(Phagozytose!=null )
+			{
+				Phagozytose.localScale-=new Vector3(0.0002f,0.0002f,0.0002f);
+				Vector3 goal = Phagozytose.position;
+				transform.position = transform.position + (goal - transform.position)*0.1f;
+			}
 			if(dissolve<0)
 			{
 				if(Phagozytose.gameObject.tag=="Helper") Destroy (Phagozytose.gameObject);

@@ -1,15 +1,15 @@
 fileFormatVersion: 2
-guid: 806783df8e256004fb0e5764425a59a4
+guid: 6bf38ae916c78d74297d2957982ff2ba
 TextureImporter:
   fileIDToRecycleName:
-    21300000: "Play_schie\xDFen_0"
-    21300002: "Play_schie\xDFen_1"
-    21300004: "Play_schie\xDFen_2"
-    21300006: "Play_schie\xDFen_3"
-    21300008: "Play_schie\xDFen_4"
-    21300010: "Play_schie\xDFen_5"
-    21300012: "Play_schie\xDFen_6"
-    21300014: "Play_schie\xDFen_7"
+    21300000: Play_schiessen_0
+    21300002: Play_schiessen_1
+    21300004: Play_schiessen_2
+    21300006: Play_schiessen_3
+    21300008: Play_schiessen_4
+    21300010: Play_schiessen_5
+    21300012: Play_schiessen_6
+    21300014: Play_schiessen_7
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -51,7 +51,7 @@ TextureImporter:
   buildTargetSettings: []
   spriteSheet:
     sprites:
-    - name: "Play_schie\xDFen_0"
+    - name: Play_schiessen_0
       rect:
         serializedVersion: 2
         x: 0
@@ -61,7 +61,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: "Play_schie\xDFen_1"
+    - name: Play_schiessen_1
       rect:
         serializedVersion: 2
         x: 512
@@ -71,7 +71,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: "Play_schie\xDFen_2"
+    - name: Play_schiessen_2
       rect:
         serializedVersion: 2
         x: 1024
@@ -81,7 +81,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: "Play_schie\xDFen_3"
+    - name: Play_schiessen_3
       rect:
         serializedVersion: 2
         x: 1536
@@ -91,7 +91,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: "Play_schie\xDFen_4"
+    - name: Play_schiessen_4
       rect:
         serializedVersion: 2
         x: 0
@@ -101,7 +101,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: "Play_schie\xDFen_5"
+    - name: Play_schiessen_5
       rect:
         serializedVersion: 2
         x: 512
@@ -111,7 +111,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: "Play_schie\xDFen_6"
+    - name: Play_schiessen_6
       rect:
         serializedVersion: 2
         x: 1024
@@ -121,7 +121,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: "Play_schie\xDFen_7"
+    - name: Play_schiessen_7
       rect:
         serializedVersion: 2
         x: 1536
