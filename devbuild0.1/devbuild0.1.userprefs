@@ -1,8 +1,9 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Objects\Enemy\Pathogen_Behaviour.cs">
     <Files>
-      <File FileName="Assets\Scripts\Objects\Player\Play_AntibodyCannon.cs" Line="27" Column="61" />
+      <File FileName="Assets\Scripts\Objects\Enemy\Pathogen_Behaviour.cs" Line="50" Column="5" />
+      <File FileName="Assets\Scripts\Objects\Player\Play_AntibodyCannon.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Objects\Enemy\Pathogen_Behaviour.cs" Line="50" Column="5" />
     </Files>
   </MonoDevelop.Ide.Workbench>
