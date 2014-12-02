@@ -11,9 +11,9 @@ public class Camera_Follow : MonoBehaviour {
 	bool freeLook = false;
 	bool bStart=true;
 
-	void Start () {
+	void Start () 
+	{
 		InvokeRepeating("BloodstreamIndicators", 0, 10);
-		// Physics2D.DefaultRaycastLayers = 8;
 	}
 	
 	// Update is called once per frame
