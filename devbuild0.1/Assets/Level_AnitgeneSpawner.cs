@@ -14,9 +14,9 @@ public class Level_AnitgeneSpawner : MonoBehaviour {
 	{
 		LastTick=Time.time;
 		
-		Object[] AntigeneBuffer = Resources.LoadAll("Sprites/Objects/Player/Aura/Antigene");
+		/*Object[] AntigeneBuffer = Resources.LoadAll("Sprites/Objects/Player/Aura/Antigene");
 		for(int i=1; i<12; i+=2)
-			sprites.Add((Sprite)AntigeneBuffer[i]);
+			sprites.Add((Sprite)AntigeneBuffer[i]);*/
 		
 	}
 	

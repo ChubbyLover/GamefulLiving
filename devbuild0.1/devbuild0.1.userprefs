@@ -1,8 +1,17 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+<<<<<<< HEAD
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Objects\Player\Play_Behaviour.cs">
     <Files>
       <File FileName="Assets\Scripts\Objects\Player\Play_Behaviour.cs" Line="103" Column="35" />
+=======
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Objects\Enemy\Pathogen_Behaviour.cs">
+    <Files>
+      <File FileName="Assets\Level_AnitgeneSpawner.cs" Line="38" Column="1" />
+      <File FileName="Assets\Scripts\Objects\Player\Play_Behaviour.cs" Line="117" Column="8" />
+      <File FileName="Assets\Scripts\Objects\Enemy\Pathogen_Behaviour.cs" Line="38" Column="59" />
+      <File FileName="Assets\Scripts\Objects\Player\Play_Antibody.cs" Line="26" Column="55" />
+>>>>>>> da5f9b2535751cfd6c7eec8ac67759ff2315bfcd
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
