@@ -9,6 +9,7 @@ public class Camera_Follow : MonoBehaviour {
 	public LayerMask walls;
 	bool bFrozen=false;
 	bool freeLook = false;
+	bool bStart=true;
 
 	void Start () {
 		InvokeRepeating("BloodstreamIndicators", 0, 10);
@@ -17,6 +18,11 @@ public class Camera_Follow : MonoBehaviour {
 	
 	// Update is called once per frame
 	void FixedUpdate () {
+		if(bStart)
+		{
+			FreezeUnfreeze();
+			bStart=false;
+		}
 		Vector3 goal = new Vector3(target.position.x,target.position.y,-10f);
 		if(!freeLook) camera.orthographicSize = 5+(goal - transform.position).magnitude;
 		transform.position = transform.position + (goal - transform.position)*0.08f;
