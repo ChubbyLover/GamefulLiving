@@ -93,11 +93,13 @@ public class Play_Behaviour: MonoBehaviour {
 	
 	
 	void OnCollisionEnter2D(Collision2D collision){
-		if(collision.gameObject.tag == "Antigene")
+		if(collision.gameObject.tag == "Antigene" && selected)
 		{
 			antibodyType = collision.gameObject.GetComponent<Level_Anitgene>().antigeneType;
+			partner.gameObject.GetComponent<Play_Behaviour>().antibodyType = antibodyType;
 			antibodySprite.GetComponent<SpriteRenderer>().sprite = collision.gameObject.GetComponent<SpriteRenderer>().sprite;
 			partner.gameObject.GetComponent<Play_Behaviour>().antibodySprite.GetComponent<SpriteRenderer>().sprite = collision.gameObject.GetComponent<SpriteRenderer>().sprite;
+			
 			Destroy (collision.gameObject);
 		}
 	}
