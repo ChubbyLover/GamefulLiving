@@ -29,7 +29,7 @@ public class Play_Behaviour: MonoBehaviour {
 	
 		
 		//CHANGE ZYTHI SELECTION
-		if (Input.GetKeyDown(KeyCode.Q) || Input.GetKeyDown(KeyCode.E))
+		if (Input.GetKeyDown(KeyCode.F))
 		{
 			selected = !selected;
 			if(selected) 
@@ -120,7 +120,15 @@ public class Play_Behaviour: MonoBehaviour {
 			}
 		}
 	}
-	
+
+	bool GetAnyKey(params KeyCode[] aKeys)
+	{
+		foreach(var key in aKeys)
+			if (Input.GetKey(key))
+				return true;
+		return false;
+	}
+
 	void OnTriggerLeave2D(Collider2D collision)
 	{
 		

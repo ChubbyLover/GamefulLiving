@@ -25,11 +25,31 @@ public class Slider_Timer : MonoBehaviour {
 			{
 				TargetSlider.value+=1;
 				fLastTime=Time.time;
-				if(gameObject.name=="Slider_Item1")	Camera.main.GetComponent<Powers_Items>().Kill(50/TargetSlider.maxValue);
-				if(gameObject.name=="Slider_Item2")	Camera.main.GetComponent<Powers_Items>().ReduceMitosis(50/TargetSlider.maxValue);
-				if(gameObject.name=="Slider_Item3")	Camera.main.GetComponent<Powers_Items>().EnhanceWhiteHepers(50/TargetSlider.maxValue);
-				if(gameObject.name=="Slider_Item4")	Camera.main.GetComponent<Powers_Items>().RestoreBodilyFunctions(50/TargetSlider.maxValue,"All");
+				if(gameObject.name=="Slider_Item1")
+				{
+					Camera.main.GetComponent<Powers_Items>().Kill(50/TargetSlider.maxValue);
+					if(TargetSlider.value==1)GameObject.FindGameObjectWithTag("GUI_Pill").GetComponent<Animator>().SetTrigger("Used");
+				}
+				if(gameObject.name=="Slider_Item2")
+				{
 
+					Camera.main.GetComponent<Powers_Items>().RestoreBodilyFunctions(50/TargetSlider.maxValue,"All");
+					GameObject[] Bars = GameObject.FindGameObjectsWithTag("GUI_Healthbar");
+
+					foreach (GameObject Bar in Bars)
+					{
+						Bar.GetComponent<Animator>().SetTrigger("Pulse");
+					}
+				}
+				if(gameObject.name=="Slider_Item3")
+				{
+					Camera.main.GetComponent<Powers_Items>().ReduceMitosis(50/TargetSlider.maxValue);
+
+				}
+				if(gameObject.name=="Slider_Item4")
+				{
+					Camera.main.GetComponent<Powers_Items>().EnhanceWhiteHepers(50/TargetSlider.maxValue);
+				}
 			}
 			else
 			{

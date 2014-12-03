@@ -8,6 +8,7 @@ public class Pathogen_Behaviour : MonoBehaviour {
 	public float fLastTime;
 	public static int amountOfPathogens  = 1;
 	private bool eaten = false;
+	public bool Medicine = false;
 	
 	int dissolve=1;
 	Transform Phagozytose;
@@ -65,6 +66,11 @@ public class Pathogen_Behaviour : MonoBehaviour {
 				
 			}
 		}
+		if(Medicine)
+		{
+			GetComponent<Animator>().SetTrigger("Die");
+			Destroy(gameObject,1);
+		}
 		
 	}
 	
@@ -74,6 +80,13 @@ public class Pathogen_Behaviour : MonoBehaviour {
 		gameObject.tag = "Untagged"; 
 		dissolve = 100;
 		Phagozytose=Phagozyt;
+		amountOfPathogens--;
+	}
+	public void Die ()
+	{
+		Medicine = true;
+		gameObject.tag = "Untagged"; 
+		dissolve = 100;
 		amountOfPathogens--;
 	}
 }
