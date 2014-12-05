@@ -9,6 +9,7 @@ public class Btn_Pressed : MonoBehaviour
 {
 	public string skey;
 	Button targetButton;
+	
 	// Use this for initialization
 	void Start () 
 	{

@@ -8,6 +8,8 @@ public class Powers_HelperAI : MonoBehaviour
 	GameObject WBC;
 	public string sState;
 
+
+
 	public float fSpeed;
 	public float fSpeedRotation;
 	public float fSpeedMaximum;
@@ -32,12 +34,7 @@ public class Powers_HelperAI : MonoBehaviour
 
 	void OnBecameInvisible() 
 	{
-		if(WBC!=null && sState != "Consume")
-		{
-			Play_SpawningWBC script = GameObject.FindGameObjectWithTag("wbc").GetComponent<Play_SpawningWBC>();
-			script.iCurrentCountWBC--;
-			Destroy(gameObject);
-		}
+		Suicide();
 	}
 	void Idle()
 	{
@@ -109,8 +106,8 @@ public class Powers_HelperAI : MonoBehaviour
 		Animator anim = gameObject.GetComponent<Animator>();
 
 		anim.SetTrigger("Consume");
-		GameObject[] WBC = GameObject.FindGameObjectsWithTag("Helper");
-		foreach (GameObject Helper in WBC)
+		GameObject[] WBCH = GameObject.FindGameObjectsWithTag("Helper");
+		foreach (GameObject Helper in WBCH)
 		{
 			Powers_HelperAI HelperAI = Helper.GetComponent<Powers_HelperAI>();
 			HelperAI.ForceState("Search");
@@ -148,6 +145,18 @@ public class Powers_HelperAI : MonoBehaviour
 		if(col.gameObject.tag=="Wall")
 		{
 			sState="Idle";
+		}
+	}
+	void Suicide ()
+	{
+		if(WBC!=null && sState != "Consume")
+		{
+			GameObject[] WBCL = GameObject.FindGameObjectsWithTag("wbc") as GameObject[];
+			foreach(GameObject bc in WBCL)
+			{
+				bc.GetComponent<Play_SpawningWBC>().iCurrentCountWBC--;
+			}
+			Destroy(gameObject);
 		}
 	}
 }

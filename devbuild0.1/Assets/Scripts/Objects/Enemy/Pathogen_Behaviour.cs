@@ -9,6 +9,7 @@ public class Pathogen_Behaviour : MonoBehaviour {
 	public static int amountOfPathogens  = 1;
 	private bool eaten = false;
 	public bool Medicine = false;
+	public bool MythosisEnabled = true;
 	
 	int dissolve=1;
 	Transform Phagozytose;
@@ -32,7 +33,7 @@ public class Pathogen_Behaviour : MonoBehaviour {
 	void Update () 
 	{
 		
-		if(timeUntilMitosis<=0 && !eaten && tag=="Pathogen")
+		if(MythosisEnabled &&timeUntilMitosis<=0 && !eaten && tag=="Pathogen")
 		{
 			amountOfPathogens++;
 			GameObject clone = (GameObject) Instantiate(gameObject, transform.position, transform.rotation);
