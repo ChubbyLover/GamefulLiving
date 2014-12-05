@@ -20,7 +20,7 @@ public class Body_PathogenInfluence : MonoBehaviour {
 	{
 		if(col.gameObject.tag=="Pathogen")
 		{
-			if(gameObject.name=="Herz") Body.fHealthHerz-=1*col.gameObject.GetComponent<Pathogen_Behaviour>().fHeart;
+			if(gameObject.name=="Herz") Body.fHealthHerz-=0.5f*col.gameObject.GetComponent<Pathogen_Behaviour>().fHeart;
 			if(gameObject.name=="Lunge") Body.fHealthLunge-=1*col.gameObject.GetComponent<Pathogen_Behaviour>().fLungs;
 			if(gameObject.name=="Darm") Body.fHealthDarm-=1*col.gameObject.GetComponent<Pathogen_Behaviour>().fDarm;
 			Body.iRest=0;

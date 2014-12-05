@@ -7,9 +7,13 @@ public class Powers_HelperAI : MonoBehaviour
 	GameObject Target;
 	GameObject WBC;
 	public string sState;
+<<<<<<< HEAD
 
 
 
+=======
+	public static int amountOfHelpers = 0;
+>>>>>>> b0dcbc4b5e69f2eda455fdd0d82a5cb7dbe8a8a3
 	public float fSpeed;
 	public float fSpeedRotation;
 	public float fSpeedMaximum;
@@ -22,10 +26,15 @@ public class Powers_HelperAI : MonoBehaviour
 	// Use this for initialization
 	void Start ()
 	{
+		amountOfHelpers++;
 		fLastTimeDirectionChanged = Time.time;
 		WBC=GameObject.FindGameObjectWithTag("wbc");
 	}
 	
+	public int getAmountOfHelpers()
+	{
+		return amountOfHelpers;
+	}
 	// Update is called once per frame
 	void Update ()
 	{
@@ -34,10 +43,27 @@ public class Powers_HelperAI : MonoBehaviour
 
 	void OnBecameInvisible() 
 	{
+<<<<<<< HEAD
 		Suicide();
+=======
+		
+		if(WBC!=null && sState != "Consume")
+		{
+			//Play_SpawningWBC script = GameObject.FindGameObjectWithTag("wbc").GetComponent<Play_SpawningWBC>();
+			//script.iCurrentCountWBC--;
+			amountOfHelpers--;
+			Destroy(gameObject);
+		}
+>>>>>>> b0dcbc4b5e69f2eda455fdd0d82a5cb7dbe8a8a3
 	}
 	void Idle()
 	{
+		if(!renderer.isVisible) {
+			// Play_SpawningWBC script = GameObject.FindGameObjectWithTag("wbc").GetComponent<Play_SpawningWBC>();
+			// script.iCurrentCountWBC--;
+			amountOfHelpers--;
+			Destroy (gameObject);
+		}
 		if(Target == null&&Time.time > fLastTimeDirectionChanged+iTimeDirectionChange&&rigidbody2D.velocity.magnitude < fSpeedMaximum&&!bConsumedPathogen)
 		{
 			Vector2 Direction = new Vector2(Random.Range(-fSpeed,fSpeed),Random.Range(-fSpeed,fSpeed));
@@ -72,6 +98,7 @@ public class Powers_HelperAI : MonoBehaviour
 				}
 			}
 		}
+		
 		/*if(PathogensUnmarked != null&&Target == null)
 		{
 			foreach (GameObject Pathogen in PathogensUnmarked)
