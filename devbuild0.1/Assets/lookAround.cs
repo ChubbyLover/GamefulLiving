@@ -14,7 +14,7 @@ public class lookAround : MonoBehaviour {
 	void Update () {
 		if ( Input.GetMouseButtonDown(0)){
 			mover.position = minimapCamera.ScreenToWorldPoint(Input.mousePosition);
-			if(mover.position.x>0&&mover.position.x<90&&mover.position.y>0&&mover.position.y<290)Camera.main.GetComponent<Camera_Follow>().startFreeLook(mover);
+			if(mover.position.x>-20&&mover.position.x<90&&mover.position.y>0&&mover.position.y<290)Camera.main.GetComponent<Camera_Follow>().startFreeLook(mover);
 		}
 		if ( Input.GetMouseButton(0)){
 			Vector2 goal = minimapCamera.ScreenToWorldPoint(Input.mousePosition);

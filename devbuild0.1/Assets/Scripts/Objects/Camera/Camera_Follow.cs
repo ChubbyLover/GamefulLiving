@@ -10,6 +10,8 @@ public class Camera_Follow : MonoBehaviour {
 	bool bFrozen=false;
 	bool freeLook = false;
 	bool bStart=true;
+	public GameObject gewonnen;
+	
 
 	void Start () 
 	{
@@ -42,6 +44,10 @@ public class Camera_Follow : MonoBehaviour {
 	public void Follow(GameObject targetToFollow)
 	{
 		target = targetToFollow.transform;
+	}
+	public void Sieg()
+	{
+		target = gewonnen.transform;
 	}
 	public void FreezeUnfreeze ()
 	{
@@ -125,6 +131,6 @@ public class Camera_Follow : MonoBehaviour {
 			if(!pointInBloodStream(newRBC.transform.position)) Destroy(newRBC);			
 		}
 		
-		
+	
 	}
 }

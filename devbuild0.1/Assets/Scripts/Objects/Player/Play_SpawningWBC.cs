@@ -10,7 +10,8 @@ public class Play_SpawningWBC : MonoBehaviour {
 
 	public LayerMask SpawningMask;
 	public Vector2 VelVector2D;
-
+	public Powers_HelperAI script;
+	
 	private GameObject WBC;
 
 	private float iLastSpawn;
@@ -25,6 +26,11 @@ public class Play_SpawningWBC : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{
+		try{
+		script = GameObject.FindGameObjectWithTag("Helper").GetComponent<Powers_HelperAI>();
+		if(script!=null) iCurrentCountWBC = script.getAmountOfHelpers();
+		} catch {
+		}
 		if(iCurrentCountWBC<iMaxCountWBC&&Time.time>iLastSpawn+iSpawnTimespan)
 		{
 			VelVector2D = gameObject.rigidbody2D.velocity;

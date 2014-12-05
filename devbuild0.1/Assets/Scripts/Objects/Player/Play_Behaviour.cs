@@ -36,11 +36,11 @@ public class Play_Behaviour: MonoBehaviour {
 			if(selected) 
 			{ 
 				transform.localScale = new Vector3(0.3f,0.3f,0.3f);
-				gameObject.GetComponent<SpriteRenderer>().sortingOrder = 7;
+				// gameObject.GetComponent<SpriteRenderer>().sortingOrder = 7;
 				Camera.main.GetComponent<Camera_Follow>().Follow(gameObject);
 			} else {
 				transform.localScale = new Vector3(0.25f,0.25f,0.25f);
-				gameObject.GetComponent<SpriteRenderer>().sortingOrder = 5;
+				// gameObject.GetComponent<SpriteRenderer>().sortingOrder = 5;
 			}
 		}
 		
@@ -111,7 +111,6 @@ public class Play_Behaviour: MonoBehaviour {
 			partner.gameObject.GetComponent<Play_Behaviour>().antibodyType = antibodyType;
 			antibodySprite.GetComponent<SpriteRenderer>().sprite = collision.gameObject.GetComponent<SpriteRenderer>().sprite;
 			partner.gameObject.GetComponent<Play_Behaviour>().antibodySprite.GetComponent<SpriteRenderer>().sprite = collision.gameObject.GetComponent<SpriteRenderer>().sprite;
-			
 			Destroy (collision.gameObject);
 		}
 	}
