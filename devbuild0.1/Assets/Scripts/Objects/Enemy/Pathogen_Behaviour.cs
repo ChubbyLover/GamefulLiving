@@ -9,12 +9,7 @@ public class Pathogen_Behaviour : MonoBehaviour {
 	public static int amountOfPathogens  = 1;
 	private bool eaten = false;
 	public bool Medicine = false;
-<<<<<<< HEAD
-	public bool MythosisEnabled = true;
-	
-=======
 	public static bool stopSpreading = false;
->>>>>>> b0dcbc4b5e69f2eda455fdd0d82a5cb7dbe8a8a3
 	int dissolve=1;
 	Transform Phagozytose;
 
@@ -37,13 +32,10 @@ public class Pathogen_Behaviour : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{
-<<<<<<< HEAD
-		
-		if(MythosisEnabled &&timeUntilMitosis<=0 && !eaten && tag=="Pathogen")
-=======
+
 		print (amountOfPathogens);
 		if(timeUntilMitosis<=0 && !eaten && tag=="Pathogen")
->>>>>>> b0dcbc4b5e69f2eda455fdd0d82a5cb7dbe8a8a3
+
 		{
 			amountOfPathogens++;
 			GameObject clone = (GameObject) Instantiate(gameObject, transform.position, transform.rotation);
@@ -101,13 +93,5 @@ public class Pathogen_Behaviour : MonoBehaviour {
 	{
 		if(tag=="Marked" && !renderer.isVisible && Random.value < 0.1f) { Destroy(gameObject); }
 	}
-	
-	void OnDestroy()
-	{
-		// Will be called just prior to destruction of the gameobject to which this script is attached
-		amountOfPathogens--;
-		print (amountOfPathogens);
-		
-		if(amountOfPathogens<=0) Camera.main.GetComponent<Camera_Follow>().Sieg();
-	}
+
 }

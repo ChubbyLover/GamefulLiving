@@ -101,6 +101,31 @@ public class Powers_Items : MonoBehaviour {
 		
 		}
 	}
+	public void DamageBodilyFunctions(float fAmmount, string sArea)
+	{
+		if(sArea=="All")
+		{
+			functionsBody.fHealthDarm-= fAmmount;
+			functionsBody.fHealthHerz-= fAmmount;
+			functionsBody.fHealthLunge= fAmmount;
+		}
+		if(sArea=="Darm")
+		{
+			functionsBody.fHealthDarm-= fAmmount;
+		}
+		if(sArea=="Herz")
+		{
+			functionsBody.fHealthHerz-= fAmmount;
+		}
+		if(sArea=="Lunge")
+		{
+			functionsBody.fHealthLunge-= fAmmount;
+		}
+		else
+		{
+			
+		}
+	}
 	public void EnhanceWhiteHepers (float fAmmount)
 	{
 		GameObject[] Helpers = GameObject.FindGameObjectsWithTag("Helper");

@@ -22,6 +22,8 @@ public class Tutorial_CheckButtonsPressed : MonoBehaviour {
 	public bool Antigene= false;
 	public bool Pathogen = false;
 
+	public bool bWin=false;
+
 	bool timer = false;
 
 	float fTimerstart;
@@ -37,6 +39,12 @@ public class Tutorial_CheckButtonsPressed : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{
+		GameObject[] Pathogens = GameObject.FindGameObjectsWithTag("Pathogen") as GameObject[];
+		if(Pathogens.Length==0&&!bWin)
+		{
+			iStage=4;
+			bWin=true;
+		}
 		if(iStage ==1)
 		{
 			if(timer)
@@ -60,6 +68,7 @@ public class Tutorial_CheckButtonsPressed : MonoBehaviour {
 				if((Switch&&Shot) || Time.time > fTimerstart+fTimerlength )
 				{
 					Invoke("Show",3);
+					timer = false;
 				}
 				if(Input.GetKey(KeyCode.F))			Switch=true;
 				if(Input.GetMouseButtonDown(0))	Shot=true;
@@ -77,18 +86,19 @@ public class Tutorial_CheckButtonsPressed : MonoBehaviour {
 				if((Antigene&&Pathogen) || Time.time > fTimerstart+fTimerlength )
 				{
 					Invoke("NextPanel",3);
+					timer = false;
 				}
 			}			
 		}
-		if(iStage ==3)
+		if (iStage ==4)
 		{
-			if(timer)
+			if(bWin)
 			{
-				if(GameObject.FindGameObjectWithTag("Pathogen")== null )
-				{
-					Invoke("TutorialDone",3);
-				}
+				GameObject.Find("Canvas_Ingame_GUI_Tut").GetComponent<Canvas>().enabled=false;
+				GameObject.Find("Canvas_Comic_Sieg").GetComponent<Canvas>().enabled=true;
+				iStage=0;
 			}
+			Sieg();
 		}
 	}
 	public void StartTimer ()
@@ -132,8 +142,9 @@ public class Tutorial_CheckButtonsPressed : MonoBehaviour {
 		Time.timeScale=1;
 		Camera.main.GetComponent<Camera_Follow>().Follow(GameObject.Find("Play_Fress"));
 	}
-	public void TutorialDone()
+	public void Sieg ()
 	{
-		//dostuff
+		GameObject[] Pathogens = GameObject.FindGameObjectsWithTag("Pathogen") as GameObject[];
+		if(Pathogens.Length==0&&!bWin) bWin = true;
 	}
 }

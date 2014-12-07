@@ -7,13 +7,9 @@ public class Powers_HelperAI : MonoBehaviour
 	GameObject Target;
 	GameObject WBC;
 	public string sState;
-<<<<<<< HEAD
 
-
-
-=======
 	public static int amountOfHelpers = 0;
->>>>>>> b0dcbc4b5e69f2eda455fdd0d82a5cb7dbe8a8a3
+
 	public float fSpeed;
 	public float fSpeedRotation;
 	public float fSpeedMaximum;
@@ -43,9 +39,6 @@ public class Powers_HelperAI : MonoBehaviour
 
 	void OnBecameInvisible() 
 	{
-<<<<<<< HEAD
-		Suicide();
-=======
 		
 		if(WBC!=null && sState != "Consume")
 		{
@@ -54,7 +47,6 @@ public class Powers_HelperAI : MonoBehaviour
 			amountOfHelpers--;
 			Destroy(gameObject);
 		}
->>>>>>> b0dcbc4b5e69f2eda455fdd0d82a5cb7dbe8a8a3
 	}
 	void Idle()
 	{

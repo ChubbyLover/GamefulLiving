@@ -29,6 +29,8 @@ public class Slider_Timer : MonoBehaviour {
 				{
 					Camera.main.GetComponent<Powers_Items>().Kill(50/TargetSlider.maxValue);
 					if(TargetSlider.value==1)GameObject.FindGameObjectWithTag("GUI_Pill").GetComponent<Animator>().SetTrigger("Used");
+					Camera.main.GetComponent<Powers_Items>().DamageBodilyFunctions(15/TargetSlider.maxValue,"Herz");
+					Camera.main.GetComponent<Powers_Items>().DamageBodilyFunctions(15/TargetSlider.maxValue,"Darm");
 				}
 				if(gameObject.name=="Slider_Item2")
 				{
@@ -44,6 +46,7 @@ public class Slider_Timer : MonoBehaviour {
 				if(gameObject.name=="Slider_Item3")
 				{
 					Camera.main.GetComponent<Powers_Items>().ReduceMitosis(50/TargetSlider.maxValue);
+					Camera.main.GetComponent<Powers_Items>().DamageBodilyFunctions(20/TargetSlider.maxValue,"Herz");
 
 				}
 				if(gameObject.name=="Slider_Item4")

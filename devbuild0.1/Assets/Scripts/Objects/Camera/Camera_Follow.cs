@@ -10,7 +10,7 @@ public class Camera_Follow : MonoBehaviour {
 	bool bFrozen=false;
 	bool freeLook = false;
 	bool bStart=true;
-	public GameObject gewonnen;
+	public bool bCameralocked=true;
 	
 
 	void Start () 
@@ -33,21 +33,28 @@ public class Camera_Follow : MonoBehaviour {
 		}
 	}
 	void Update(){
+		GameObject[] Marked = GameObject.FindGameObjectsWithTag("Marked") as GameObject[];
+		GameObject[] UnMarked = GameObject.FindGameObjectsWithTag("Pathogen") as GameObject[];
+
+		if(Marked.Length==0&&UnMarked.Length==0)
+		{
+			FreezeUnfreeze();
+			bCameralocked=true;
+			GameObject.Find("Canvas_Ingame_GUI").GetComponent<Canvas>().enabled=false;
+			GameObject.Find("Canvas_LevelSieg").GetComponent<Canvas>().enabled=true;
+		}
 		if(freeLook)
 		{
 			Vector3 goal = new Vector3(target.position.x,target.position.y,-10f);
 			camera.orthographicSize = 10;
 			transform.position = transform.position + (goal - transform.position)*0.08f;
 		}
+
 	}
 	
 	public void Follow(GameObject targetToFollow)
 	{
 		target = targetToFollow.transform;
-	}
-	public void Sieg()
-	{
-		target = gewonnen.transform;
 	}
 	public void FreezeUnfreeze ()
 	{
@@ -80,13 +87,19 @@ public class Camera_Follow : MonoBehaviour {
 		return inside;
 		
 	}
-	
+	public void sbCameraLocked (bool b)
+	{
+		this.bCameralocked=b;
+	}
 	public void startFreeLook(Transform freeTarget)
 	{
-		freeLook = true;
-		Time.timeScale=0.1f;
-		storeTarget = target;
-		target=freeTarget;
+		if(!bCameralocked)
+		{
+			freeLook = true;
+			Time.timeScale=0.1f;
+			storeTarget = target;
+			target=freeTarget;
+		}
 	}
 	public void endFreeLook()
 	{
@@ -97,7 +110,6 @@ public class Camera_Follow : MonoBehaviour {
 			target = storeTarget;
 		}
 	}
-	
 	void BloodstreamIndicators()
 	{
 		

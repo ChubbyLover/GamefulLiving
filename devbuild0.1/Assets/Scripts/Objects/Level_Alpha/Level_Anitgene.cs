@@ -7,6 +7,8 @@ public class Level_Anitgene : MonoBehaviour {
 	public float Livetime; 
 	//public int iAmmountOfAntigenes=6;
 	public int antigeneType;
+
+	public GameObject Spawner;
 	// Use this for initialization
 	void Start () 
 	{
@@ -31,5 +33,9 @@ public class Level_Anitgene : MonoBehaviour {
 	void Update () 
 	{
 		
+	}
+	void OnDestroy()
+	{
+		Spawner.GetComponent<Level_AnitgeneSpawner>().bNoantigene=true;
 	}
 }
