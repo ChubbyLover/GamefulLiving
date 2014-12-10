@@ -36,6 +36,10 @@ public class Level_Anitgene : MonoBehaviour {
 	}
 	void OnDestroy()
 	{
-		Spawner.GetComponent<Level_AnitgeneSpawner>().bNoantigene=true;
+		if(Spawner!=null)Spawner.GetComponent<Level_AnitgeneSpawner>().bNoantigene=true;
+	}
+	void OnBecameVisible()
+	{
+		if(!Camera.main.GetComponent<Tutorial_CheckButtonsPressed>().Antigene)Camera.main.GetComponent<Tutorial_CheckButtonsPressed>().Antigene=true;
 	}
 }

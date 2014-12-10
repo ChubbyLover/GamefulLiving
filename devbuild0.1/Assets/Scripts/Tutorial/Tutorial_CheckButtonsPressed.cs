@@ -5,36 +5,34 @@ using System.Collections;
 public class Tutorial_CheckButtonsPressed : MonoBehaviour {
 
 
-	public GameObject TPStage1;
-	public GameObject TPStage2;
-	public GameObject TPStage3;
+	GameObject[] Popups;
 
 	public int iStage = 1;
-
-	public bool Up = false;
-	public bool Down = false;
-	public bool Left = false;
-	public bool Right = false;
-
-	public bool Switch = false;
-	public bool Shot=false;
-
-	public bool Antigene= false;
-	public bool Pathogen = false;
-
 	public bool bWin=false;
+
+	public bool Panelout=false;
+
+	public bool MouseMoved=false;
+	public bool Pathogen=false;
+	public bool Antigene=false;
+	public bool Fress = false;
+	public bool Eat = false;
+	public bool Wrong = false;
+	public bool Change = false;
+	public bool Markier = false;
 
 	bool timer = false;
 
 	float fTimerstart;
 	public float fTimerlength = 45;
 
-
+	Vector3 Mouseposition;
 
 	// Use this for initialization
 	void Start () 
 	{
-
+		Popups = GameObject.FindGameObjectsWithTag("GUI_Educational");
+		Mouseposition=Input.mousePosition;
 	}
 	// Update is called once per frame
 	void Update () 
@@ -45,60 +43,49 @@ public class Tutorial_CheckButtonsPressed : MonoBehaviour {
 			iStage=4;
 			bWin=true;
 		}
-		if(iStage ==1)
+		if(!Panelout)
 		{
-			if(timer)
+			if(Mouseposition!=Input.mousePosition&&!MouseMoved&&iStage==1)
 			{
-				if((Up&&Right&&Down&&Left) || Time.time > fTimerstart+fTimerlength )
+				Panelout=true;
+				Invoke("NextPanel",3);
+			}
+			if(Antigene&&iStage==2)
+			{
+				Panelout=true;
+				Invoke("NextPanel",3);
+			}
+			if(Fress&&iStage==3)
+			{
+				Panelout=true;
+				Invoke("NextPanel",3);
+			}
+			if(Eat&&iStage==4)
+			{
+				Panelout=true;
+				Invoke("NextPanel",3);
+			}
+			if(Change&&iStage==5)
+			{
+				Panelout=true;
+				Invoke("NextPanel",3);
+			}
+			if(iStage==6&&Input.GetKeyDown(KeyCode.F)&&!Markier)
+			{
+				Panelout=true;
+				Invoke("NextPanel",3);
+			}
+			if (iStage ==4)
+			{
+				if(bWin)
 				{
-					Invoke("NextPanel",3);
-					timer = false;
+					GameObject.Find("Canvas_Ingame_GUI_Tut").GetComponent<Canvas>().enabled=false;
+					GameObject.Find("Canvas_Comic_Sieg").GetComponent<Canvas>().enabled=true;
+					GameObject.Find("Navigational_Helper").GetComponent<Button_LevelAccessControl>().Levelfinished(Application.loadedLevel+1);
+					iStage=0;
 				}
-				if(Input.GetKey(KeyCode.W)||Input.GetKey(KeyCode.UpArrow)) 		Up=true;
-				if(Input.GetKey(KeyCode.S)||Input.GetKey(KeyCode.DownArrow))	Down=true;
-				if(Input.GetKey(KeyCode.A)||Input.GetKey(KeyCode.LeftArrow)) 	Left=true;
-				if(Input.GetKey(KeyCode.D)||Input.GetKey(KeyCode.RightArrow))	Right=true;
+				Sieg();
 			}
-
-		}
-		if(iStage ==2)
-		{
-			if(timer)
-			{
-				if((Switch&&Shot) || Time.time > fTimerstart+fTimerlength )
-				{
-					Invoke("Show",3);
-					timer = false;
-				}
-				if(Input.GetKey(KeyCode.F))			Switch=true;
-				if(Input.GetMouseButtonDown(0))	Shot=true;
-			}
-			else
-			{
-				if(Input.GetMouseButtonDown(0)) NextPanel();
-			}
-			
-		}
-		if(iStage ==3)
-		{
-			if(timer)
-			{
-				if((Antigene&&Pathogen) || Time.time > fTimerstart+fTimerlength )
-				{
-					Invoke("NextPanel",3);
-					timer = false;
-				}
-			}			
-		}
-		if (iStage ==4)
-		{
-			if(bWin)
-			{
-				GameObject.Find("Canvas_Ingame_GUI_Tut").GetComponent<Canvas>().enabled=false;
-				GameObject.Find("Canvas_Comic_Sieg").GetComponent<Canvas>().enabled=true;
-				iStage=0;
-			}
-			Sieg();
 		}
 	}
 	public void StartTimer ()
@@ -112,24 +99,45 @@ public class Tutorial_CheckButtonsPressed : MonoBehaviour {
 	}
 	public void NextPanel ()
 	{
-		GameObject TargetPanel=TPStage1;
-		if(iStage==1) TargetPanel = TPStage1;
-		if(iStage==2) TargetPanel = TPStage2;
-		if(iStage==3) TargetPanel = TPStage3;
-		TargetPanel.SetActive(true);
-		GameObject[] Buttons = GameObject.FindGameObjectsWithTag("GUI_Menu") as GameObject[];
-		
-		foreach(GameObject buton in Buttons)
+		foreach (GameObject Popup in Popups)
 		{
-			buton.GetComponent<Button>().interactable=false;
+			if(Popup.name=="Panel_Steuerung"&&iStage==1)
+			{
+				Popup.GetComponent<Animator>().SetTrigger("Out");
+				MouseMoved=true;
+			}
+			if(Popup.name=="Panel_Antigenspawner"&&iStage==2)
+			{
+				Popup.GetComponent<Animator>().SetTrigger("Out");
+				Fress=true;
+			}
+			if(Popup.name=="Panel_Fresszelle"&&iStage==3)
+			{
+				Popup.GetComponent<Animator>().SetTrigger("Out");
+			}
+			if(Popup.name=="Panel_WrongAntigene"&&iStage==4&&Wrong)
+			{
+					Popup.GetComponent<Animator>().SetTrigger("Out");
+					Eat=false;
+					iStage--;
+			}
+			if(Popup.name=="Panel_RightAntigene"&&iStage==4&&!Wrong)
+			{
+				Popup.GetComponent<Animator>().SetTrigger("Out");
+				Change=true;
+			}
+			if(Popup.name=="Panel_Wechsel"&&iStage==5)
+			{
+				Popup.GetComponent<Animator>().SetTrigger("Out");
+			}
+			if(Popup.name=="Panel_Markierzelle"&&iStage==6)
+			{
+				Popup.GetComponent<Animator>().SetTrigger("Out");
+				Markier=true;
+			}
 		}
-		Camera.main.GetComponent<Camera_Follow>().FreezeUnfreeze();
+		iStage++;
 		CancelInvoke();
-	}
-	public void Show ()
-	{
-		Invoke("Freeze",1);
-		Camera.main.GetComponent<Camera_Follow>().Follow(GameObject.FindGameObjectWithTag("Pathogen"));
 	}
 	void Freeze ()
 	{
@@ -146,5 +154,14 @@ public class Tutorial_CheckButtonsPressed : MonoBehaviour {
 	{
 		GameObject[] Pathogens = GameObject.FindGameObjectsWithTag("Pathogen") as GameObject[];
 		if(Pathogens.Length==0&&!bWin) bWin = true;
+	}
+	void lockButtons ()
+	{
+		GameObject[] Items = GameObject.FindGameObjectsWithTag("GUI_Items");
+		foreach(GameObject Item in Items)
+		{
+			Item.GetComponent<Button>().interactable=false;
+		}
+		Camera.main.GetComponent<Powers_Items>().setItemsEnabled(false);
 	}
 }

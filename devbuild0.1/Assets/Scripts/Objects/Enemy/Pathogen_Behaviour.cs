@@ -33,7 +33,6 @@ public class Pathogen_Behaviour : MonoBehaviour {
 	void Update () 
 	{
 
-		print (amountOfPathogens);
 		if(timeUntilMitosis<=0 && !eaten && tag=="Pathogen")
 
 		{

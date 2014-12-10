@@ -20,7 +20,11 @@ public class Level_Navigator : MonoBehaviour {
 			{
 				GameObject.Find("Canvas_LevelUebersicht").GetComponent<Canvas>().enabled=true;
 				GameObject.Find("Canvas_Hauptmenu").GetComponent<Canvas>().enabled=false;
-				Destroy(GameObject.Find("Navigational_Helper"));
+				GameObject[] Navigators = GameObject.FindGameObjectsWithTag("Navigation");
+				foreach(GameObject Navigator in Navigators )
+				{
+					if(Navigator.GetComponent<Level_Navigator>().bChanged!=true) Destroy(Navigator);
+				}
 			}
 		}
 	}

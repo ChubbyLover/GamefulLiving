@@ -8,8 +8,11 @@ public class Icon_DisplayLock : MonoBehaviour {
 
 	void Start () 
 	{
+		CheckInteractable();
+	}
+	public void CheckInteractable ()
+	{
 		ParentImageBtn = gameObject.GetComponentInParent<Button>();
-
 		if(!ParentImageBtn.IsInteractable())
 		{
 			GetComponent<Image>().enabled=true;

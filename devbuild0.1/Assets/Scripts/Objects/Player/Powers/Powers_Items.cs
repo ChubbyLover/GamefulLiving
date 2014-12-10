@@ -10,6 +10,8 @@ public class Powers_Items : MonoBehaviour {
 	public Slider Item2;
 	public Slider Item3;
 	public Slider Item4;
+
+	bool ItemsEnabled=false;
 	
 	// Use this for initialization
 	void Start () 
@@ -22,23 +24,26 @@ public class Powers_Items : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{
-		if(Input.GetKeyDown(KeyCode.Alpha1))
+		if(ItemsEnabled)
 		{
-			Item1.GetComponent<Slider_Timer>().Starttimer(60);
-		}
-		if(Input.GetKeyDown(KeyCode.Alpha2))
-		{
-			Item2.GetComponent<Slider_Timer>().Starttimer(60);
+			if(Input.GetKeyDown(KeyCode.Alpha1))
+			{
+				Item1.GetComponent<Slider_Timer>().Starttimer(60);
+			}
+			if(Input.GetKeyDown(KeyCode.Alpha2))
+			{
+				Item2.GetComponent<Slider_Timer>().Starttimer(60);
 
-		}
-		if(Input.GetKeyDown(KeyCode.Alpha3))
-		{
-			Item3.GetComponent<Slider_Timer>().Starttimer(60);
+			}
+			if(Input.GetKeyDown(KeyCode.Alpha3))
+			{
+				Item3.GetComponent<Slider_Timer>().Starttimer(60);
 
-		}
-		if(Input.GetKeyDown(KeyCode.Alpha4))
-		{
-			Item4.GetComponent<Slider_Timer>().Starttimer(60);
+			}
+			if(Input.GetKeyDown(KeyCode.Alpha4))
+			{
+				Item4.GetComponent<Slider_Timer>().Starttimer(60);
+			}
 		}
 	}
 	public void ReduceMitosis(float fPercent)
@@ -134,5 +139,9 @@ public class Powers_Items : MonoBehaviour {
 		{
 			Helper.GetComponent<Powers_HelperAI>().fSpeedMaximum+=fAmmount;
 		}
+	}
+	public void setItemsEnabled(bool ItemsEnabled)
+	{
+		this.ItemsEnabled=ItemsEnabled;
 	}
 }

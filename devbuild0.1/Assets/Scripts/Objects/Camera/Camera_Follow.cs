@@ -11,20 +11,16 @@ public class Camera_Follow : MonoBehaviour {
 	bool freeLook = false;
 	bool bStart=true;
 	public bool bCameralocked=true;
-	
+	public Texture2D CursorIMGNormal;
 
 	void Start () 
 	{
+		Cursor.SetCursor(CursorIMGNormal,Vector2.zero,CursorMode.Auto);
 		InvokeRepeating("BloodstreamIndicators", 0, 10);
 	}
 	
 	// Update is called once per frame
 	void FixedUpdate () {
-		if(bStart)
-		{
-			FreezeUnfreeze();
-			bStart=false;
-		}
 		if(!freeLook)
 		{
 			Vector3 goal = new Vector3(target.position.x,target.position.y,-10f);
@@ -40,7 +36,7 @@ public class Camera_Follow : MonoBehaviour {
 		{
 			FreezeUnfreeze();
 			bCameralocked=true;
-			GameObject.Find("Canvas_Ingame_GUI").GetComponent<Canvas>().enabled=false;
+			GameObject.Find("Canvas_Ingame_GUI_Tut").GetComponent<Canvas>().enabled=false;
 			GameObject.Find("Canvas_LevelSieg").GetComponent<Canvas>().enabled=true;
 		}
 		if(freeLook)

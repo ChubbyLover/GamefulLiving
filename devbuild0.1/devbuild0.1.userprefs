@@ -1,16 +1,14 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Objects\Level_Alpha\Level_Anitgene.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Objects\Camera\Camera_Follow.cs">
     <Files>
-      <File FileName="Assets\Scripts\Objects\Camera\Camera_Follow.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Tutorial\Enemy_Tutorial.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Objects\Enemy\Pathogen_Behaviour.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Tutorial\Tutorial_CheckButtonsPressed.cs" Line="1" Column="1" />
-      <File FileName="Assets\Level_Navigator.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Objects\Player\Powers\Powers_Items.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\GUI\Slider_Timer.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Objects\Level_Alpha\Level_AnitgeneSpawner.cs" Line="35" Column="62" />
-      <File FileName="Assets\Scripts\Objects\Level_Alpha\Level_Anitgene.cs" Line="39" Column="1" />
+      <File FileName="Assets\Scripts\Objects\Level_Alpha\Level_Anitgene.cs" Line="43" Column="1" />
+      <File FileName="Assets\Scripts\Tutorial\Tutorial_CheckButtonsPressed.cs" Line="133" Column="38" />
+      <File FileName="Assets\GUI_RetractPanel.cs" Line="16" Column="6" />
+      <File FileName="Assets\Tutorial_Fresszelle.cs" Line="19" Column="119" />
+      <File FileName="Assets\Scripts\Objects\Player\Play_Behaviour.cs" Line="9" Column="2" />
+      <File FileName="Assets\Change_Cursor.cs" Line="7" Column="34" />
+      <File FileName="Assets\Scripts\Objects\Camera\Camera_Follow.cs" Line="18" Column="35" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
