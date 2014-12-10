@@ -5,9 +5,13 @@ public class lookAround : MonoBehaviour {
 	
 	public Camera minimapCamera;
 	public Transform mover;
+	public GameObject magnifier;
+	private SpriteRenderer magnifierSprite;
 	// Use this for initialization
 	void Start () {
-	
+		magnifierSprite = magnifier.GetComponent<SpriteRenderer>();
+		magnifierSprite.enabled = false;
+		
 	}
 	
 	// Update is called once per frame
@@ -24,5 +28,14 @@ public class lookAround : MonoBehaviour {
 			Camera.main.GetComponent<Camera_Follow>().endFreeLook();
 		}
 		
+		Vector2 mouseNow = minimapCamera.ScreenToWorldPoint(Input.mousePosition);
+		if(mouseNow.x>-20&&mouseNow.x<90&&mouseNow.y>0&&mouseNow.y<290) 
+		{
+			magnifierSprite.enabled = true;
+			magnifier.transform.position = mouseNow;
+		} else {
+			magnifierSprite.enabled = false;
+		}
+			
 	}
 }

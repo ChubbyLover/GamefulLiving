@@ -12,10 +12,15 @@ public class Play_Behaviour: MonoBehaviour {
 	public GameObject antibodySprite;
 	public Transform partner;
 	public LayerMask SpawningMask;
+	private int movement = 1;
 	
 	private Animator[] anims;
 	private Transform target;
-
+	
+	void Awake() {
+		// Application.targetFrameRate = 60;
+	}
+	
 	void Start () 
 	{
 		
@@ -27,8 +32,12 @@ public class Play_Behaviour: MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	
-		
+		// Change control setting
+		if (Input.GetKeyDown(KeyCode.L))
+		{
+			movement++;
+			if(movement==5) movement = 1;
+		}
 		//CHANGE ZYTHI SELECTION
 		if (Input.GetKeyDown(KeyCode.F))
 		{
@@ -39,7 +48,7 @@ public class Play_Behaviour: MonoBehaviour {
 				// gameObject.GetComponent<SpriteRenderer>().sortingOrder = 7;
 				Camera.main.GetComponent<Camera_Follow>().Follow(gameObject);
 			} else {
-				transform.localScale = new Vector3(0.25f,0.25f,0.25f);
+				transform.localScale = new Vector3(0.2f,0.2f,0.2f);
 				// gameObject.GetComponent<SpriteRenderer>().sortingOrder = 5;
 			}
 		}
@@ -52,23 +61,51 @@ public class Play_Behaviour: MonoBehaviour {
 				float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
 				transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
 				
-				// MOVEMENT
-				if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow)&&rigidbody2D.velocity.magnitude<fMaxSpeed)
+				// WASD
+				if(movement==1)
 				{
-					rigidbody2D.AddForce(Vector2.up*fCompensator);	
+					if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow)&&rigidbody2D.velocity.magnitude<fMaxSpeed)
+					{
+						rigidbody2D.AddForce(Vector2.up*fCompensator*Time.deltaTime);	
+					}
+					if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow)&&rigidbody2D.velocity.magnitude<fMaxSpeed)
+					{
+						rigidbody2D.AddForce(Vector2.up*fCompensator*Time.deltaTime*-1.0f);
+					}
+					if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow)&&rigidbody2D.velocity.magnitude<fMaxSpeed)
+					{
+						rigidbody2D.AddForce(Vector2.right*fCompensator*Time.deltaTime*-1.0f);	
+					}
+					if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow)&&rigidbody2D.velocity.magnitude<fMaxSpeed)
+					{
+						rigidbody2D.AddForce(Vector2.right*fCompensator*Time.deltaTime);	
+					}
 				}
-				if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow)&&rigidbody2D.velocity.magnitude<fMaxSpeed)
+				// AUTO SWIM
+				else if(movement==2)
 				{
-					rigidbody2D.AddForce(Vector2.up*fCompensator*-1.0f);
+					if(dir.magnitude>1) rigidbody2D.AddForce(dir.normalized*(Mathf.Clamp(dir.magnitude,1,4)-1)*fCompensator*0.4f*Time.deltaTime);	
 				}
-				if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow)&&rigidbody2D.velocity.magnitude<fMaxSpeed)
+				// SWIM on SPACE
+				else if(movement==3)
 				{
-					rigidbody2D.AddForce(Vector2.right*fCompensator*-1.0f);	
+					if(dir.magnitude>1 && Input.GetKey(KeyCode.Space)) rigidbody2D.AddForce(dir.normalized*fCompensator*Time.deltaTime);	
 				}
-				if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow)&&rigidbody2D.velocity.magnitude<fMaxSpeed)
+				else if(movement==4)
 				{
-					rigidbody2D.AddForce(Vector2.right*fCompensator);	
+					if (dir.magnitude>1.0f) 
+					{
+						if (Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow)&&rigidbody2D.velocity.magnitude<fMaxSpeed) 
+							rigidbody2D.AddForce(transform.right * 600 * Time.deltaTime);	
+						if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow)&&rigidbody2D.velocity.magnitude<fMaxSpeed)
+							rigidbody2D.AddForce(transform.right * -600 * Time.deltaTime);	
+						if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow)&&rigidbody2D.velocity.magnitude<fMaxSpeed)
+							rigidbody2D.AddForce(transform.up * 600 * Time.deltaTime);	
+						if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow)&&rigidbody2D.velocity.magnitude<fMaxSpeed)
+							rigidbody2D.AddForce(transform.up * -600 * Time.deltaTime);	
+					}
 				}
+				
 			}
 			
 		}
@@ -114,6 +151,12 @@ public class Play_Behaviour: MonoBehaviour {
 			Destroy (collision.gameObject);
 		}
 	}
+	
+	
+	void OnGUI() {
+		GUI.Label(new Rect(10, 10, 100, 20), movement.ToString());
+	}
+	
 	
 	void OnTriggerEnter2D(Collider2D collision)
 	{
