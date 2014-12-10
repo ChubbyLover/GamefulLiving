@@ -95,7 +95,7 @@
      <Compile Include="Assets\Scripts\Tutorial\Tutorial_Anitgene.cs" />
      <Compile Include="Assets\Scripts\Tutorial\Tutorial_CheckButtonsPressed.cs" />
      <Compile Include="Assets\lookAround.cs" />
-     <None Include="Assets\Resources\Sprites\Objects\Level_Prototype\SVG\SVG_Test.txt" />
+     <None Include="Assets\Resources\sprites\Objects\Level_Prototype\SVG\SVG_Test.txt" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.0/UnityEngine.UI.dll</HintPath>
  </Reference>
