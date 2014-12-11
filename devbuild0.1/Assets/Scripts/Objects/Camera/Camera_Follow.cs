@@ -15,7 +15,7 @@ public class Camera_Follow : MonoBehaviour {
 
 	void Start () 
 	{
-		InvokeRepeating("BloodstreamIndicators", 0, 10);
+		// InvokeRepeating("BloodstreamIndicators", 0, 10);
 	}
 	
 	// Update is called once per frame
