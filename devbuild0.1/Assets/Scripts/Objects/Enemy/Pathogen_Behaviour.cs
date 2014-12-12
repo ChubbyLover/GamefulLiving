@@ -9,9 +9,13 @@ public class Pathogen_Behaviour : MonoBehaviour {
 	public static int amountOfPathogens  = 1;
 	private bool eaten = false;
 	public bool Medicine = false;
+	public bool bEasymode=false;
 	public static bool stopSpreading = false;
 	int dissolve=1;
 	Transform Phagozytose;
+
+	public int MytosisMin;
+	public int MytosisMax;
 
 	//Body Influencing variable
 
@@ -23,8 +27,8 @@ public class Pathogen_Behaviour : MonoBehaviour {
 	// Use this for initialization
 	void Start () 
 	{
-		if(amountOfPathogens > 35) stopSpreading = true;
-		timeUntilMitosis = Random.Range(150,amountOfPathogens*300);
+		if(bEasymode&&amountOfPathogens > 35) stopSpreading = true;
+		timeUntilMitosis = Random.Range(MytosisMin,amountOfPathogens*MytosisMax);
 		rigidbody2D.AddForce(new Vector2(Random.value*50-25,Random.value*50-25));
 		InvokeRepeating("Clean", 10.0f, 1.0f);
 	}
@@ -32,11 +36,7 @@ public class Pathogen_Behaviour : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{
-
-<<<<<<< HEAD
-=======
 		
->>>>>>> 1a5601a32c2490c63aee5337d26abec707c7dbf4
 		if(timeUntilMitosis<=0 && !eaten && tag=="Pathogen")
 
 		{

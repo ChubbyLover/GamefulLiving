@@ -5,12 +5,12 @@ public class Camera_GUI : MonoBehaviour {
 
 
 
-	// Use this for initialization
+	public Texture2D CursorIMGNormal;
+	
 	void Start () 
 	{
-	
+		Cursor.SetCursor(CursorIMGNormal,Vector2.zero,CursorMode.Auto); 
 	}
-	
 	// Update is called once per frame
 	void Update () {
 	

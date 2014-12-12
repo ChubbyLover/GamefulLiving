@@ -11,6 +11,6 @@ public class Tutorial_Anitgene : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{
-		if(GetComponent<SpriteRenderer>().sprite!=null) Camera.main.GetComponent<Tutorial_CheckButtonsPressed>().Antigene=true;
+		if(Application.loadedLevelName=="Level_Tutorial"&&GetComponent<SpriteRenderer>().sprite!=null) Camera.main.GetComponent<Tutorial_CheckButtonsPressed>().Antigene=true;
 	}
 }

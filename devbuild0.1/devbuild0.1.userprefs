@@ -1,32 +1,25 @@
 ﻿<Properties>
-<<<<<<< HEAD
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Objects\Camera\Camera_Follow.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Objects\Level_Alpha\Body_Functions.cs">
     <Files>
-      <File FileName="Assets\Scripts\Objects\Level_Alpha\Level_Anitgene.cs" Line="43" Column="1" />
-      <File FileName="Assets\Scripts\Tutorial\Tutorial_CheckButtonsPressed.cs" Line="133" Column="38" />
-      <File FileName="Assets\GUI_RetractPanel.cs" Line="16" Column="6" />
-      <File FileName="Assets\Tutorial_Fresszelle.cs" Line="19" Column="119" />
-      <File FileName="Assets\Scripts\Objects\Player\Play_Behaviour.cs" Line="9" Column="2" />
-      <File FileName="Assets\Change_Cursor.cs" Line="7" Column="34" />
-      <File FileName="Assets\Scripts\Objects\Camera\Camera_Follow.cs" Line="18" Column="35" />
-=======
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Objects\Enemy\Pathogen_Behaviour.cs">
-    <Files>
-      <File FileName="Assets\Scripts\GUI\Slider_Timer.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Objects\Level_Alpha\Level_AnitgeneSpawner.cs" Line="21" Column="45" />
-      <File FileName="Assets\Scripts\Objects\Level_Alpha\Level_Anitgene.cs" Line="39" Column="1" />
-      <File FileName="Assets\lookAround.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Objects\Player\Play_Behaviour.cs" Line="56" Column="15" />
-      <File FileName="Assets\Scripts\Objects\Enemy\Pathogen_Behaviour.cs" Line="28" Column="76" />
->>>>>>> 1a5601a32c2490c63aee5337d26abec707c7dbf4
+      <File FileName="Assets\Scripts\Objects\Level_Alpha\Body_Functions.cs" Line="60" Column="1" />
+      <File FileName="Assets\Scripts\GUI\Slider_Coloradjustment.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Tutorial\Tutorial_CheckButtonsPressed.cs" Line="111" Column="1" />
+      <File FileName="Assets\GUI_RetractPanel.cs" Line="1" Column="1" />
+      <File FileName="Assets\Button_LevelAccessControl.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Objects\Level_Alpha\Level_AnitgeneSpawner.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Objects\Enemy\Pathogen_Behaviour.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\GUI\Buttons\Button_GraphicSwitcher.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\GUI\Buttons\Btn_Pressed.cs" Line="1" Column="1" />
+      <File FileName="Assets\Change_Cursor.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Objects\Level_Alpha\Body_Functions.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\GUI\Slider_Percent.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
-      <Breakpoint file="C:\Users\Agindacake\Desktop\Daten\FH St.Poelten\WS2014\Projekt\.git\devbuild0.1\Assets\Scripts\Tutorial\Enemy_Tutorial.cs" line="9" />
       <Breakpoint file="C:\Users\Agindacake\Desktop\Daten\FH St.Poelten\WS2014\Projekt\.git\devbuild0.1\Assets\Level_Navigator.cs" line="21" />
+      <Breakpoint file="C:\Users\Agindacake\Desktop\Daten\FH St.Poelten\WS2014\Projekt\.git\devbuild0.1\Assets\Scripts\Objects\Level_Alpha\Body_Functions.cs" line="34" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />

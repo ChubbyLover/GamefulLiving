@@ -16,34 +16,40 @@ public class Level_Navigator : MonoBehaviour {
 	{
 		if(bChanged)
 		{
-			if(sAdditionalInfo=="LevelUebersicht"&&Application.loadedLevelName=="GUI_Alpha")
+			if(sAdditionalInfo=="LevelUebersicht"&&Application.loadedLevel==0)
 			{
-				GameObject.Find("Canvas_LevelUebersicht").GetComponent<Canvas>().enabled=true;
 				GameObject.Find("Canvas_Hauptmenu").GetComponent<Canvas>().enabled=false;
-				GameObject[] Navigators = GameObject.FindGameObjectsWithTag("Navigation");
-				foreach(GameObject Navigator in Navigators )
-				{
-					if(Navigator.GetComponent<Level_Navigator>().bChanged!=true) Destroy(Navigator);
-				}
+				GameObject.Find("Canvas_LevelUebersicht").GetComponent<Canvas>().enabled=true;
+				sAdditionalInfo="";
+			}
+			GameObject[] Navigators = GameObject.FindGameObjectsWithTag("Navigation");
+			foreach(GameObject Navigator in Navigators )
+			{
+				if(Navigator.GetComponent<Level_Navigator>().bChanged!=true) Destroy(Navigator);
 			}
 		}
 	}
-	public void ChangeLevel(bool Next)
+	public void LoadNextLevel()
 	{
 		Application.LoadLevel(Application.loadedLevel+1);
 	}
-	public void ChangeLevel()
+	public void ReloadLevel()
 	{
 		Application.LoadLevel(Application.loadedLevel);
 	}
-	public void ChangeLevel(int i)
+	public void LoadMenuLevel()
 	{
-		Application.LoadLevel(i);
+		Application.LoadLevel(0);
 	}
-	public void ChangeLevel(string sAdditionalInfo)
+	public void GotoLevelMenu()
 	{
-		Application.LoadLevel("GUI_Alpha");
+		string sAdditionalInfo="LevelUebersicht";
+		Application.LoadLevel(0);
 		this.sAdditionalInfo=sAdditionalInfo;
 		bChanged = true;
+	}
+	public void setbChanged(bool bChanged)
+	{
+		this.bChanged=bChanged;
 	}
 }

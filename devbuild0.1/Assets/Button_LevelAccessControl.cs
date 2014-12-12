@@ -5,7 +5,7 @@ using System.Collections;
 public class Button_LevelAccessControl : MonoBehaviour {
 
 	public int iLevelsUnlocked=0;
-	bool bUpdated=false;
+	public bool bUpdated=false;
 	// Use this for initialization
 	void Start () 
 	{
