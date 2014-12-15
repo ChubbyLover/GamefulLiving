@@ -28,14 +28,14 @@ public class Tutorial_CheckButtonsPressed : MonoBehaviour
 	public bool[] Item = new bool[4];
 
 	public int iLevel=0;
-
-	bool timer = false;
+	
 	public int iTimeuntilPopup;
 
 	float fTimerstart;
 	public float fTimerlength = 45;
 
 	Vector3 Mouseposition;
+	AudioSource Asrc;
 
 	// Use this for initialization
 	void Start () 
@@ -45,6 +45,9 @@ public class Tutorial_CheckButtonsPressed : MonoBehaviour
 
 		if(Application.loadedLevelName=="Level_Tutorial")  iLevel=0;
 		if(Application.loadedLevelName=="Level_Scharlach") iLevel=1;
+
+		Asrc = GameObject.FindGameObjectWithTag("Audio_Sprecher").GetComponent<AudioSource>();
+
 	}
 	// Update is called once per frame
 	void Update () 
@@ -70,7 +73,7 @@ public class Tutorial_CheckButtonsPressed : MonoBehaviour
 					Panelout=true;
 					Invoke("NextPanel",iTimeuntilPopup);
 				}
-				if(Fress&&iStage==iTimeuntilPopup)
+				if(Fress&&iStage==3)
 				{
 					Panelout=true;
 					Invoke("NextPanel",iTimeuntilPopup);
@@ -152,11 +155,7 @@ public class Tutorial_CheckButtonsPressed : MonoBehaviour
 				Sieg();
 			}
 	}
-	public void StartTimer ()
-	{
-		timer=true;
-		fTimerstart= Time.time;
-	}
+
 	public void setStage(int iStage)
 	{
 		this.iStage=iStage;
@@ -170,41 +169,57 @@ public class Tutorial_CheckButtonsPressed : MonoBehaviour
 				if(Popup.name=="Panel_Steuerung"&&iStage==1)
 				{
 					Popup.GetComponent<Animator>().SetTrigger("Out");
+					Asrc.clip = Resources.Load("Sounds/Sprecher/Ingame/Steuerung/Steuerung1") as AudioClip;
+					Asrc.Play();
 					MouseMoved=true;
 				}
 				if(Popup.name=="Panel_Antigenspawner"&&iStage==2)
 				{
 					Popup.GetComponent<Animator>().SetTrigger("Out");
+					Asrc.clip = Resources.Load("Sounds/Sprecher/Ingame/Antigene/Antigene") as AudioClip;
+					Asrc.Play();
 					Fress=true;
 				}
 				if(Popup.name=="Panel_Fresszelle"&&iStage==3)
 				{
 					Popup.GetComponent<Animator>().SetTrigger("Out");
+					Asrc.clip = Resources.Load("Sounds/Sprecher/Ingame/Fresszelle/Fresszelle") as AudioClip;
+					Asrc.Play();
 				}
 				if(Popup.name=="Panel_WrongAntigene"&&iStage==4&&Wrong)
 				{
-						Popup.GetComponent<Animator>().SetTrigger("Out");
-						Eat=false;
-						iStage--;
+					Popup.GetComponent<Animator>().SetTrigger("Out");
+					Asrc.clip = Resources.Load("Sounds/Sprecher/Ingame/Wrong/Wrong") as AudioClip;
+					Asrc.Play();
+					Eat=false;
+					iStage--;
 				}
 				if(Popup.name=="Panel_RightAntigene"&&iStage==4&&!Wrong)
 				{
 					Popup.GetComponent<Animator>().SetTrigger("Out");
+					Asrc.clip = Resources.Load("Sounds/Sprecher/Ingame/Right/Right") as AudioClip;
+					Asrc.Play();
 					Change=true;
 				}
 				if(Popup.name=="Panel_Wechsel"&&iStage==5)
 				{
 					Popup.GetComponent<Animator>().SetTrigger("Out");
+					Asrc.clip = Resources.Load("Sounds/Sprecher/Ingame/Wechsel/Wechsel") as AudioClip;
+					Asrc.Play();
 					Markier=true;
 				}
 				if(Popup.name=="Panel_Markierzelle"&&iStage==6)
 				{
 					Popup.GetComponent<Animator>().SetTrigger("Out");
+					Asrc.clip = Resources.Load("Sounds/Sprecher/Ingame/Markiererzelle/Markiererzelle") as AudioClip;
+					Asrc.Play();
 					Neutrophile=true;
 				}
 				if(Popup.name=="Panel_Neutrophile"&&iStage==7)
 				{
 					Popup.GetComponent<Animator>().SetTrigger("Out");
+					Asrc.clip = Resources.Load("Sounds/Sprecher/Ingame/Neutrophile/Neutrophile") as AudioClip;
+					Asrc.Play();
 				}
 			}
 			if(iLevel==1)
@@ -212,53 +227,56 @@ public class Tutorial_CheckButtonsPressed : MonoBehaviour
 				if(Popup.name=="Panel_Bodymap"&&iStage==1)
 				{
 					Popup.GetComponent<Animator>().SetTrigger("Out");
+					Asrc.clip = Resources.Load("Sounds/Sprecher/Ingame/Map/Map") as AudioClip;
+					Asrc.Play();
 					Bodymap=true;
 					Healthbar=true;
 				}
 				if(Popup.name=="Panel_Healthbars"&&iStage==2)
 				{
 					Popup.GetComponent<Animator>().SetTrigger("Out");
+					Asrc.clip = Resources.Load("Sounds/Sprecher/Ingame/Healthbar/Healthbar") as AudioClip;
+					Asrc.Play();
 					Items = true;
 				}
 				if(Popup.name=="Panel_Items"&&iStage==3)
 				{
 					Popup.GetComponent<Animator>().SetTrigger("Out");
+					Asrc.clip = Resources.Load("Sounds/Sprecher/Ingame/Items/Items") as AudioClip;
+					Asrc.Play();
 					Item[0] = true;
 				}
 				if(Popup.name=="Panel_Pille"&&iStage==4)
 				{
 					Popup.GetComponent<Animator>().SetTrigger("Out");
+					Asrc.clip = Resources.Load("Sounds/Sprecher/Ingame/Pille/Pille") as AudioClip;
+					Asrc.Play();
 					Item[1] = true;
 				}
 				if(Popup.name=="Panel_Wasser"&&iStage==5)
 				{
 					Popup.GetComponent<Animator>().SetTrigger("Out");
+					Asrc.clip = Resources.Load("Sounds/Sprecher/Ingame/Wasser/Wasser") as AudioClip;
+					Asrc.Play();
 					Item[2] = true;
 				}
 				if(Popup.name=="Panel_Fieber"&&iStage==6)
 				{
 					Popup.GetComponent<Animator>().SetTrigger("Out");
+					Asrc.clip = Resources.Load("Sounds/Sprecher/Ingame/Fieber/Fieber") as AudioClip;
+					Asrc.Play();
 					Item[3] = true;
 				}
 				if(Popup.name=="Panel_Obst"&&iStage==7)
 				{
 					Popup.GetComponent<Animator>().SetTrigger("Out");
+					Asrc.clip = Resources.Load("Sounds/Sprecher/Ingame/Obst/Obst") as AudioClip;
+					Asrc.Play();
 				}	
 			}
 		}
 		iStage++;
 		CancelInvoke();
-	}
-	void Freeze ()
-	{
-		timer = false;
-		Time.timeScale=0;
-
-	}
-	public void Unfreeze()
-	{
-		Time.timeScale=1;
-		Camera.main.GetComponent<Camera_Follow>().Follow(GameObject.Find("Play_Fress"));
 	}
 	public void Sieg ()
 	{

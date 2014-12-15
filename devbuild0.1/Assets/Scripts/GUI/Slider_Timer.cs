@@ -52,6 +52,12 @@ public class Slider_Timer : MonoBehaviour {
 				if(gameObject.name=="Slider_Item4")
 				{
 					Camera.main.GetComponent<Powers_Items>().EnhanceWhiteHepers(50/TargetSlider.maxValue);
+					GameObject[] Helpers = GameObject.FindGameObjectsWithTag("Helper");
+			
+					foreach(GameObject Helper in Helpers)
+					{
+						Helper.GetComponent<Powers_HelperAI>().PoweredUp=true;
+					}
 				}
 			}
 			else

@@ -25,6 +25,7 @@ public class Play_Antibody : MonoBehaviour {
 				Destroy(gameObject.GetComponent<Rigidbody2D>());
 				Destroy(gameObject.GetComponent<BoxCollider2D>());
 				collision.gameObject.tag="Marked";
+				collision.gameObject.layer=17;
 			}
 		}
 	}

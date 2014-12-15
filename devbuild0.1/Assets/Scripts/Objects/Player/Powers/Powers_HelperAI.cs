@@ -19,6 +19,8 @@ public class Powers_HelperAI : MonoBehaviour
 	public float fTimeToDeath;
 	public bool bConsumedPathogen = false;
 
+	public bool PoweredUp = false;
+
 	// Use this for initialization
 	void Start ()
 	{
@@ -117,6 +119,12 @@ public class Powers_HelperAI : MonoBehaviour
 			if(rigidbody2D.velocity.sqrMagnitude < fSpeedMaximum)
 			{
 				rigidbody2D.AddRelativeForce(Vector2.right*fSpeed,ForceMode2D.Impulse);
+			}
+
+			if(PoweredUp)
+			{
+				GetComponent<SpriteRenderer>().color = new Color(88,242,255);
+				fSpeedMaximum*=2;
 			}
 		}
 	}

@@ -17,8 +17,6 @@ public class Powers_Items : MonoBehaviour {
 	void Start () 
 	{
 		functionsBody = GameObject.FindGameObjectWithTag("Body").GetComponent<Body_Functions>();
-		GameObject[] PathogensMarked = GameObject.FindGameObjectsWithTag("Pathogen");
-		GameObject[] PathogensUnmarked = GameObject.FindGameObjectsWithTag("Marked");
 	}
 	
 	// Update is called once per frame

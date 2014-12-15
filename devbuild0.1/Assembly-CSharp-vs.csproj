@@ -46,19 +46,18 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Button_LevelAccessControl.cs" />
-     <Compile Include="Assets\Camera_LevelNavigation.cs" />
-     <Compile Include="Assets\Change_Cursor.cs" />
-     <Compile Include="Assets\GUI_RetractPanel.cs" />
-     <Compile Include="Assets\Level_Navigator.cs" />
      <Compile Include="Assets\RBC_controller.cs" />
      <Compile Include="Assets\Scripts\Classes\Converter_SVG.cs" />
      <Compile Include="Assets\Scripts\Classes\Polygon.cs" />
      <Compile Include="Assets\Scripts\GUI\Buttons\Btn_Origin.cs" />
      <Compile Include="Assets\Scripts\GUI\Buttons\Btn_Pressed.cs" />
      <Compile Include="Assets\Scripts\GUI\Buttons\Button_GraphicSwitcher.cs" />
+     <Compile Include="Assets\Scripts\GUI\Buttons\Button_LevelAccessControl.cs" />
      <Compile Include="Assets\Scripts\GUI\Camera\Camera_GUI.cs" />
+     <Compile Include="Assets\Scripts\GUI\Camera\Camera_LevelNavigation.cs" />
      <Compile Include="Assets\Scripts\GUI\Camera\Camera_Proceed.cs" />
+     <Compile Include="Assets\Scripts\GUI\Change_Cursor.cs" />
+     <Compile Include="Assets\Scripts\GUI\GUI_RetractPanel.cs" />
      <Compile Include="Assets\Scripts\GUI\Images\Icon_DisplayLock.cs" />
      <Compile Include="Assets\Scripts\GUI\Slider_Coloradjustment.cs" />
      <Compile Include="Assets\Scripts\GUI\Slider_Percent.cs" />
@@ -80,6 +79,7 @@
      <Compile Include="Assets\Scripts\Objects\Level_Alpha\Level_Anitgene.cs" />
      <Compile Include="Assets\Scripts\Objects\Level_Alpha\Level_AnitgeneSpawner.cs" />
      <Compile Include="Assets\Scripts\Objects\Level_Alpha\Level_Generation.cs" />
+     <Compile Include="Assets\Scripts\Objects\Level_Alpha\Level_Navigator.cs" />
      <Compile Include="Assets\Scripts\Objects\Level_Alpha\Level_Tile.cs" />
      <Compile Include="Assets\Scripts\Objects\Level_Prototype\Props\Props_BoneMarrow.cs" />
      <Compile Include="Assets\Scripts\Objects\Level_Prototype\Props\Props_RedCellSpawner.cs" />

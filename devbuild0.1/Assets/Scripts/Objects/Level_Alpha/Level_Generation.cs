@@ -12,8 +12,7 @@ public class Level_Generation : MonoBehaviour {
 	Object[,] TilesSprites;
 
 	GameObject Tile;
-	GameObject Flow;
-	GameObject Wallcollider;
+
  
 	// Use this for initialization
 	void Start () 
@@ -34,8 +33,6 @@ public class Level_Generation : MonoBehaviour {
 			}
 		}
 		Tile = Resources.Load("Prefabs/Objects/Level_Alpha/Tiles/Tile") as GameObject;
-		Flow = Resources.Load("Prefabs/Objects/Level_Alpha/FlowMap") as GameObject;
-		Wallcollider = Resources.Load("Prefabs/Objects/Level_Alpha/Wallcollider") as GameObject;
 		//GameObject FlowClone = Instantiate(Flow,transform.position,transform.rotation) as GameObject;
 		//GameObject Wallclone = Instantiate(Wallcollider,transform.position,transform.rotation) as GameObject	;
 

@@ -5,9 +5,12 @@ public class Play_AntibodyCannon : MonoBehaviour {
 
 	public GameObject antibodySprite;
 	private Animator anim;
+
+	private AudioSource Asrc;
 	// Use this for initialization
 	void Start () 
 	{
+		Asrc = GetComponentInChildren<AudioSource>();
 		//anim = GetComponent<Animator>();
 	}
 	
@@ -28,6 +31,8 @@ public class Play_AntibodyCannon : MonoBehaviour {
 				Animator anim = GetComponent<Animator>();
 
 				anim.SetTrigger("Pew");
+				Asrc.clip= Resources.Load("Sounds/Shoot")as AudioClip;
+				Asrc.Play();
 				// gameObject.tag = "pathogen"+gameObject.GetComponent<Play_Behaviour>().antibodyType.ToString();
 			}
 		}	

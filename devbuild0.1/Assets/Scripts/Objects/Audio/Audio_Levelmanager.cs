@@ -10,7 +10,6 @@ public class Audio_Levelmanager : MonoBehaviour
 	// Use this for initialization
 	void Start () 
 	{
-		DontDestroyOnLoad(gameObject);
 	}
 	// Update is called once per frame
 	void Update () 
@@ -40,5 +39,25 @@ public class Audio_Levelmanager : MonoBehaviour
 	public float getEffectsLevel ()
 	{
 		return fLevelEffects;
+	}
+	public void  SetAudioLevels ()
+	{
+		GameObject[] Effects = GameObject.FindGameObjectsWithTag("Audio_Effects");
+		GameObject[] Sprechers = GameObject.FindGameObjectsWithTag("Audio_Sprecher");
+		GameObject[] Musics = GameObject.FindGameObjectsWithTag("Audio_Music");
+
+		foreach(GameObject Effect in Effects)
+		{
+			Effect.GetComponent<AudioSource>().volume = fLevelEffects;
+		}
+		foreach(GameObject Sprecher in Sprechers)
+		{
+			Sprecher.GetComponent<AudioSource>().volume = fLevelSprecher;
+		}
+		foreach(GameObject Music in Musics)
+		{
+			Music.GetComponent<AudioSource>().volume = fLevelMusic;
+		}
+
 	}
 }

@@ -9,6 +9,7 @@ public class Body_Functions : MonoBehaviour
 	public float fHealthHerz=100;
 	public float fHealthLunge=100;
 	bool GameEnded = false;
+	public bool healthy = true;
 
 	string sCauseofDeath="";
 
@@ -30,7 +31,7 @@ public class Body_Functions : MonoBehaviour
 
 	void Update()
 	{
-		RestBody();
+		if(healthy)RestBody();
 		Herz.value=fHealthHerz/100;
 		Darm.value=fHealthDarm/100;
 		Lunge.value=fHealthLunge/100;

@@ -13,6 +13,7 @@ public class Play_Behaviour: MonoBehaviour {
 	public Transform partner;
 	public LayerMask SpawningMask;
 	private int movement = 1;
+	private AudioSource Asrc;
 	
 	private Animator[] anims;
 	private Transform target;
@@ -27,7 +28,8 @@ public class Play_Behaviour: MonoBehaviour {
 		/*if(antibodyType == 16) antibodyType = Random.Range(0,15);
 		Sprite[] test = Resources.LoadAll <Sprite> ("Sprites/Objects/Player/Play_Antigens");
 		antibodySprite.GetComponent<SpriteRenderer>().sprite = test[antibodyType];*/
-		anims=gameObject.GetComponentsInChildren<Animator>();
+		Asrc = GetComponentInChildren<AudioSource>();
+		anims=GetComponentsInChildren<Animator>();
 	}
 	
 	// Update is called once per frame
@@ -150,6 +152,11 @@ public class Play_Behaviour: MonoBehaviour {
 			partner.gameObject.GetComponent<Play_Behaviour>().antibodySprite.GetComponent<SpriteRenderer>().sprite = collision.gameObject.GetComponent<SpriteRenderer>().sprite;
 			Destroy (collision.gameObject);
 		}
+		else
+		{
+			Asrc.clip = Resources.Load("Sounds/Bump") as AudioClip;
+			Asrc.Play();
+		}
 	}
 	
 	
@@ -171,8 +178,11 @@ public class Play_Behaviour: MonoBehaviour {
 				// transform.localScale+=new Vector3(0.02f,0.02f,0.02f);
 				anims[0].SetTrigger("HitEnemy");
 				anims[1].SetTrigger("HitEnemy");
+				//Asrc.clip = Resources.Load("Sounds/") as AudioClip;
+				//Asrc.Play();
 			}
 		}
+
 	}
 
 	bool GetAnyKey(params KeyCode[] aKeys)

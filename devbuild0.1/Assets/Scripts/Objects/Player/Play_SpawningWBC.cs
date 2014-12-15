@@ -20,7 +20,7 @@ public class Play_SpawningWBC : MonoBehaviour {
 	void Start () 
 	{
 		WBC = Resources.Load("Prefabs/Objects/Player/Powers/Power_WhiteHelper") as GameObject;
-		float iLastSpawn = Time.time;
+		iLastSpawn = Time.time;
 	}
 	
 	// Update is called once per frame
