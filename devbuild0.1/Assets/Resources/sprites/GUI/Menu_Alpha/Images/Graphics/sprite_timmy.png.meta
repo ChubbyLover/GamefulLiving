@@ -23,7 +23,7 @@ TextureImporter:
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 1
+    enableMipMap: 0
     linearTexture: 0
     correctGamma: 0
     fadeOut: 0
@@ -42,7 +42,7 @@ TextureImporter:
   textureFormat: -1
   maxTextureSize: 1024
   textureSettings:
-    filterMode: 1
+    filterMode: 2
     aniso: 16
     mipBias: -1
     wrapMode: 1
@@ -65,59 +65,59 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 1304
-        width: 500
-        height: 652
+        y: 4119
+        width: 1365
+        height: 2059
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: sprite_timmy_1
       rect:
         serializedVersion: 2
-        x: 500
-        y: 1304
-        width: 500
-        height: 652
+        x: 1365
+        y: 4119
+        width: 1365
+        height: 2059
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: sprite_timmy_2
       rect:
         serializedVersion: 2
-        x: 1000
-        y: 1304
-        width: 500
-        height: 652
+        x: 2730
+        y: 4119
+        width: 1365
+        height: 2059
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: sprite_timmy_3
       rect:
         serializedVersion: 2
-        x: 1500
-        y: 1304
-        width: 500
-        height: 652
+        x: 4095
+        y: 4119
+        width: 1365
+        height: 2059
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: sprite_timmy_4
       rect:
         serializedVersion: 2
-        x: 2000
-        y: 1304
-        width: 500
-        height: 652
+        x: 5460
+        y: 4119
+        width: 1365
+        height: 2059
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: sprite_timmy_5
       rect:
         serializedVersion: 2
-        x: 2500
-        y: 1304
-        width: 500
-        height: 652
+        x: 6825
+        y: 4119
+        width: 1365
+        height: 2059
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -125,59 +125,59 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 652
-        width: 500
-        height: 652
+        y: 2060
+        width: 1365
+        height: 2059
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: sprite_timmy_7
       rect:
         serializedVersion: 2
-        x: 500
-        y: 652
-        width: 500
-        height: 652
+        x: 1365
+        y: 2060
+        width: 1365
+        height: 2059
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: sprite_timmy_8
       rect:
         serializedVersion: 2
-        x: 1000
-        y: 652
-        width: 500
-        height: 652
+        x: 2730
+        y: 2060
+        width: 1365
+        height: 2059
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: sprite_timmy_9
       rect:
         serializedVersion: 2
-        x: 1500
-        y: 652
-        width: 500
-        height: 652
+        x: 4095
+        y: 2060
+        width: 1365
+        height: 2059
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: sprite_timmy_10
       rect:
         serializedVersion: 2
-        x: 2000
-        y: 652
-        width: 500
-        height: 652
+        x: 5460
+        y: 2060
+        width: 1365
+        height: 2059
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: sprite_timmy_11
       rect:
         serializedVersion: 2
-        x: 2500
-        y: 652
-        width: 500
-        height: 652
+        x: 6825
+        y: 2060
+        width: 1365
+        height: 2059
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -185,59 +185,59 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
-        width: 500
-        height: 652
+        y: 1
+        width: 1365
+        height: 2059
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: sprite_timmy_13
       rect:
         serializedVersion: 2
-        x: 500
-        y: 0
-        width: 500
-        height: 652
+        x: 1365
+        y: 1
+        width: 1365
+        height: 2059
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: sprite_timmy_14
       rect:
         serializedVersion: 2
-        x: 1000
-        y: 0
-        width: 500
-        height: 652
+        x: 2730
+        y: 1
+        width: 1365
+        height: 2059
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: sprite_timmy_15
       rect:
         serializedVersion: 2
-        x: 1500
-        y: 0
-        width: 500
-        height: 652
+        x: 4095
+        y: 1
+        width: 1365
+        height: 2059
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: sprite_timmy_16
       rect:
         serializedVersion: 2
-        x: 2000
-        y: 0
-        width: 500
-        height: 652
+        x: 5460
+        y: 1
+        width: 1365
+        height: 2059
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: sprite_timmy_17
       rect:
         serializedVersion: 2
-        x: 2500
-        y: 0
-        width: 500
-        height: 652
+        x: 6825
+        y: 1
+        width: 1365
+        height: 2059
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

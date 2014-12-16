@@ -31,7 +31,7 @@ public class Play_AntibodyCannon : MonoBehaviour {
 				Animator anim = GetComponent<Animator>();
 
 				anim.SetTrigger("Pew");
-				Asrc.clip= Resources.Load("Sounds/Shoot")as AudioClip;
+				Asrc.clip= Resources.Load("Sounds/schießen")as AudioClip;
 				Asrc.Play();
 				// gameObject.tag = "pathogen"+gameObject.GetComponent<Play_Behaviour>().antibodyType.ToString();
 			}

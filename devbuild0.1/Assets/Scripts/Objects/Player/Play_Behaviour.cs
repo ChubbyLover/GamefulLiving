@@ -178,8 +178,8 @@ public class Play_Behaviour: MonoBehaviour {
 				// transform.localScale+=new Vector3(0.02f,0.02f,0.02f);
 				anims[0].SetTrigger("HitEnemy");
 				anims[1].SetTrigger("HitEnemy");
-				//Asrc.clip = Resources.Load("Sounds/") as AudioClip;
-				//Asrc.Play();
+				Asrc.clip = Resources.Load("Sounds/Eating") as AudioClip;
+				Asrc.Play();
 			}
 		}
 

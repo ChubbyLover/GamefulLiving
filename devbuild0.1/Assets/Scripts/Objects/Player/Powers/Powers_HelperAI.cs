@@ -20,6 +20,7 @@ public class Powers_HelperAI : MonoBehaviour
 	public bool bConsumedPathogen = false;
 
 	public bool PoweredUp = false;
+	AudioSource Asrc;
 
 	// Use this for initialization
 	void Start ()
@@ -27,6 +28,7 @@ public class Powers_HelperAI : MonoBehaviour
 		amountOfHelpers++;
 		fLastTimeDirectionChanged = Time.time;
 		WBC=GameObject.FindGameObjectWithTag("wbc");
+		Asrc = GetComponentInChildren<AudioSource>();
 	}
 	
 	public int getAmountOfHelpers()
@@ -126,6 +128,8 @@ public class Powers_HelperAI : MonoBehaviour
 				GetComponent<SpriteRenderer>().color = new Color(88,242,255);
 				fSpeedMaximum*=2;
 			}
+			Asrc.clip = Resources.Load("Sounds/NeutrophilerVormFressen") as AudioClip;
+			Asrc.Play();
 		}
 	}
 	void Consume ()

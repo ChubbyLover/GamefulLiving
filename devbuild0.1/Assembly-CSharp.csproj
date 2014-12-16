@@ -46,6 +46,7 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Animation_change.cs" />
      <Compile Include="Assets\RBC_controller.cs" />
      <Compile Include="Assets\Scripts\Classes\Converter_SVG.cs" />
      <Compile Include="Assets\Scripts\Classes\Polygon.cs" />
@@ -62,7 +63,7 @@
      <Compile Include="Assets\Scripts\GUI\Slider_Coloradjustment.cs" />
      <Compile Include="Assets\Scripts\GUI\Slider_Percent.cs" />
      <Compile Include="Assets\Scripts\GUI\Slider_Timer.cs" />
-     <Compile Include="Assets\Scripts\Objects\Audio\Audio_Levelmanager.cs" />
+     <Compile Include="Assets\Scripts\Objects\Camera\Audio\Audio_Levelmanager.cs" />
      <Compile Include="Assets\Scripts\Objects\Camera\Camera_Control.cs" />
      <Compile Include="Assets\Scripts\Objects\Camera\Camera_Follow.cs" />
      <Compile Include="Assets\Scripts\Objects\Camera\Prototyp\Camera_AnyButtonContinue.cs" />
