@@ -47,19 +47,16 @@ public class Tutorial_CheckButtonsPressed : MonoBehaviour
 
 		if(Application.loadedLevelName=="Level_Tutorial")  iLevel=0;
 		if(Application.loadedLevelName=="Level_Scharlach") iLevel=1;
-
+		
+		Invoke("checkForPathogens", 2);
+		
 		Asrc = GameObject.FindGameObjectWithTag("Audio_Sprecher").GetComponent<AudioSource>();
 		AsrcMusic= GameObject.FindGameObjectWithTag("Audio_Music").GetComponent<AudioSource>();;
 	}
 	// Update is called once per frame
 	void Update () 
 	{
-		GameObject[] Pathogens = GameObject.FindGameObjectsWithTag("Pathogen") as GameObject[];
-		if(Pathogens.Length==0&&!bWin)
-		{
-			iStage=0;
-			bWin=true;
-		}
+		
 
 		if(iLevel==0)
 		{
@@ -162,6 +159,17 @@ public class Tutorial_CheckButtonsPressed : MonoBehaviour
 	public void setStage(int iStage)
 	{
 		this.iStage=iStage;
+	}
+	
+	public void checkForPathogens()
+	{
+		GameObject[] Pathogens = GameObject.FindGameObjectsWithTag("Pathogen") as GameObject[];
+		GameObject[] PathogensMarked = GameObject.FindGameObjectsWithTag("Marked") as GameObject[];
+		if(Pathogens.Length==0&&PathogensMarked.Length==0&&!bWin)
+		{
+			iStage=0;
+			bWin=true;
+		}
 	}
 	public void NextPanel ()
 	{
