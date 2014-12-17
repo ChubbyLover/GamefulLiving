@@ -23,7 +23,10 @@ public class Pathogen_Behaviour : MonoBehaviour {
 	public float fLungs;
 	public float fDarm;
 	
-
+	void OnLevelWasLoaded(int level) {
+		stopSpreading = false;
+		amountOfPathogens  = 1;
+	}
 	// Use this for initialization
 	void Start () 
 	{
@@ -42,7 +45,7 @@ public class Pathogen_Behaviour : MonoBehaviour {
 		{
 			amountOfPathogens++;
 			GameObject clone = (GameObject) Instantiate(gameObject, transform.position, transform.rotation);
-			timeUntilMitosis = Random.Range(150,amountOfPathogens*300);
+			timeUntilMitosis = Random.Range(MytosisMin,amountOfPathogens*MytosisMax);
 			
 		}
 		if(eaten)
@@ -54,14 +57,7 @@ public class Pathogen_Behaviour : MonoBehaviour {
 				// Phagozytose.localScale-=new Vector3(0.0002f,0.0002f,0.0002f);
 				Vector3 goal = Phagozytose.position;
 				transform.position = transform.position + (goal - transform.position)*0.1f;
-				if(dissolve<0)
-				{
-					if(Phagozytose.gameObject.tag=="Helper")
-					{
-						Destroy (Phagozytose.gameObject);
-					}
-					Destroy (gameObject);
-				}
+				
 			}
 
 		} else {
@@ -72,9 +68,20 @@ public class Pathogen_Behaviour : MonoBehaviour {
 				
 			}
 		}
+		if(dissolve<0 || transform.localScale.x < 0.01f)
+		{
+			if(Phagozytose!=null )
+			{
+				if(Phagozytose.gameObject.tag=="Helper")
+				{
+					Destroy (Phagozytose.gameObject);
+				}
+			}
+			Destroy (gameObject);
+		}
+		
 		if(Medicine)
 		{
-			GetComponent<Animator>().SetTrigger("Die");
 			Destroy(gameObject,1);
 		}
 	}

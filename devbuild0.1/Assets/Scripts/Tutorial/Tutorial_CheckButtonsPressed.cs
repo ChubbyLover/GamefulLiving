@@ -27,7 +27,7 @@ public class Tutorial_CheckButtonsPressed : MonoBehaviour
 	public bool Items = false;
 	public bool[] Item = new bool[4];
 
-	public int iLevel=0;
+	public int iLevel=2;
 	
 	public int iTimeuntilPopup;
 
@@ -47,20 +47,24 @@ public class Tutorial_CheckButtonsPressed : MonoBehaviour
 
 		if(Application.loadedLevelName=="Level_Tutorial")  iLevel=0;
 		if(Application.loadedLevelName=="Level_Scharlach") iLevel=1;
-
+		
+		InvokeRepeating("CheckForPathogens", 0f,0.5f);
+		
 		Asrc = GameObject.FindGameObjectWithTag("Audio_Sprecher").GetComponent<AudioSource>();
 		AsrcMusic= GameObject.FindGameObjectWithTag("Audio_Music").GetComponent<AudioSource>();;
 	}
 	// Update is called once per frame
 	void Update () 
 	{
-		GameObject[] Pathogens = GameObject.FindGameObjectsWithTag("Pathogen") as GameObject[];
-		if(Pathogens.Length==0&&!bWin)
+		if(bWin&&iStage==0)
 		{
-			iStage=0;
-			bWin=true;
+			GameObject.Find("Canvas_Ingame_GUI_Tut").GetComponent<Canvas>().enabled=false;
+			GameObject.Find("Canvas_Comic_Sieg").GetComponent<Canvas>().enabled=true;
+			GameObject.Find("Navigational_Helper").GetComponent<Button_LevelAccessControl>().Levelfinished(Application.loadedLevel);
+			GameObject.Find("Navigational_Helper").GetComponent<Button_LevelAccessControl>().bUpdated=false;
+			Asrc.Stop();
+			iStage=1337;
 		}
-
 		if(iLevel==0)
 		{
 			if(!Panelout)
@@ -143,25 +147,22 @@ public class Tutorial_CheckButtonsPressed : MonoBehaviour
 				}
 			}
 		}
-
-			if (iStage ==0)
-			{
-				if(bWin)
-				{
-					GameObject.Find("Canvas_Ingame_GUI_Tut").GetComponent<Canvas>().enabled=false;
-					GameObject.Find("Canvas_Comic_Sieg").GetComponent<Canvas>().enabled=true;
-					GameObject.Find("Navigational_Helper").GetComponent<Button_LevelAccessControl>().Levelfinished(Application.loadedLevel);
-					GameObject.Find("Navigational_Helper").GetComponent<Button_LevelAccessControl>().bUpdated=false;
-					Asrc.Stop();
-					iStage=1337;
-				}
-				Sieg();
-			}
 	}
 
 	public void setStage(int iStage)
 	{
 		this.iStage=iStage;
+	}
+	
+	public void CheckForPathogens()
+	{
+		GameObject[] Pathogens = GameObject.FindGameObjectsWithTag("Pathogen") as GameObject[];
+		GameObject[] PathogensMarked = GameObject.FindGameObjectsWithTag("Marked") as GameObject[];
+		if(Pathogens.Length==0&&PathogensMarked.Length==0&&!bWin)
+		{
+			iStage=0;
+			bWin=true;
+		}
 	}
 	public void NextPanel ()
 	{
@@ -172,7 +173,7 @@ public class Tutorial_CheckButtonsPressed : MonoBehaviour
 				if(Popup.name=="Panel_Steuerung"&&iStage==1)
 				{
 					Popup.GetComponent<Animator>().SetTrigger("Out");
-					Asrc.clip = Resources.Load("Sounds/Sprecher/Ingame/Steuerung/Steuerung1") as AudioClip;
+					Asrc.clip = Resources.Load("Sounds/Sprecher/Ingame/Steuerung/Steuerung") as AudioClip;
 					Asrc.Play();
 					AsrcMusic.volume=fLowerMusiclevel;
 					MouseMoved=true;
@@ -295,11 +296,7 @@ public class Tutorial_CheckButtonsPressed : MonoBehaviour
 		}
 		iStage++;
 		CancelInvoke();
-	}
-	public void Sieg ()
-	{
-		GameObject[] Pathogens = GameObject.FindGameObjectsWithTag("Pathogen") as GameObject[];
-		if(Pathogens.Length==0&&!bWin) bWin = true;
+		InvokeRepeating("CheckForPathogens", 0f,0.5f);
 	}
 	void lockButtons ()
 	{

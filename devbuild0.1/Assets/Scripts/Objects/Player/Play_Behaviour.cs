@@ -12,7 +12,7 @@ public class Play_Behaviour: MonoBehaviour {
 	public GameObject antibodySprite;
 	public Transform partner;
 	public LayerMask SpawningMask;
-	private int movement = 1;
+	private int movement = 3;
 	private AudioSource Asrc;
 	
 	private Animator[] anims;
@@ -91,7 +91,7 @@ public class Play_Behaviour: MonoBehaviour {
 				// SWIM on SPACE
 				else if(movement==3)
 				{
-					if(dir.magnitude>1 && Input.GetKey(KeyCode.Space)) rigidbody2D.AddForce(dir.normalized*fCompensator*Time.deltaTime);	
+					if(Input.GetKey(KeyCode.Space)) rigidbody2D.AddForce(dir.normalized*fCompensator*Time.deltaTime);	
 				}
 				else if(movement==4)
 				{

@@ -9,7 +9,7 @@ public class Level_AnitgeneSpawner : MonoBehaviour {
 	float LastTick;
 	public List<Sprite> sprites = new List<Sprite>();
 	public int iAntigene=0;
-	public bool bNoantigene=true;
+	public bool bNoantigene=false;
 
 	// Use this for initialization
 	void Start () 
@@ -25,7 +25,7 @@ public class Level_AnitgeneSpawner : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{
-		if(Time.time>LastTick+Tickspeed&&bNoantigene)
+		if(Time.time>LastTick+Tickspeed&&!bNoantigene)
 		{
 			// antiGen = new GameObject();
 			antiGen = Instantiate (Resources.Load("Prefabs/Objects/Player/Antigene/Antigene"),transform.position, transform.rotation) as GameObject;
@@ -35,7 +35,6 @@ public class Level_AnitgeneSpawner : MonoBehaviour {
 			antiGen.GetComponent<Level_Anitgene>().Spawner=gameObject;
 			LastTick=Time.time;
 			Destroy (antiGen, 5.0f);
-			bNoantigene=false;
 		}
 	}
 }

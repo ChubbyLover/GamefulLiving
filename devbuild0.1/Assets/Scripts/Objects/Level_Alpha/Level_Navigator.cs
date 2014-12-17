@@ -30,7 +30,9 @@ public class Level_Navigator : MonoBehaviour {
 			if(sAdditionalInfo=="LevelUebersicht"&&Application.loadedLevel==0)
 			{
 				GameObject.Find("Canvas_Hauptmenu").GetComponent<Canvas>().enabled=false;
+				GameObject.Find("Canvas_Intoranimation").GetComponent<Canvas>().enabled=false;
 				GameObject.Find("Canvas_LevelUebersicht").GetComponent<Canvas>().enabled=true;
+				gameObject.GetComponent<Button_LevelAccessControl>().bUpdated = false;
 				sAdditionalInfo="";
 			}
 			GetComponent<Audio_Levelmanager>().SetAudioLevels();

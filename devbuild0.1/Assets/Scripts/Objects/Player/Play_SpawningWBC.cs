@@ -29,7 +29,7 @@ public class Play_SpawningWBC : MonoBehaviour {
 		try{
 		script = GameObject.FindGameObjectWithTag("Helper").GetComponent<Powers_HelperAI>();
 		if(script!=null) iCurrentCountWBC = script.getAmountOfHelpers();
-		} catch {
+		} catch { //<3 exception handling like a bozz
 		}
 		if(iCurrentCountWBC<iMaxCountWBC&&Time.time>iLastSpawn+iSpawnTimespan)
 		{
