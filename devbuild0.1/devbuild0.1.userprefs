@@ -1,28 +1,9 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-<<<<<<< HEAD
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Objects\Level_Alpha\Level_Navigator.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Tutorial\Tutorial_CheckButtonsPressed.cs">
     <Files>
-      <File FileName="Assets\Scripts\Objects\Camera\Camera_Follow.cs" Line="38" Column="2" />
-      <File FileName="Assets\Scripts\GUI\Camera\Camera_LevelNavigation.cs" Line="16" Column="11" />
-      <File FileName="Assets\Scripts\Objects\Level_Alpha\Level_Navigator.cs" Line="26" Column="17" />
-=======
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\GUI\Buttons\Button_LevelAccessControl.cs">
-    <Files>
-      <File FileName="Assets\Scripts\Objects\Enemy\Pathogen_Behaviour.cs" Line="26" Column="2" />
-      <File FileName="Assets\Scripts\Objects\Player\Play_Behaviour.cs" Line="45" Column="4" />
-      <File FileName="Assets\Scripts\Objects\Camera\Camera_Follow.cs" Line="40" Column="89" />
-      <File FileName="Assets\Scripts\Objects\Player\Play_AntibodyCannon.cs" Line="9" Column="2" />
-      <File FileName="Assets\Scripts\Objects\Player\Play_SpawningWBC.cs" Line="14" Column="2" />
-      <File FileName="Assets\Scripts\Objects\Level_Alpha\Level_Navigator.cs" Line="32" Column="78" />
-      <File FileName="Assets\Scripts\GUI\Images\Icon_DisplayLock.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\GUI\Buttons\Button_LevelAccessControl.cs" Line="24" Column="19" />
-      <File FileName="Assets\Scripts\Objects\Camera\Audio\Audio_Levelmanager.cs" Line="21" Column="32" />
-      <File FileName="Assets\Scripts\Objects\Player\Powers\Powers_HelperAI.cs" Line="69" Column="6" />
-      <File FileName="Assets\Scripts\Objects\Level_Alpha\Level_AnitgeneSpawner.cs" Line="28" Column="49" />
-      <File FileName="Assets\Scripts\Tutorial\Tutorial_CheckButtonsPressed.cs" Line="49" Column="3" />
-      <File FileName="Assets\Scripts\Objects\Level_Alpha\Level_Anitgene.cs" Line="46" Column="1" />
->>>>>>> 61d72328f62890eb168ca315f7e2df2e4ac365e1
+      <File FileName="Assets\Scripts\Objects\Camera\Camera_Follow.cs" Line="144" Column="1" />
+      <File FileName="Assets\Scripts\Tutorial\Tutorial_CheckButtonsPressed.cs" Line="154" Column="3" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
