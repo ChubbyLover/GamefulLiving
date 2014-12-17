@@ -23,7 +23,10 @@ public class Pathogen_Behaviour : MonoBehaviour {
 	public float fLungs;
 	public float fDarm;
 	
-
+	void OnLevelWasLoaded(int level) {
+		stopSpreading = false;
+		amountOfPathogens  = 1;
+	}
 	// Use this for initialization
 	void Start () 
 	{

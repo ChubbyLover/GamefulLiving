@@ -21,7 +21,14 @@ public class Powers_HelperAI : MonoBehaviour
 
 	public bool PoweredUp = false;
 	AudioSource Asrc;
-
+	
+	void OnLevelWasLoaded(int level) {
+		amountOfHelpers = 0;
+	}
+	void OnDestroy()
+	{
+		amountOfHelpers--;
+	}
 	// Use this for initialization
 	void Start ()
 	{
@@ -39,6 +46,8 @@ public class Powers_HelperAI : MonoBehaviour
 	void Update ()
 	{
 		Statemachine();
+		print (Time.timeScale);
+		if(Time.timeScale == 0) Asrc.Stop();
 	}
 
 	void OnBecameInvisible() 
@@ -48,7 +57,7 @@ public class Powers_HelperAI : MonoBehaviour
 		{
 			//Play_SpawningWBC script = GameObject.FindGameObjectWithTag("wbc").GetComponent<Play_SpawningWBC>();
 			//script.iCurrentCountWBC--;
-			amountOfHelpers--;
+			// amountOfHelpers--;
 			Destroy(gameObject);
 		}
 	}
@@ -57,7 +66,7 @@ public class Powers_HelperAI : MonoBehaviour
 		if(!renderer.isVisible) {
 			// Play_SpawningWBC script = GameObject.FindGameObjectWithTag("wbc").GetComponent<Play_SpawningWBC>();
 			// script.iCurrentCountWBC--;
-			amountOfHelpers--;
+			//amountOfHelpers--;
 			Destroy (gameObject);
 		}
 		if(Target == null&&Time.time > fLastTimeDirectionChanged+iTimeDirectionChange&&rigidbody2D.velocity.magnitude < fSpeedMaximum&&!bConsumedPathogen)

@@ -12,10 +12,11 @@ public class Camera_Follow : MonoBehaviour {
 	bool bStart=true;
 	public bool bCameralocked=true;
 	public Texture2D CursorIMGNormal;
+	public GameObject NaviHelper;
 
 	void Start () 
 	{
-		Cursor.SetCursor(CursorIMGNormal,Vector2.zero,CursorMode.Auto);
+		//Cursor.SetCursor(CursorIMGNormal,Vector2.zero,CursorMode.Auto);
 		//InvokeRepeating("BloodstreamIndicators", 0, 10);
 		if(Application.loadedLevelName=="Level_Tutorial") bStart=false;	
 	}
@@ -40,10 +41,12 @@ public class Camera_Follow : MonoBehaviour {
 
 		if(Marked.Length==0&&UnMarked.Length==0)
 		{
-			FreezeUnfreeze();
+			bFrozen=true;
+			Time.timeScale=0;
 			bCameralocked=true;
 			GameObject.Find("Canvas_Ingame_GUI_Tut").GetComponent<Canvas>().enabled=false;
 			GameObject.Find("Canvas_LevelSieg").GetComponent<Canvas>().enabled=true;
+			GameObject.Find("Navigational_Helper").GetComponent<Button_LevelAccessControl>().Levelfinished(Application.loadedLevel);
 		}
 		if(freeLook)
 		{

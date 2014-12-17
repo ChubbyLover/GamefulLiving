@@ -36,7 +36,7 @@ public class Level_Anitgene : MonoBehaviour {
 	}
 	void OnDestroy()
 	{
-		if(Spawner!=null)Spawner.GetComponent<Level_AnitgeneSpawner>().bNoantigene=true;
+		// if(Spawner!=null)Spawner.GetComponent<Level_AnitgeneSpawner>().bNoantigene=true;  WHHHHHYYYYY?????
 	}
 	void OnBecameVisible()
 	{

@@ -12,12 +12,17 @@ public class Button_LevelAccessControl : MonoBehaviour {
 	// Use this for initialization
 	void Start () 
 	{
-
+		// bUpdated=false;
 	}
 	
 	// Update is called once per frame
 	void Update () 
 	{
+		if (Input.GetKeyDown(KeyCode.K))
+		{
+			iLevelsUnlocked=3;
+			bUpdated=false;
+		}
 		if(Application.loadedLevelName=="GUI_Alpha"&&!bUpdated)
 		{
 			GameObject[] Levelpanels = GameObject.FindGameObjectsWithTag("GUI_LevelButton");
@@ -53,7 +58,10 @@ public class Button_LevelAccessControl : MonoBehaviour {
 	}
 	public void Levelfinished(int i)
 	{
+		print ("miau");
+		bUpdated = false;
 		iLevelsUnlocked=i;
+		Save ();
 	}
 }
 
