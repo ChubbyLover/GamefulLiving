@@ -48,7 +48,11 @@ public class Tutorial_CheckButtonsPressed : MonoBehaviour
 		if(Application.loadedLevelName=="Level_Tutorial")  iLevel=0;
 		if(Application.loadedLevelName=="Level_Scharlach") iLevel=1;
 		
+<<<<<<< HEAD
 		InvokeRepeating("CheckForPathogens", 0f,0.5f);
+=======
+		Invoke("checkForPathogens", 2);
+>>>>>>> 61d72328f62890eb168ca315f7e2df2e4ac365e1
 		
 		Asrc = GameObject.FindGameObjectWithTag("Audio_Sprecher").GetComponent<AudioSource>();
 		AsrcMusic= GameObject.FindGameObjectWithTag("Audio_Music").GetComponent<AudioSource>();;
@@ -56,6 +60,7 @@ public class Tutorial_CheckButtonsPressed : MonoBehaviour
 	// Update is called once per frame
 	void Update () 
 	{
+<<<<<<< HEAD
 		if(bWin&&iStage==0)
 		{
 			GameObject.Find("Canvas_Ingame_GUI_Tut").GetComponent<Canvas>().enabled=false;
@@ -65,6 +70,10 @@ public class Tutorial_CheckButtonsPressed : MonoBehaviour
 			Asrc.Stop();
 			iStage=1337;
 		}
+=======
+		
+
+>>>>>>> 61d72328f62890eb168ca315f7e2df2e4ac365e1
 		if(iLevel==0)
 		{
 			if(!Panelout)
@@ -154,7 +163,11 @@ public class Tutorial_CheckButtonsPressed : MonoBehaviour
 		this.iStage=iStage;
 	}
 	
+<<<<<<< HEAD
 	public void CheckForPathogens()
+=======
+	public void checkForPathogens()
+>>>>>>> 61d72328f62890eb168ca315f7e2df2e4ac365e1
 	{
 		GameObject[] Pathogens = GameObject.FindGameObjectsWithTag("Pathogen") as GameObject[];
 		GameObject[] PathogensMarked = GameObject.FindGameObjectsWithTag("Marked") as GameObject[];

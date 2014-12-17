@@ -35,8 +35,24 @@ public class Camera_Follow : MonoBehaviour {
 			transform.position = transform.position + (goal - transform.position)*0.08f;
 		}
 	}
+<<<<<<< HEAD
 	void Update()
 	{
+=======
+	void Update(){
+		GameObject[] Marked = GameObject.FindGameObjectsWithTag("Marked") as GameObject[];
+		GameObject[] UnMarked = GameObject.FindGameObjectsWithTag("Pathogen") as GameObject[];
+
+		if(Marked.Length==0&&UnMarked.Length==0)
+		{
+			bFrozen=true;
+			Time.timeScale=0;
+			bCameralocked=true;
+			GameObject.Find("Canvas_Ingame_GUI_Tut").GetComponent<Canvas>().enabled=false;
+			GameObject.Find("Canvas_LevelSieg").GetComponent<Canvas>().enabled=true;
+			GameObject.Find("Navigational_Helper").GetComponent<Button_LevelAccessControl>().Levelfinished(Application.loadedLevel);
+		}
+>>>>>>> 61d72328f62890eb168ca315f7e2df2e4ac365e1
 		if(freeLook)
 		{
 			Vector3 goal = new Vector3(target.position.x,target.position.y,-10f);
