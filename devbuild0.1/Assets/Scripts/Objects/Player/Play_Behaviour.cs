@@ -12,7 +12,6 @@ public class Play_Behaviour: MonoBehaviour {
 	public GameObject antibodySprite;
 	public Transform partner;
 	public LayerMask SpawningMask;
-	private int movement = 3;
 	private AudioSource Asrc;
 	
 	private Animator[] anims;
@@ -34,14 +33,8 @@ public class Play_Behaviour: MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		// Change control setting
-		if (Input.GetKeyDown(KeyCode.L))
-		{
-			movement++;
-			if(movement==5) movement = 1;
-		}
 		//CHANGE ZYTHI SELECTION
-		if (Input.GetKeyDown(KeyCode.F))
+		if (Input.GetKeyDown(KeyCode.F)&&Application.loadedLevelName != "Level_Tutorial_1"&&Application.loadedLevelName != "Level_Tutorial_2"&&Application.loadedLevelName != "Level_Tutorial_3")
 		{
 			selected = !selected;
 			if(selected) 
@@ -62,52 +55,8 @@ public class Play_Behaviour: MonoBehaviour {
 				Vector2 dir = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
 				float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
 				transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
-				
-				// WASD
-				if(movement==1)
-				{
-					if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow)&&rigidbody2D.velocity.magnitude<fMaxSpeed)
-					{
-						rigidbody2D.AddForce(Vector2.up*fCompensator*Time.deltaTime);	
-					}
-					if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow)&&rigidbody2D.velocity.magnitude<fMaxSpeed)
-					{
-						rigidbody2D.AddForce(Vector2.up*fCompensator*Time.deltaTime*-1.0f);
-					}
-					if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow)&&rigidbody2D.velocity.magnitude<fMaxSpeed)
-					{
-						rigidbody2D.AddForce(Vector2.right*fCompensator*Time.deltaTime*-1.0f);	
-					}
-					if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow)&&rigidbody2D.velocity.magnitude<fMaxSpeed)
-					{
-						rigidbody2D.AddForce(Vector2.right*fCompensator*Time.deltaTime);	
-					}
-				}
-				// AUTO SWIM
-				else if(movement==2)
-				{
-					if(dir.magnitude>1) rigidbody2D.AddForce(dir.normalized*(Mathf.Clamp(dir.magnitude,1,4)-1)*fCompensator*0.4f*Time.deltaTime);	
-				}
-				// SWIM on SPACE
-				else if(movement==3)
-				{
-					if(Input.GetKey(KeyCode.Space)) rigidbody2D.AddForce(dir.normalized*fCompensator*Time.deltaTime);	
-				}
-				else if(movement==4)
-				{
-					if (dir.magnitude>1.0f) 
-					{
-						if (Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow)&&rigidbody2D.velocity.magnitude<fMaxSpeed) 
-							rigidbody2D.AddForce(transform.right * 600 * Time.deltaTime);	
-						if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow)&&rigidbody2D.velocity.magnitude<fMaxSpeed)
-							rigidbody2D.AddForce(transform.right * -600 * Time.deltaTime);	
-						if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow)&&rigidbody2D.velocity.magnitude<fMaxSpeed)
-							rigidbody2D.AddForce(transform.up * 600 * Time.deltaTime);	
-						if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow)&&rigidbody2D.velocity.magnitude<fMaxSpeed)
-							rigidbody2D.AddForce(transform.up * -600 * Time.deltaTime);	
-					}
-				}
-				
+
+				if(Input.GetKey(KeyCode.Space)) rigidbody2D.AddForce(dir.normalized*fCompensator*Time.deltaTime);					
 			}
 			
 		}
@@ -158,13 +107,7 @@ public class Play_Behaviour: MonoBehaviour {
 			Asrc.Play();
 		}
 	}
-	
-	
-	void OnGUI() {
-		GUI.Label(new Rect(10, 10, 100, 20), movement.ToString());
-	}
-	
-	
+		
 	void OnTriggerEnter2D(Collider2D collision)
 	{
 		if(collision.gameObject.tag == "Pathogen" || collision.gameObject.tag == "Marked")

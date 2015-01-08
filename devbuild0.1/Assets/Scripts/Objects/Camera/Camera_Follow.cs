@@ -18,7 +18,7 @@ public class Camera_Follow : MonoBehaviour {
 	{
 		//Cursor.SetCursor(CursorIMGNormal,Vector2.zero,CursorMode.Auto);
 		//InvokeRepeating("BloodstreamIndicators", 0, 10);
-		if(Application.loadedLevelName=="Level_Tutorial") bStart=false;	
+		if(Application.loadedLevelName.Contains("Level_Tutorial")) bStart=false;	
 	}
 	
 	// Update is called once per frame

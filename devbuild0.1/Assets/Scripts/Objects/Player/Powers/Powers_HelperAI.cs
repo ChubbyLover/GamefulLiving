@@ -46,7 +46,6 @@ public class Powers_HelperAI : MonoBehaviour
 	void Update ()
 	{
 		Statemachine();
-		print (Time.timeScale);
 		if(Time.timeScale == 0) Asrc.Stop();
 	}
 

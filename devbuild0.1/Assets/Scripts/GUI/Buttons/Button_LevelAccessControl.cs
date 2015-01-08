@@ -58,7 +58,6 @@ public class Button_LevelAccessControl : MonoBehaviour {
 	}
 	public void Levelfinished(int i)
 	{
-		print ("miau");
 		bUpdated = false;
 		iLevelsUnlocked=i;
 		Save ();

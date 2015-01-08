@@ -6,7 +6,7 @@ public class Body_PathogenInfluence : MonoBehaviour {
 
 	Body_Functions Body;
 	public int iPathogens=0;
-	bool isEmpty=true;
+	public bool isEmpty=true;
 	// Use this for initialization
 	void Start () 
 	{
@@ -14,21 +14,39 @@ public class Body_PathogenInfluence : MonoBehaviour {
 	}
 	void FixedUpdate()
 	{
-		isEmpty = true;
+		if(gameObject.name=="Herz") Body.HerzHealthy=true;
+		if(gameObject.name=="Lunge") Body.LungeHealthy=true;
+		if(gameObject.name=="Darm") Body.DarmHealthy=true;
 	}
 	// Update is called once per frame
 	void Update () 
 	{
-		if(isEmpty) Body.healthy=true;
+		if(isEmpty)
+		{
+			if(gameObject.name=="Herz") Body.HerzHealthy=true;
+			if(gameObject.name=="Lunge") Body.LungeHealthy=true;
+			if(gameObject.name=="Darm") Body.DarmHealthy=true;
+		}
 	}
 	void OnTriggerStay2D(Collider2D col) 
 	{
-		if(col.gameObject.tag=="Pathogen")
+		if(col.gameObject.tag=="Pathogen"||col.gameObject.tag=="Marked")
 		{
-			if(gameObject.name=="Herz") Body.fHealthHerz-=1f*col.gameObject.GetComponent<Pathogen_Behaviour>().fHeart;
-			if(gameObject.name=="Lunge") Body.fHealthLunge-=1*col.gameObject.GetComponent<Pathogen_Behaviour>().fLungs;
-			if(gameObject.name=="Darm") Body.fHealthDarm-=1*col.gameObject.GetComponent<Pathogen_Behaviour>().fDarm;
-			Body.healthy=false;
+			if(gameObject.name=="Herz")
+			{
+				Body.fHealthHerz-=1f*col.gameObject.GetComponent<Pathogen_Behaviour>().fHeart;
+				Body.HerzHealthy=false;
+			}
+			if(gameObject.name=="Lunge")
+			{
+				Body.fHealthLunge-=1f*col.gameObject.GetComponent<Pathogen_Behaviour>().fLungs;
+				Body.LungeHealthy=false;
+			}
+			if(gameObject.name=="Darm")
+			{
+				Body.fHealthDarm-=1f*col.gameObject.GetComponent<Pathogen_Behaviour>().fDarm;
+				Body.DarmHealthy=false;
+			}
 			isEmpty = false;
 		}
 	}

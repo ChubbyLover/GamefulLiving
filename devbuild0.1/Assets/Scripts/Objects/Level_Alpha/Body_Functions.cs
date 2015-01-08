@@ -11,6 +11,11 @@ public class Body_Functions : MonoBehaviour
 	bool GameEnded = false;
 	public bool healthy = true;
 
+	public bool HerzHealthy = true;
+	public bool DarmHealthy = true;
+	public bool LungeHealthy = true;
+
+
 	string sCauseofDeath="";
 
 	public Slider Herz;
@@ -31,7 +36,6 @@ public class Body_Functions : MonoBehaviour
 
 	void Update()
 	{
-		if(healthy)RestBody();
 		Herz.value=fHealthHerz/100;
 		Darm.value=fHealthDarm/100;
 		Lunge.value=fHealthLunge/100;
@@ -63,7 +67,12 @@ public class Body_Functions : MonoBehaviour
 			GameObject.FindGameObjectWithTag("GUI_LowHpIndicator").GetComponent<Image>().enabled=false;
 		}
 	}
-
+	void LateUpdate()
+	{
+		if(HerzHealthy&&DarmHealthy&&LungeHealthy) healthy =true;
+		else healthy=false;
+		if(healthy)RestBody();
+	}
 	private void RestBody ()
 	{
 		if(Time.time > fLastTick+fTickSpeed)

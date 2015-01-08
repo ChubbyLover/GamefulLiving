@@ -16,16 +16,7 @@ public class Tutorial_Fresszelle : MonoBehaviour {
 	{
 		if(collision.gameObject.tag == "Pathogen" || collision.gameObject.tag == "Marked")
 		{	
-			if(collision.gameObject.GetComponent<Pathogen_Behaviour>().pathoType == GetComponent<Play_Behaviour>().antibodyType)
-			{
-				Camera.main.GetComponent<Tutorial_CheckButtonsPressed>().Eat =true;
-				Camera.main.GetComponent<Tutorial_CheckButtonsPressed>().Wrong=false;
-			}
-			else
-			{
-				Camera.main.GetComponent<Tutorial_CheckButtonsPressed>().Eat =true;
-				Camera.main.GetComponent<Tutorial_CheckButtonsPressed>().Wrong=true;
-			}
+				Camera.main.GetComponent<Tutorial_CheckButtonsPressed>().Antigene =true;
 		}
 	}
 }

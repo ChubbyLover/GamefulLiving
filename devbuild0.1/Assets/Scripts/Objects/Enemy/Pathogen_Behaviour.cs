@@ -30,7 +30,8 @@ public class Pathogen_Behaviour : MonoBehaviour {
 	// Use this for initialization
 	void Start () 
 	{
-		if(bEasymode&&amountOfPathogens > 35) stopSpreading = true;
+		if(bEasymode&&amountOfPathogens > 20) stopSpreading = true;
+		if(Application.loadedLevelName=="Level_Tutorial_1") stopSpreading=true;
 		timeUntilMitosis = Random.Range(MytosisMin,amountOfPathogens*MytosisMax);
 		rigidbody2D.AddForce(new Vector2(Random.value*50-25,Random.value*50-25));
 		InvokeRepeating("Clean", 10.0f, 1.0f);
@@ -41,7 +42,6 @@ public class Pathogen_Behaviour : MonoBehaviour {
 	{
 		
 		if(timeUntilMitosis<=0 && !eaten && tag=="Pathogen")
-
 		{
 			amountOfPathogens++;
 			GameObject clone = (GameObject) Instantiate(gameObject, transform.position, transform.rotation);

@@ -8,9 +8,11 @@ public class GUI_RetractPanel : MonoBehaviour {
 	private bool bIgnore=false;
 
 	AudioSource AsrcMusic;
+	AudioSource Asrc;
 	// Use this for initialization
 	void Start () {
-		AsrcMusic = GameObject.FindGameObjectWithTag("Audio_Music").GetComponent<AudioSource>(); 
+		AsrcMusic = GameObject.FindGameObjectWithTag("Audio_Music").GetComponent<AudioSource>();
+		Asrc = GameObject.FindGameObjectWithTag("Audio_Sprecher").GetComponent<AudioSource>();
 	}
 	
 	// Update is called once per frame
@@ -27,6 +29,7 @@ public class GUI_RetractPanel : MonoBehaviour {
 		bStart=false;
 		GetComponent<Animator>().SetTrigger("In");
 		AsrcMusic.volume = 0.7f;
+		Asrc.Stop();
 		Invoke("EnabelNewPanel",2);
 	}
 	void EnabelNewPanel()

@@ -3,11 +3,6 @@ using System.Collections;
 
 public class Camera_LevelNavigation : MonoBehaviour 
 {
-	public void Start ()
-	{
-		print(Application.persistentDataPath);
-	}
-	
 	public void CallFunctionfromHelper(int i)
 	{
 		switch (i)

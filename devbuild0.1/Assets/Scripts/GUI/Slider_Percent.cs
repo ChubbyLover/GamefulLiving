@@ -15,6 +15,6 @@ public class Slider_Percent : MonoBehaviour {
 	void Update () 
 	{
 		Text text = GetComponent<Text>();
-		text.text = Targetslider.GetComponent<Slider>().value*100+"%";
+		text.text = Mathf.Round(Targetslider.GetComponent<Slider>().value*100)+"%";
 	}
 }
