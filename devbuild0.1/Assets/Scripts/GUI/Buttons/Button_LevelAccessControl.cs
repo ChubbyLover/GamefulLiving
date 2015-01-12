@@ -63,7 +63,7 @@ public class Button_LevelAccessControl : MonoBehaviour {
 	public void Levelfinished(int i)
 	{
 		bUpdated = false;
-		iLevelsUnlocked=i;
+		if(i>iLevelsUnlocked) iLevelsUnlocked=i;
 		Save ();
 	}
 }
