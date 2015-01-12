@@ -57,7 +57,10 @@ public class Tutorial_CheckButtonsPressed : MonoBehaviour
 		if(Application.loadedLevelName=="Level_Tutorial_3")  iLevel=2;
 		if(Application.loadedLevelName=="Level_Tutorial_4")  iLevel=3;
 		if(Application.loadedLevelName=="Level_Tutorial_5")  iLevel=4;
-		InvokeRepeating("CheckForPathogens", 0f,0.5f);
+		
+		if(Application.loadedLevelName!="Level_endless") {
+			InvokeRepeating("CheckForPathogens", 0f,0.5f);
+		}
 			
 		Asrc = GameObject.FindGameObjectWithTag("Audio_Sprecher").GetComponent<AudioSource>();
 		AsrcMusic= GameObject.FindGameObjectWithTag("Audio_Music").GetComponent<AudioSource>();;
@@ -329,7 +332,7 @@ public class Tutorial_CheckButtonsPressed : MonoBehaviour
 		}
 		iStage++;
 		CancelInvoke();
-		InvokeRepeating("CheckForPathogens", 0f,0.5f);
+		if(Application.loadedLevelName!="Level_endless") {InvokeRepeating("CheckForPathogens", 0f,0.5f);}
 	}
 	void lockButtons ()
 	{

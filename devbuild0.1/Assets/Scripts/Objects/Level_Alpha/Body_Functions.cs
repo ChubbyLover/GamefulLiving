@@ -52,7 +52,7 @@ public class Body_Functions : MonoBehaviour
 		}
 		if(fHealthLunge<=0)
 		{
-			sCauseofDeath="Das Atmen fiel Timmy so schwer das er ins Krankenhaus musste";
+			sCauseofDeath="Das Atmen fiel Timmy so schwer, dass er ins Krankenhaus musste";
 			EndGame();
 		}
 		if(Time.time>fLastPopup+fPopuptimer&&(fHealthHerz<=50||fHealthLunge<=50||fHealthDarm<=50))
@@ -85,8 +85,10 @@ public class Body_Functions : MonoBehaviour
 	}
 	private void EndGame ()
 	{
+		print ("teste");
 		if(!GameEnded)
 		{
+			
 			GameObject.Find("Canvas_Comic_Niedrlage").GetComponent<Canvas>().enabled=true;
 			GameObject.Find("Text_Fail").GetComponent<Text>().text=sCauseofDeath;
 			GameObject.Find("Canvas_Ingame_GUI_Tut").GetComponent<Canvas>().enabled=false;

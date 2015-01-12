@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Animation_change.cs" />
+     <Compile Include="Assets\InfectionSpawner.cs" />
      <Compile Include="Assets\RBC_controller.cs" />
      <Compile Include="Assets\Scripts\Classes\Converter_SVG.cs" />
      <Compile Include="Assets\Scripts\Classes\Polygon.cs" />
@@ -99,7 +100,9 @@
      <Compile Include="Assets\Scripts\Tutorial\Enemy_Tutorial.cs" />
      <Compile Include="Assets\Scripts\Tutorial\Tutorial_CheckButtonsPressed.cs" />
      <Compile Include="Assets\Tutorial_Fresszelle.cs" />
+     <Compile Include="Assets\endlessLevel.cs" />
      <Compile Include="Assets\lookAround.cs" />
+     <Compile Include="Assets\pulsate.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.0/UnityEngine.UI.dll</HintPath>
  </Reference>

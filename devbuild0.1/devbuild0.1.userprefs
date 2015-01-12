@@ -1,22 +1,12 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\GUI\Slider_Percent.cs">
+  <MonoDevelop.Ide.Workspace />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Objects\Camera\Camera_Follow.cs">
     <Files>
-      <File FileName="Assets\Scripts\Tutorial\Tutorial_CheckButtonsPressed.cs" Line="309" Column="18" />
-      <File FileName="Assets\Scripts\Objects\Camera\Camera_Follow.cs" Line="33" Column="1" />
-      <File FileName="Assets\Scripts\GUI\Buttons\Button_LevelAccessControl.cs" Line="77" Column="3" />
-      <File FileName="Assets\Tutorial_Fresszelle.cs" Line="19" Column="77" />
-      <File FileName="Assets\Scripts\Objects\Level_Alpha\Body_Functions.cs" Line="39" Column="14" />
-      <File FileName="Assets\Scripts\Objects\Enemy\Pathogen_Behaviour.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Tutorial\Enemy_Tutorial.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Objects\Level_Alpha\Body_PathogenInfluence.cs" Line="33" Column="42" />
-      <File FileName="Assets\Scripts\GUI\Slider_Percent.cs" Line="18" Column="68" />
+      <File FileName="Assets\Scripts\Objects\Camera\Camera_Follow.cs" Line="145" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <Breakpoint file="C:\Users\Agindacake\Desktop\Daten\FH St.Poelten\WS2014\Projekt\.git\devbuild0.1\Assets\Scripts\Objects\Level_Alpha\Body_PathogenInfluence.cs" line="35" />
-    </BreakpointStore>
+    <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>

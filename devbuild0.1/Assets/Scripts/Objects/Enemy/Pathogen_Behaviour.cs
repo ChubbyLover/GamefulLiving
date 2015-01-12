@@ -16,6 +16,7 @@ public class Pathogen_Behaviour : MonoBehaviour {
 
 	public int MytosisMin;
 	public int MytosisMax;
+	public int maxAmountOfPathogens;
 
 	//Body Influencing variable
 
@@ -30,15 +31,16 @@ public class Pathogen_Behaviour : MonoBehaviour {
 	// Use this for initialization
 	void Start () 
 	{
-		if(bEasymode&&amountOfPathogens > 20) stopSpreading = true;
+		print (amountOfPathogens);
+		if(bEasymode&&amountOfPathogens > maxAmountOfPathogens) stopSpreading = true;
 		if(Application.loadedLevelName=="Level_Tutorial_1") stopSpreading=true;
 		timeUntilMitosis = Random.Range(MytosisMin,amountOfPathogens*MytosisMax);
 		rigidbody2D.AddForce(new Vector2(Random.value*50-25,Random.value*50-25));
-		InvokeRepeating("Clean", 10.0f, 1.0f);
+		InvokeRepeating("Clean", 10.0f, 2.0f);
 	}
 	
 	// Update is called once per frame
-	void Update () 
+	void FixedUpdate () 
 	{
 		
 		if(timeUntilMitosis<=0 && !eaten && tag=="Pathogen")
@@ -46,7 +48,6 @@ public class Pathogen_Behaviour : MonoBehaviour {
 			amountOfPathogens++;
 			GameObject clone = (GameObject) Instantiate(gameObject, transform.position, transform.rotation);
 			timeUntilMitosis = Random.Range(MytosisMin,amountOfPathogens*MytosisMax);
-			
 		}
 		if(eaten)
 		{
@@ -102,6 +103,10 @@ public class Pathogen_Behaviour : MonoBehaviour {
 	public void Clean()
 	{
 		if(tag=="Marked" && !renderer.isVisible && Random.value < 0.1f) { Destroy(gameObject); }
+	}
+	public void OnDestroy()
+	{
+		amountOfPathogens--;
 	}
 
 }
