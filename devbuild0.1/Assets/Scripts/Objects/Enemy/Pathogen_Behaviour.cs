@@ -31,7 +31,6 @@ public class Pathogen_Behaviour : MonoBehaviour {
 	// Use this for initialization
 	void Start () 
 	{
-		print (amountOfPathogens);
 		if(bEasymode&&amountOfPathogens > maxAmountOfPathogens) stopSpreading = true;
 		if(Application.loadedLevelName=="Level_Tutorial_1") stopSpreading=true;
 		timeUntilMitosis = Random.Range(MytosisMin,amountOfPathogens*MytosisMax);

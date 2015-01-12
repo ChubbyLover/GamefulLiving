@@ -6,6 +6,8 @@ public class Icon_DisplayLock : MonoBehaviour {
 
 	Button ParentImageBtn;
 
+	public string sId;
+
 	void Start () 
 	{
 		CheckInteractable();

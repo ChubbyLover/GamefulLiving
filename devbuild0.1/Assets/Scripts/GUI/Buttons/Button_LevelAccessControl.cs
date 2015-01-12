@@ -8,13 +8,14 @@ using System;
 public class Button_LevelAccessControl : MonoBehaviour {
 
 	public int iLevelsUnlocked;
+
+	public string[] Levels = new string[] {"Tut1","Tut2","Tut3","Tut4","Tut5","Lvl1","Lvl2","Lvl3","Lvl4"};
+
 	public bool bUpdated=false;
 	// Use this for initialization
 	void Start () 
 	{
-		// bUpdated=false;
 	}
-	
 	// Update is called once per frame
 	void Update () 
 	{
@@ -22,10 +23,17 @@ public class Button_LevelAccessControl : MonoBehaviour {
 		{
 			GameObject[] Levelpanels = GameObject.FindGameObjectsWithTag("GUI_LevelButton");
 			
-			for(int i=0; i<iLevelsUnlocked; i++)
+			for(int i=0; i<Levels.Length; i++)
 			{
-				Levelpanels[i].GetComponent<Button>().interactable=true;
-				Levelpanels[i].GetComponentInChildren<Icon_DisplayLock>().CheckInteractable();
+				for(int j=0;j<iLevelsUnlocked+1; j++)
+				{
+					Icon_DisplayLock Icon =  Levelpanels[i].GetComponentInChildren<Icon_DisplayLock>();
+					if (Icon.sId==Levels[j])
+					{
+						Levelpanels[i].GetComponent<Button>().interactable=true;
+						Levelpanels[i].GetComponentInChildren<Icon_DisplayLock>().CheckInteractable();
+					}
+				}
 			}
 			bUpdated=true;
 		}

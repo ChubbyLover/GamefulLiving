@@ -1,17 +1,14 @@
 ﻿<Properties>
-<<<<<<< HEAD
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\GUI\Camera\Camera_LevelNavigation.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\GUI\Buttons\Button_LevelAccessControl.cs">
     <Files>
-      <File FileName="Assets\Scripts\Tutorial\Tutorial_CheckButtonsPressed.cs" Line="75" Column="21" />
-      <File FileName="Assets\Scripts\Objects\Level_Alpha\Level_Navigator.cs" Line="41" Column="23" />
-      <File FileName="Assets\Scripts\GUI\Camera\Camera_LevelNavigation.cs" Line="6" Column="24" />
-=======
-  <MonoDevelop.Ide.Workspace />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Objects\Camera\Camera_Follow.cs">
-    <Files>
-      <File FileName="Assets\Scripts\Objects\Camera\Camera_Follow.cs" Line="145" Column="1" />
->>>>>>> 8648f5ff371325f4e4e977ccd9c0919aeb4b127d
+      <File FileName="Assets\Scripts\GUI\Buttons\Button_LevelAccessControl.cs" Line="33" Column="6" />
+      <File FileName="Assets\Scripts\Objects\Level_Alpha\Level_Navigator.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\GUI\Camera\Camera_LevelNavigation.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Tutorial\Tutorial_CheckButtonsPressed.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\GUI\Buttons\Button_LevelAccessControl.cs" Line="33" Column="6" />
+      <File FileName="Assets\Scripts\GUI\Images\Icon_DisplayLock.cs" Line="26" Column="1" />
+      <File FileName="Assets\Scripts\Objects\Enemy\Pathogen_Behaviour.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

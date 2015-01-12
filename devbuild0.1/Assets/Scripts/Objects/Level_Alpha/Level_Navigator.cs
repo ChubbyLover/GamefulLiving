@@ -44,7 +44,8 @@ public class Level_Navigator : MonoBehaviour {
 	}
 	public void LoadNextLevel()
 	{
-		Application.LoadLevel(Application.loadedLevel+1);
+		int iNextlevel= Application.loadedLevel+1;
+		Application.LoadLevel(iNextlevel);
 	}
 	public void ReloadLevel()
 	{
