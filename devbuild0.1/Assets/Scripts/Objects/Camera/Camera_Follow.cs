@@ -18,6 +18,7 @@ public class Camera_Follow : MonoBehaviour {
 	{
 		//Cursor.SetCursor(CursorIMGNormal,Vector2.zero,CursorMode.Auto);
 		//InvokeRepeating("BloodstreamIndicators", 0, 10);
+		Application.targetFrameRate = 60;
 		if(Application.loadedLevelName.Contains("Level_Tutorial")) bStart=false;	
 	}
 	

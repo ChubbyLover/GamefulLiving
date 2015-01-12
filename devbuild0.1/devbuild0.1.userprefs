@@ -1,16 +1,21 @@
 ﻿<Properties>
+<<<<<<< HEAD
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\GUI\Camera\Camera_LevelNavigation.cs">
     <Files>
       <File FileName="Assets\Scripts\Tutorial\Tutorial_CheckButtonsPressed.cs" Line="75" Column="21" />
       <File FileName="Assets\Scripts\Objects\Level_Alpha\Level_Navigator.cs" Line="41" Column="23" />
       <File FileName="Assets\Scripts\GUI\Camera\Camera_LevelNavigation.cs" Line="6" Column="24" />
+=======
+  <MonoDevelop.Ide.Workspace />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Objects\Camera\Camera_Follow.cs">
+    <Files>
+      <File FileName="Assets\Scripts\Objects\Camera\Camera_Follow.cs" Line="145" Column="1" />
+>>>>>>> 8648f5ff371325f4e4e977ccd9c0919aeb4b127d
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <Breakpoint file="C:\Users\Agindacake\Desktop\Daten\FH St.Poelten\WS2014\Projekt\.git\devbuild0.1\Assets\Scripts\Objects\Level_Alpha\Body_PathogenInfluence.cs" line="35" />
-    </BreakpointStore>
+    <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>
