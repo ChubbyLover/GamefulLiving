@@ -24,6 +24,7 @@ public class Play_Antibody : MonoBehaviour {
 				gameObject.transform.parent = collision.gameObject.transform;
 				Destroy(gameObject.GetComponent<Rigidbody2D>());
 				Destroy(gameObject.GetComponent<BoxCollider2D>());
+				collision.gameObject.GetComponent<Pathogen_Behaviour>().goDiePlease();
 				collision.gameObject.tag="Marked";
 				collision.gameObject.layer=17;
 			}
