@@ -7,7 +7,7 @@ using System;
 
 public class Button_LevelAccessControl : MonoBehaviour {
 
-	public int iLevelsUnlocked=0;
+	public int iLevelsUnlocked;
 	public bool bUpdated=false;
 	// Use this for initialization
 	void Start () 
@@ -18,11 +18,6 @@ public class Button_LevelAccessControl : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{
-		if (Input.GetKeyDown(KeyCode.K))
-		{
-			iLevelsUnlocked=3;
-			bUpdated=false;
-		}
 		if(Application.loadedLevelName=="GUI_Alpha"&&!bUpdated)
 		{
 			GameObject[] Levelpanels = GameObject.FindGameObjectsWithTag("GUI_LevelButton");
@@ -47,6 +42,7 @@ public class Button_LevelAccessControl : MonoBehaviour {
 	}
 	public void  Load()
 	{
+		print(Application.persistentDataPath);
 		if(File.Exists(Application.persistentDataPath+"/Levels.dat"))
 		{
 			BinaryFormatter Formatter = new BinaryFormatter();

@@ -3,6 +3,12 @@ using System.Collections;
 
 public class Camera_LevelNavigation : MonoBehaviour 
 {
+	public int iTutorial=0;
+
+	public void setiTutorial (int iTutorial)
+	{
+		this.iTutorial=iTutorial;
+	}
 	public void CallFunctionfromHelper(int i)
 	{
 		switch (i)
@@ -15,6 +21,8 @@ public class Camera_LevelNavigation : MonoBehaviour
 				break;
 		case 3: GameObject.FindGameObjectWithTag("Navigation").GetComponent<Level_Navigator>().LoadMenuLevel();
 				break;
+		case 4: GameObject.FindGameObjectWithTag("Navigation").GetComponent<Level_Navigator>().LoadLevel(iTutorial);
+			break;
 		}
 	}
 	public void LoadLevel (int i)

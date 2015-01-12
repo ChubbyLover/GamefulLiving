@@ -72,6 +72,7 @@ public class Tutorial_CheckButtonsPressed : MonoBehaviour
 			Navigation.Levelfinished(Application.loadedLevel);
 			Navigation.bUpdated=false;
 			Asrc.Stop();
+			Time.timeScale=0;
 			iStage=1337;
 		}
 		if(iLevel==0)

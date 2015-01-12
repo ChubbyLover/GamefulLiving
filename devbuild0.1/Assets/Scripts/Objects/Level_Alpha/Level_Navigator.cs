@@ -38,6 +38,10 @@ public class Level_Navigator : MonoBehaviour {
 			GetComponent<Audio_Levelmanager>().SetAudioLevels();
 		}
 	}
+	public void LoadLevel(int i)
+	{
+		Application.LoadLevel(i);
+	}
 	public void LoadNextLevel()
 	{
 		Application.LoadLevel(Application.loadedLevel+1);
