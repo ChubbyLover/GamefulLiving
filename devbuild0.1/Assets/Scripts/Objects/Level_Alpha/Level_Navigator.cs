@@ -27,15 +27,28 @@ public class Level_Navigator : MonoBehaviour {
 	{
 		if(bChanged)
 		{
-			if(sAdditionalInfo=="LevelUebersicht"&&Application.loadedLevel==0)
+			if(Application.loadedLevel==0)
 			{
-				GameObject.Find("Canvas_Hauptmenu").GetComponent<Canvas>().enabled=false;
-				GameObject.Find("Canvas_Intoranimation").GetComponent<Canvas>().enabled=false;
-				GameObject.Find("Canvas_LevelUebersicht").GetComponent<Canvas>().enabled=true;
-				gameObject.GetComponent<Button_LevelAccessControl>().bUpdated = false;
-				sAdditionalInfo="";
+				if(sAdditionalInfo=="LevelUebersicht")
+				{
+					GameObject.Find("Canvas_Hauptmenu").GetComponent<Canvas>().enabled=false;
+					GameObject.Find("Canvas_Intoranimation").GetComponent<Canvas>().enabled=false;
+					GameObject.Find("Canvas_LevelUebersicht").GetComponent<Canvas>().enabled=true;
+					gameObject.GetComponent<Button_LevelAccessControl>().bUpdated = false;
+					sAdditionalInfo="";
+					bChanged=false;
+				}
+				else
+				{
+					GameObject.Find("Canvas_Hauptmenu").GetComponent<Canvas>().enabled=true;
+					GameObject.Find("Canvas_Intoranimation").GetComponent<Canvas>().enabled=false;
+					gameObject.GetComponent<Button_LevelAccessControl>().bUpdated = false;
+					bChanged=false;
+				}
+
 			}
 			GetComponent<Audio_Levelmanager>().SetAudioLevels();
+
 		}
 	}
 	public void LoadLevel(int i)
@@ -54,6 +67,7 @@ public class Level_Navigator : MonoBehaviour {
 	public void LoadMenuLevel()
 	{
 		Application.LoadLevel(0);
+		bChanged = true;
 	}
 	public void GotoLevelMenu()
 	{

@@ -99,6 +99,19 @@ public class Pathogen_Behaviour : MonoBehaviour {
 		gameObject.tag = "Pathogen"; 
 		dissolve = 100;
 	}
+	public void goDiePlease()
+	{
+		Invoke ("DieAlone",10);
+	}
+	
+	public void DieAlone ()
+	{
+		eaten = true;
+		gameObject.tag = "Pathogen"; 
+		dissolve = 100;
+		Phagozytose = this.transform;
+	}
+	
 	public void Clean()
 	{
 		if(tag=="Marked" && !renderer.isVisible && Random.value < 0.1f) { Destroy(gameObject); }

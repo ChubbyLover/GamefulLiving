@@ -50,7 +50,7 @@ public class Button_LevelAccessControl : MonoBehaviour {
 	}
 	public void  Load()
 	{
-		print(Application.persistentDataPath);
+		//print(Application.persistentDataPath);
 		if(File.Exists(Application.persistentDataPath+"/Levels.dat"))
 		{
 			BinaryFormatter Formatter = new BinaryFormatter();
@@ -63,7 +63,7 @@ public class Button_LevelAccessControl : MonoBehaviour {
 	public void Levelfinished(int i)
 	{
 		bUpdated = false;
-		iLevelsUnlocked=i;
+		if(i>iLevelsUnlocked) iLevelsUnlocked=i;
 		Save ();
 	}
 }

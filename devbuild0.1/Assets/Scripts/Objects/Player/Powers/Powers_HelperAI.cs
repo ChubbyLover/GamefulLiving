@@ -18,6 +18,7 @@ public class Powers_HelperAI : MonoBehaviour
 	public int iTimeDirectionChange;
 	public float fTimeToDeath;
 	public bool bConsumedPathogen = false;
+	public float fMaxdistance=15;
 
 	public bool PoweredUp = false;
 	AudioSource Asrc;
@@ -62,7 +63,8 @@ public class Powers_HelperAI : MonoBehaviour
 	}
 	void Idle()
 	{
-		if(!renderer.isVisible) {
+		if(!renderer.isVisible||Vector3.Distance(WBC.transform.position,transform.position)>=fMaxdistance) 
+		{
 			// Play_SpawningWBC script = GameObject.FindGameObjectWithTag("wbc").GetComponent<Play_SpawningWBC>();
 			// script.iCurrentCountWBC--;
 			//amountOfHelpers--;

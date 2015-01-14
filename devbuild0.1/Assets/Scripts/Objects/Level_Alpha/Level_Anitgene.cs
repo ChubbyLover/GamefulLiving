@@ -42,4 +42,24 @@ public class Level_Anitgene : MonoBehaviour {
 	{
 		if(Application.loadedLevelName=="Level_Tutorial"&&!Camera.main.GetComponent<Tutorial_CheckButtonsPressed>().Antigene)Camera.main.GetComponent<Tutorial_CheckButtonsPressed>().Antigene=true;
 	}
+	void OnCollisionEnter2D(Collision2D col)
+	{
+		if(col.gameObject.name=="Play_Fress")
+		{
+			if(Application.loadedLevel==9)
+			{
+				TheDuke Duke = GameObject.FindGameObjectWithTag("Secrets").GetComponent<TheDuke>();
+				for(int i=Duke.iElement;i<Duke.iCollected.Length;i++)
+				{
+					if(Duke.iCollected[i]==0)
+					{
+						Duke.iCollected[i] = antigeneType;
+						Duke.iElement++;
+
+					}
+					break;
+				}
+			}
+		}
+	}
 }
