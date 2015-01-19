@@ -7,7 +7,7 @@ public class Camera_Follow : MonoBehaviour {
 	public Transform target;
 	public Transform storeTarget;
 	public LayerMask walls;
-	bool bFrozen=false;
+	public bool bFrozen=false;
 	bool freeLook = false;
 	bool bStart=true;
 	public bool bCameralocked=true;

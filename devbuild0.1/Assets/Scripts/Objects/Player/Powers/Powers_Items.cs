@@ -11,7 +11,7 @@ public class Powers_Items : MonoBehaviour {
 	public Slider Item3;
 	public Slider Item4;
 
-	bool ItemsEnabled=false;
+	bool ItemsEnabled=true;
 	
 	// Use this for initialization
 	void Start () 
@@ -26,21 +26,21 @@ public class Powers_Items : MonoBehaviour {
 		{
 			if(Input.GetKeyDown(KeyCode.Alpha1))
 			{
-				Item1.GetComponent<Slider_Timer>().Starttimer(60);
+				Item1.GetComponent<Slider_Timer>().Starttimer(60*Application.targetFrameRate);
 			}
 			if(Input.GetKeyDown(KeyCode.Alpha2))
 			{
-				Item2.GetComponent<Slider_Timer>().Starttimer(60);
+				Item2.GetComponent<Slider_Timer>().Starttimer(60*Application.targetFrameRate);
 
 			}
 			if(Input.GetKeyDown(KeyCode.Alpha3))
 			{
-				Item3.GetComponent<Slider_Timer>().Starttimer(60);
+				Item3.GetComponent<Slider_Timer>().Starttimer(60*Application.targetFrameRate);
 
 			}
 			if(Input.GetKeyDown(KeyCode.Alpha4))
 			{
-				Item4.GetComponent<Slider_Timer>().Starttimer(60);
+				Item4.GetComponent<Slider_Timer>().Starttimer(60*Application.targetFrameRate);
 			}
 		}
 	}

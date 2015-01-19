@@ -45,7 +45,7 @@ public class endlessLevel : MonoBehaviour {
 		// make shit spread according to stage
 		newPathogenBehaviour.MytosisMin = (int) (400.0f/((float)stage+1.0f));
 		newPathogenBehaviour.MytosisMax = (int) (20.0f + (3800.0f / ((float)stage + 9.0f)));
-		newPathogenBehaviour.maxAmountOfPathogens = (stage+3)*3;
+		newPathogenBehaviour.maxAmountOfPathogens = (stage+3)*6;
 		newPathogenBehaviour.bEasymode = true;
 		// maybe create even more shit later
 		spawnings--;

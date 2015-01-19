@@ -27,36 +27,47 @@ public class Slider_Timer : MonoBehaviour {
 				fLastTime=Time.time;
 				if(gameObject.name=="Slider_Item1")
 				{
-					Camera.main.GetComponent<Powers_Items>().Kill(50/TargetSlider.maxValue);
+					if(TargetSlider.value<=TargetSlider.maxValue/2)
+					{
+						Camera.main.GetComponent<Powers_Items>().Kill(50/TargetSlider.maxValue);
+						Camera.main.GetComponent<Powers_Items>().DamageBodilyFunctions(15/TargetSlider.maxValue,"Herz");
+						Camera.main.GetComponent<Powers_Items>().DamageBodilyFunctions(15/TargetSlider.maxValue,"Darm");
+					}
 					if(TargetSlider.value==1)GameObject.FindGameObjectWithTag("GUI_Pill").GetComponent<Animator>().SetTrigger("Used");
-					Camera.main.GetComponent<Powers_Items>().DamageBodilyFunctions(15/TargetSlider.maxValue,"Herz");
-					Camera.main.GetComponent<Powers_Items>().DamageBodilyFunctions(15/TargetSlider.maxValue,"Darm");
 				}
 				if(gameObject.name=="Slider_Item2")
 				{
 
-					Camera.main.GetComponent<Powers_Items>().RestoreBodilyFunctions(50/TargetSlider.maxValue,"All");
-					GameObject[] Bars = GameObject.FindGameObjectsWithTag("GUI_Healthbar");
-
-					foreach (GameObject Bar in Bars)
+					if(TargetSlider.value<=TargetSlider.maxValue/2)
 					{
-						Bar.GetComponent<Animator>().SetTrigger("Pulse");
+						Camera.main.GetComponent<Powers_Items>().RestoreBodilyFunctions(50/TargetSlider.maxValue,"All");
+						GameObject[] Bars = GameObject.FindGameObjectsWithTag("GUI_Healthbar");
+
+						foreach (GameObject Bar in Bars)
+						{
+							Bar.GetComponent<Animator>().SetTrigger("Pulse");
+						}
 					}
 				}
 				if(gameObject.name=="Slider_Item3")
 				{
-					Camera.main.GetComponent<Powers_Items>().ReduceMitosis(50/TargetSlider.maxValue);
-					Camera.main.GetComponent<Powers_Items>().DamageBodilyFunctions(20/TargetSlider.maxValue,"Herz");
-
+					if(TargetSlider.value<=TargetSlider.maxValue/2)
+					{
+						Camera.main.GetComponent<Powers_Items>().ReduceMitosis(50/TargetSlider.maxValue);
+						Camera.main.GetComponent<Powers_Items>().DamageBodilyFunctions(20/TargetSlider.maxValue,"Herz");
+					}
 				}
 				if(gameObject.name=="Slider_Item4")
 				{
-					Camera.main.GetComponent<Powers_Items>().EnhanceWhiteHepers(50/TargetSlider.maxValue);
-					GameObject[] Helpers = GameObject.FindGameObjectsWithTag("Helper");
-			
-					foreach(GameObject Helper in Helpers)
+					if(TargetSlider.value<=TargetSlider.maxValue/2)
 					{
-						Helper.GetComponent<Powers_HelperAI>().PoweredUp=true;
+						Camera.main.GetComponent<Powers_Items>().EnhanceWhiteHepers(50/TargetSlider.maxValue);
+						GameObject[] Helpers = GameObject.FindGameObjectsWithTag("Helper");
+				
+						foreach(GameObject Helper in Helpers)
+						{
+							Helper.GetComponent<Powers_HelperAI>().PoweredUp=true;
+						}
 					}
 				}
 			}

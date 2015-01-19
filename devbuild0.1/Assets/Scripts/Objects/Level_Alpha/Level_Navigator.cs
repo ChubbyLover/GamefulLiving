@@ -21,6 +21,7 @@ public class Level_Navigator : MonoBehaviour {
 		{
 			Destroy(gameObject);
 		}
+		Application.targetFrameRate=60;
 	}
 	// Update is called once per frame
 	void Update () 
