@@ -14,6 +14,7 @@ public class Body_PathogenInfluence : MonoBehaviour {
 	}
 	void FixedUpdate()
 	{
+		iPathogens=0;
 		if(gameObject.name=="Herz") Body.HerzHealthy=true;
 		if(gameObject.name=="Lunge") Body.LungeHealthy=true;
 		if(gameObject.name=="Darm") Body.DarmHealthy=true;
@@ -32,19 +33,21 @@ public class Body_PathogenInfluence : MonoBehaviour {
 	{
 		if(col.gameObject.tag=="Pathogen"||col.gameObject.tag=="Marked")
 		{
+			iPathogens++;
+			float factor = 1f/(1+iPathogens/10f);
 			if(gameObject.name=="Herz")
 			{
-				Body.fHealthHerz-=1f*col.gameObject.GetComponent<Pathogen_Behaviour>().fHeart;
+				Body.fHealthHerz-=factor*col.gameObject.GetComponent<Pathogen_Behaviour>().fHeart;
 				Body.HerzHealthy=false;
 			}
 			if(gameObject.name=="Lunge")
 			{
-				Body.fHealthLunge-=1f*col.gameObject.GetComponent<Pathogen_Behaviour>().fLungs;
+				Body.fHealthLunge-=factor*col.gameObject.GetComponent<Pathogen_Behaviour>().fLungs;
 				Body.LungeHealthy=false;
 			}
 			if(gameObject.name=="Darm")
 			{
-				Body.fHealthDarm-=1f*col.gameObject.GetComponent<Pathogen_Behaviour>().fDarm;
+				Body.fHealthDarm-=factor*col.gameObject.GetComponent<Pathogen_Behaviour>().fDarm;
 				Body.DarmHealthy=false;
 			}
 			isEmpty = false;
