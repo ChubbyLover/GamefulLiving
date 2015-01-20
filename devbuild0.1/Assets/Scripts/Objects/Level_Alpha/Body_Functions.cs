@@ -85,7 +85,7 @@ public class Body_Functions : MonoBehaviour
 	}
 	private void EndGame ()
 	{
-		print ("teste");
+		Time.timeScale=0f;
 		if(!GameEnded)
 		{
 			

@@ -21,26 +21,26 @@ public class Change_Cursor : MonoBehaviour {
 	{
 		if(!bCursorChanged)
 		{
-			Cursor.SetCursor(CursorIMGHover,Vector2.zero,CursorMode.Auto);
+			// Cursor.SetCursor(CursorIMGHover,Vector2.zero,CursorMode.Auto);
 			bCursorChanged=true;
 		}
 
 		else
 		{
-			Cursor.SetCursor(CursorIMGNormal,Vector2.zero,CursorMode.Auto);
+			// Cursor.SetCursor(CursorIMGNormal,Vector2.zero,CursorMode.Auto);
 			bCursorChanged=false;
 		}
 	}
 	public void CursorHover()
 	{
-		Cursor.SetCursor(CursorIMGHover,Vector2.zero,CursorMode.Auto);
+		// Cursor.SetCursor(CursorIMGHover,Vector2.zero,CursorMode.Auto);
 	}
 	public void CrusorClick()
 	{
-		Cursor.SetCursor(CursorIMGClick,Vector2.zero,CursorMode.Auto);
+		// Cursor.SetCursor(CursorIMGClick,Vector2.zero,CursorMode.Auto);
 	}
 	public void Cursorleave()
 	{
-		Cursor.SetCursor(CursorIMGNormal,Vector2.zero,CursorMode.Auto);
+		// Cursor.SetCursor(CursorIMGNormal,Vector2.zero,CursorMode.Auto);
 	}
 }
