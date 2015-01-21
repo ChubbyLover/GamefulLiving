@@ -208,7 +208,7 @@ public class Tutorial_CheckButtonsPressed : MonoBehaviour
 					Popup.GetComponent<Animator>().SetTrigger("Out");
 					Asrc.clip = Resources.Load("Sounds/Sprecher/Ingame/Steuerung/Steuerung") as AudioClip;
 					Asrc.Play();
-					AsrcMusic.volume=fLowerMusiclevel;
+					if(AsrcMusic.volume > fLowerMusiclevel)AsrcMusic.volume=fLowerMusiclevel;
 					MouseMoved=true;
 					Fress=true;
 				}
@@ -217,14 +217,14 @@ public class Tutorial_CheckButtonsPressed : MonoBehaviour
 					Popup.GetComponent<Animator>().SetTrigger("Out");
 					Asrc.clip = Resources.Load("Sounds/Sprecher/Ingame/Fresszelle/Fresszelle") as AudioClip;
 					Asrc.Play();
-					AsrcMusic.volume=fLowerMusiclevel;
+					if(AsrcMusic.volume > fLowerMusiclevel)AsrcMusic.volume=fLowerMusiclevel;
 				}
 				if(Popup.name=="Panel_Bodymap"&&iStage==3)
 				{
 					Popup.GetComponent<Animator>().SetTrigger("Out");
 					Asrc.clip = Resources.Load("Sounds/Sprecher/Ingame/Map/Map") as AudioClip;
 					Asrc.Play();
-					AsrcMusic.volume=fLowerMusiclevel;
+					if(AsrcMusic.volume > fLowerMusiclevel)AsrcMusic.volume=fLowerMusiclevel;
 					Bodymap=true;
 					Healthbar=true;
 				}
@@ -236,7 +236,7 @@ public class Tutorial_CheckButtonsPressed : MonoBehaviour
 					Popup.GetComponent<Animator>().SetTrigger("Out");
 					Asrc.clip = Resources.Load("Sounds/Sprecher/Ingame/Steuerung/Steuerung") as AudioClip;
 					Asrc.Play();
-					AsrcMusic.volume=fLowerMusiclevel;
+					if(AsrcMusic.volume > fLowerMusiclevel)AsrcMusic.volume=fLowerMusiclevel;
 					MouseMoved=true;
 					Healthbar=true;
 				}
@@ -245,7 +245,7 @@ public class Tutorial_CheckButtonsPressed : MonoBehaviour
 					Popup.GetComponent<Animator>().SetTrigger("Out");
 					Asrc.clip = Resources.Load("Sounds/Sprecher/Ingame/Healthbar/Healthbar") as AudioClip;
 					Asrc.Play();
-					AsrcMusic.volume=fLowerMusiclevel;
+					if(AsrcMusic.volume > fLowerMusiclevel)AsrcMusic.volume=fLowerMusiclevel;
 				}
 			}
 			if(iLevel==2)
@@ -255,7 +255,7 @@ public class Tutorial_CheckButtonsPressed : MonoBehaviour
 					Popup.GetComponent<Animator>().SetTrigger("Out");
 					Asrc.clip = Resources.Load("Sounds/Sprecher/Ingame/Markiererzelle/Markiererzelle") as AudioClip;
 					Asrc.Play();
-					AsrcMusic.volume=fLowerMusiclevel;
+					if(AsrcMusic.volume > fLowerMusiclevel)AsrcMusic.volume=fLowerMusiclevel;
 					MouseMoved=true;
 					Neutrophile=true;
 				}
@@ -264,7 +264,7 @@ public class Tutorial_CheckButtonsPressed : MonoBehaviour
 					Popup.GetComponent<Animator>().SetTrigger("Out");
 					Asrc.clip = Resources.Load("Sounds/Sprecher/Ingame/Neutrophile/Neutrophile") as AudioClip;
 					Asrc.Play();
-					AsrcMusic.volume=fLowerMusiclevel;
+					if(AsrcMusic.volume > fLowerMusiclevel)AsrcMusic.volume=fLowerMusiclevel;
 				}
 			}
 			if(iLevel==3)
@@ -274,7 +274,7 @@ public class Tutorial_CheckButtonsPressed : MonoBehaviour
 					Popup.GetComponent<Animator>().SetTrigger("Out");
 					Asrc.clip = Resources.Load("Sounds/Sprecher/Ingame/Antigene/Antigene") as AudioClip;
 					Asrc.Play();
-					AsrcMusic.volume=fLowerMusiclevel;
+					if(AsrcMusic.volume > fLowerMusiclevel)AsrcMusic.volume=fLowerMusiclevel;
 					MouseMoved=true;
 				}
 				if(Popup.name=="Panel_Wechsel"&&iStage==2)
@@ -282,7 +282,7 @@ public class Tutorial_CheckButtonsPressed : MonoBehaviour
 					Popup.GetComponent<Animator>().SetTrigger("Out");
 					Asrc.clip = Resources.Load("Sounds/Sprecher/Ingame/Wechsel/Wechsel") as AudioClip;
 					Asrc.Play();
-					AsrcMusic.volume=fLowerMusiclevel;
+					if(AsrcMusic.volume > fLowerMusiclevel)AsrcMusic.volume=fLowerMusiclevel;
 					Change =true;
 				}
 
@@ -294,7 +294,7 @@ public class Tutorial_CheckButtonsPressed : MonoBehaviour
 					Popup.GetComponent<Animator>().SetTrigger("Out");
 					Asrc.clip = Resources.Load("Sounds/Sprecher/Ingame/Items/Items") as AudioClip;
 					Asrc.Play();
-					AsrcMusic.volume=fLowerMusiclevel;
+					if(AsrcMusic.volume > fLowerMusiclevel)AsrcMusic.volume=fLowerMusiclevel;
 					MouseMoved= true;
 					Item[0] = true;
 				}
@@ -303,7 +303,7 @@ public class Tutorial_CheckButtonsPressed : MonoBehaviour
 					Popup.GetComponent<Animator>().SetTrigger("Out");
 					Asrc.clip = Resources.Load("Sounds/Sprecher/Ingame/Pille/Pille") as AudioClip;
 					Asrc.Play();
-					AsrcMusic.volume=fLowerMusiclevel;
+					if(AsrcMusic.volume > fLowerMusiclevel)AsrcMusic.volume=fLowerMusiclevel;
 					Item[1] = true;
 				}
 				if(Popup.name=="Panel_Wasser"&&iStage==3)
@@ -311,7 +311,7 @@ public class Tutorial_CheckButtonsPressed : MonoBehaviour
 					Popup.GetComponent<Animator>().SetTrigger("Out");
 					Asrc.clip = Resources.Load("Sounds/Sprecher/Ingame/Wasser/Wasser") as AudioClip;
 					Asrc.Play();
-					AsrcMusic.volume=fLowerMusiclevel;
+					if(AsrcMusic.volume > fLowerMusiclevel)AsrcMusic.volume=fLowerMusiclevel;
 					Item[2] = true;
 				}
 				if(Popup.name=="Panel_Fieber"&&iStage==4)
@@ -319,7 +319,7 @@ public class Tutorial_CheckButtonsPressed : MonoBehaviour
 					Popup.GetComponent<Animator>().SetTrigger("Out");
 					Asrc.clip = Resources.Load("Sounds/Sprecher/Ingame/Fieber/Fieber") as AudioClip;
 					Asrc.Play();
-					AsrcMusic.volume=fLowerMusiclevel;
+					if(AsrcMusic.volume > fLowerMusiclevel)AsrcMusic.volume=fLowerMusiclevel;
 					Item[3] = true;
 				}
 				if(Popup.name=="Panel_Obst"&&iStage==5)
@@ -327,7 +327,7 @@ public class Tutorial_CheckButtonsPressed : MonoBehaviour
 					Popup.GetComponent<Animator>().SetTrigger("Out");
 					Asrc.clip = Resources.Load("Sounds/Sprecher/Ingame/Obst/Obst") as AudioClip;
 					Asrc.Play();
-					AsrcMusic.volume=fLowerMusiclevel;
+					if(AsrcMusic.volume > fLowerMusiclevel)AsrcMusic.volume=fLowerMusiclevel;
 				}	
 			}
 		}

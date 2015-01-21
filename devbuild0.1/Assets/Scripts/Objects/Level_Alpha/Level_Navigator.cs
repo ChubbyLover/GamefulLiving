@@ -48,9 +48,12 @@ public class Level_Navigator : MonoBehaviour {
 				}
 
 			}
-			GetComponent<Audio_Levelmanager>().SetAudioLevels();
 
 		}
+	}
+	void OnLevelWasLoaded() 
+	{
+		Navigation.GetComponent<Audio_Levelmanager>().SetAudioLevels();
 	}
 	public void LoadLevel(int i)
 	{

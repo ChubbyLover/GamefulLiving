@@ -1,18 +1,13 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Objects\Level_Alpha\Body_PathogenInfluence.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Objects\Player\Powers\Powers_Items.cs">
     <Files>
-      <File FileName="Assets\Scripts\GUI\GUI_RetractPanel.cs" Line="1" Column="1" />
-      <File FileName="Assets\endlessLevel.cs" Line="72" Column="1" />
-      <File FileName="Assets\Scripts\Objects\Camera\Camera_Follow.cs" Line="19" Column="68" />
-      <File FileName="Assets\Scripts\Objects\Player\Play_Behaviour.cs" Line="42" Column="55" />
-      <File FileName="Assets\Scripts\GUI\Slider_Timer.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Objects\Player\Powers\Powers_Items.cs" Line="29" Column="83" />
-      <File FileName="Assets\Scripts\Objects\Level_Alpha\Level_Navigator.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\GUI\Camera\Camera_GUI.cs" Line="8" Column="23" />
-      <File FileName="Assets\Scripts\GUI\Change_Cursor.cs" Line="44" Column="6" />
-      <File FileName="Assets\Scripts\Objects\Level_Alpha\Body_Functions.cs" Line="81" Column="57" />
-      <File FileName="Assets\Scripts\Objects\Level_Alpha\Body_PathogenInfluence.cs" Line="37" Column="41" />
+      <File FileName="Assets\Scripts\Objects\Camera\Audio\Audio_Levelmanager.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\GUI\Camera\Camera_LevelNavigation.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Objects\Level_Alpha\Level_Navigator.cs" Line="49" Column="5" />
+      <File FileName="Assets\Scripts\Tutorial\Tutorial_CheckButtonsPressed.cs" Line="48" Column="1" />
+      <File FileName="Assets\Scripts\GUI\Slider_Timer.cs" Line="35" Column="101" />
+      <File FileName="Assets\Scripts\Objects\Player\Powers\Powers_Items.cs" Line="142" Column="3" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

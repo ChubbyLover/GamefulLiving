@@ -7,10 +7,14 @@ public class Body_PathogenInfluence : MonoBehaviour {
 	Body_Functions Body;
 	public int iPathogens=0;
 	public bool isEmpty=true;
+
+	float fInterval;
+	float fStarttime;
 	// Use this for initialization
 	void Start () 
 	{
 		Body = GameObject.FindGameObjectWithTag("Body").GetComponent<Body_Functions>();
+		fStarttime = Time.time;
 	}
 	void FixedUpdate()
 	{

@@ -28,7 +28,7 @@ public class GUI_RetractPanel : MonoBehaviour {
 	{
 		bStart=false;
 		GetComponent<Animator>().SetTrigger("In");
-		AsrcMusic.volume = 0.7f;
+		if(AsrcMusic.volume==0.4f)AsrcMusic.volume = 0.7f;
 		Asrc.Stop();
 		Invoke("EnabelNewPanel",2);
 	}

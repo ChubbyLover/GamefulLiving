@@ -9,7 +9,7 @@ public class Slider_Timer : MonoBehaviour {
 	
 	bool StartTimer=false;
 	float fLastTime;
-	float fTimer=0.1f;
+	float fTimer=0.3f;
 	// Use this for initialization
 	void Start () 
 	{
@@ -25,13 +25,14 @@ public class Slider_Timer : MonoBehaviour {
 			{
 				TargetSlider.value+=1;
 				fLastTime=Time.time;
+				TargetButton.interactable=false;
 				if(gameObject.name=="Slider_Item1")
 				{
 					if(TargetSlider.value<=TargetSlider.maxValue/2)
 					{
 						Camera.main.GetComponent<Powers_Items>().Kill(50/TargetSlider.maxValue);
-						Camera.main.GetComponent<Powers_Items>().DamageBodilyFunctions(15/TargetSlider.maxValue,"Herz");
-						Camera.main.GetComponent<Powers_Items>().DamageBodilyFunctions(15/TargetSlider.maxValue,"Darm");
+						Camera.main.GetComponent<Powers_Items>().DamageBodilyFunctions(60/TargetSlider.maxValue,"Herz");
+						Camera.main.GetComponent<Powers_Items>().DamageBodilyFunctions(120/TargetSlider.maxValue,"Darm");
 					}
 					if(TargetSlider.value==1)GameObject.FindGameObjectWithTag("GUI_Pill").GetComponent<Animator>().SetTrigger("Used");
 				}
@@ -54,7 +55,7 @@ public class Slider_Timer : MonoBehaviour {
 					if(TargetSlider.value<=TargetSlider.maxValue/2)
 					{
 						Camera.main.GetComponent<Powers_Items>().ReduceMitosis(50/TargetSlider.maxValue);
-						Camera.main.GetComponent<Powers_Items>().DamageBodilyFunctions(20/TargetSlider.maxValue,"Herz");
+						Camera.main.GetComponent<Powers_Items>().DamageBodilyFunctions(35/TargetSlider.maxValue,"Herz");
 					}
 				}
 				if(gameObject.name=="Slider_Item4")
@@ -83,7 +84,7 @@ public class Slider_Timer : MonoBehaviour {
 		if(!StartTimer)
 		{
 			TargetSlider.value=0;
-			TargetSlider.maxValue=fLength;
+			TargetSlider.maxValue=fLength*Application.targetFrameRate;
 			StartTimer=true;
 			fLastTime=Time.time;
 		}

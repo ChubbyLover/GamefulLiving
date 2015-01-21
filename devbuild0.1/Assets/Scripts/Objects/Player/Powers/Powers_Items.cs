@@ -26,21 +26,19 @@ public class Powers_Items : MonoBehaviour {
 		{
 			if(Input.GetKeyDown(KeyCode.Alpha1))
 			{
-				Item1.GetComponent<Slider_Timer>().Starttimer(60*Application.targetFrameRate);
+				Item4.GetComponent<Slider_Timer>().Starttimer(2);
 			}
 			if(Input.GetKeyDown(KeyCode.Alpha2))
 			{
-				Item2.GetComponent<Slider_Timer>().Starttimer(60*Application.targetFrameRate);
-
+				Item3.GetComponent<Slider_Timer>().Starttimer(2);
 			}
 			if(Input.GetKeyDown(KeyCode.Alpha3))
 			{
-				Item3.GetComponent<Slider_Timer>().Starttimer(60*Application.targetFrameRate);
-
+				Item2.GetComponent<Slider_Timer>().Starttimer(2);
 			}
 			if(Input.GetKeyDown(KeyCode.Alpha4))
 			{
-				Item4.GetComponent<Slider_Timer>().Starttimer(60*Application.targetFrameRate);
+				Item1.GetComponent<Slider_Timer>().Starttimer(2);
 			}
 		}
 	}

@@ -62,7 +62,7 @@ public class Body_Functions : MonoBehaviour
 			GameObject.FindGameObjectWithTag("GUI_LowHpIndicator").GetComponent<Image>().enabled=true;
 			fLastPopup = Time.time;
 		}
-		if(fHealthHerz>=50&&fHealthLunge>=50&&fHealthDarm>=50)
+		if(fHealthHerz<=50&&fHealthLunge<=50&&fHealthDarm<=50)
 		{
 			GameObject.FindGameObjectWithTag("GUI_LowHpIndicator").GetComponent<Image>().enabled=false;
 		}

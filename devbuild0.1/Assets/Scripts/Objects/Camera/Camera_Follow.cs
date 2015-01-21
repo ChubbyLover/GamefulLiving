@@ -45,7 +45,6 @@ public class Camera_Follow : MonoBehaviour {
 			camera.orthographicSize = 10;
 			transform.position = transform.position + (goal - transform.position)*0.08f;
 		}
-
 	}
 	
 	public void Follow(GameObject targetToFollow)
